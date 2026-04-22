@@ -35,52 +35,60 @@ const fullServices = [
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-brand-black">
+    <main className="min-h-screen bg-black selection:bg-red-600 selection:text-white overflow-x-hidden">
       <Navbar />
       
-      <section className="pt-48 pb-24 border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="pt-32 md:pt-48 pb-14 md:pb-24 border-b border-white/5 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 relative overflow-hidden">
+        {/* Cinematic Glow */}
+        <div className="absolute top-1/2 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.08),transparent_70%)] blur-[100px] translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="max-w-4xl"
           >
-            <span className="text-brand-red font-black uppercase tracking-[0.4em] text-[10px] mb-8 block text-white/40">Core Capabilities</span>
-            <h1 className="text-5xl md:text-[7rem] font-black leading-[0.85] tracking-tighter mb-12">
+            <span className="text-red-500 font-black uppercase tracking-[0.4em] text-[10px] mb-8 block">Core Capabilities</span>
+            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black leading-[0.85] tracking-tighter mb-12 uppercase text-white">
               INDUSTRIAL <br />
-              <span className="text-white/20 italic">SOLUTIONS</span>
+              <span className="text-zinc-700 italic">SOLUTIONS</span>
             </h1>
-            <p className="text-white/50 text-xl leading-relaxed font-medium">
+            <p className="p-lg">
               We provide integrated manufacturing systems engineered for elite athletic performance and global brand scalability.
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid lg:grid-cols-2 gap-12">
+      <section className="section-padding bg-gradient-to-b from-zinc-900 via-zinc-950 to-black relative">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             {fullServices.map((service, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="glass-card p-16 group hover:border-brand-red/30 transition-all duration-700"
+                transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
+                whileHover={{ 
+                  scale: 1.01,
+                  borderColor: "rgba(220, 38, 38, 0.4)",
+                  boxShadow: "0 0 30px rgba(220, 38, 38, 0.15)"
+                }}
+                className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-[2.5rem] p-10 md:p-16 group transition-all duration-500 active:scale-[0.99]"
               >
-                <div className="text-brand-red mb-10 group-hover:scale-110 transition-transform duration-700">
+                <div className="text-red-600 mb-10 group-hover:scale-110 transition-transform duration-700">
                   {service.icon}
                 </div>
-                <h2 className="text-3xl font-black mb-6 tracking-tighter uppercase">{service.title}</h2>
-                <p className="text-white/40 text-lg leading-relaxed mb-10 font-medium">
+                <h2 className="h-md mb-6 uppercase text-white">{service.title}</h2>
+                <p className="p-lg mb-10 text-zinc-400">
                   {service.description}
                 </p>
                 <div className="space-y-4">
                   {service.benefits.map((benefit, j) => (
-                    <div key={j} className="flex items-center gap-4 text-white/80 font-bold uppercase tracking-widest text-[10px]">
-                      <CheckCircle2 className="w-4 h-4 text-brand-red" />
+                    <div key={j} className="flex items-center gap-4 text-zinc-300 font-bold uppercase tracking-widest text-[10px] group-hover:text-white transition-colors">
+                      <CheckCircle2 className="w-4 h-4 text-red-600" />
                       {benefit}
                     </div>
                   ))}

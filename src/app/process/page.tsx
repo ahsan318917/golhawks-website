@@ -41,58 +41,64 @@ const steps = [
 
 export default function ProcessPage() {
   return (
-    <main className="min-h-screen bg-brand-black">
+    <main className="min-h-screen bg-black selection:bg-red-600 selection:text-white overflow-x-hidden">
       <Navbar />
       
-      <section className="pt-48 pb-24 border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="pt-32 md:pt-48 pb-14 md:pb-24 border-b border-white/5 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 relative overflow-hidden">
+        {/* Cinematic Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.08),transparent_70%)] blur-[120px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="max-w-4xl"
           >
-            <span className="text-brand-red font-black uppercase tracking-[0.4em] text-[10px] mb-8 block text-white/40">Our Systems</span>
-            <h1 className="text-5xl md:text-[7rem] font-black leading-[0.85] tracking-tighter mb-12">
+            <span className="text-red-500 font-black uppercase tracking-[0.4em] text-[10px] mb-8 block">Our Systems</span>
+            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black leading-[0.85] tracking-tighter mb-12 uppercase text-white">
               PRODUCTION <br />
-              <span className="text-white/20 italic">LINE</span>
+              <span className="text-zinc-700 italic">LINE</span>
             </h1>
-            <p className="text-white/50 text-xl leading-relaxed font-medium">
+            <p className="p-lg">
               A defined, quality-controlled workflow from initial concept to global delivery. Engineering trust through process.
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-32 relative overflow-hidden">
+      <section className="section-padding bg-gradient-to-b from-zinc-900 via-black to-zinc-950 relative overflow-hidden">
         {/* Animated Background Line */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-gradient-to-b from-brand-red/50 via-white/5 to-transparent hidden lg:block" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-gradient-to-b from-red-600/50 via-white/5 to-transparent hidden lg:block" />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          <div className="space-y-40">
+          <div className="space-y-24 md:space-y-40">
             {steps.map((step, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
                 className={`flex flex-col lg:flex-row gap-12 lg:gap-32 items-start ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
                 <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
-                  <div className="w-24 h-24 rounded-[2rem] bg-brand-black border border-brand-red/30 flex items-center justify-center text-brand-red mb-10 shadow-[0_0_50px_-10px_rgba(196,18,48,0.2)]">
+                  <motion.div 
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="w-20 h-20 md:w-24 md:h-24 rounded-[1.5rem] md:rounded-[2rem] bg-black/60 border border-red-600/30 flex items-center justify-center text-red-600 mb-10 shadow-[0_0_50px_-10px_rgba(220,38,38,0.2)] backdrop-blur-md"
+                  >
                     {step.icon}
-                  </div>
-                  <h2 className="text-3xl md:text-5xl font-black mb-8 tracking-tighter uppercase">{step.title}</h2>
-                  <p className="text-white/40 text-lg leading-relaxed font-medium mb-12">
+                  </motion.div>
+                  <h2 className="h-md mb-8 uppercase text-white">{step.title}</h2>
+                  <p className="p-lg mb-12 text-zinc-400">
                     {step.desc}
                   </p>
                   
-                  <div className="grid grid-cols-2 gap-8 w-full border-t border-white/5 pt-10">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full border-t border-white/5 pt-10 text-left">
                     {step.expect.map((item, j) => (
-                      <div key={j} className="space-y-1">
-                        <div className="text-[10px] font-black uppercase tracking-widest text-brand-red">Expectation</div>
-                        <div className="text-white font-bold tracking-tight">{item}</div>
+                      <div key={j} className="space-y-1 group">
+                        <div className="text-[10px] font-black uppercase tracking-widest text-red-600">Expectation</div>
+                        <div className="text-zinc-200 font-bold tracking-tight uppercase text-xs md:text-sm italic group-hover:text-white transition-colors">{item}</div>
                       </div>
                     ))}
                   </div>

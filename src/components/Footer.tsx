@@ -6,7 +6,7 @@ import { ShieldCheck, Truck, Globe } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-brand-black border-t border-white/5 pt-32 pb-12">
+    <footer className="bg-brand-black border-t border-white/5 pt-20 md:pt-32 pb-12">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid lg:grid-cols-4 gap-16 mb-24">
           <div className="col-span-1 lg:col-span-2">
@@ -14,7 +14,7 @@ const Footer = () => {
               <span className="text-brand-red italic transition-transform group-hover:skew-x-[-10deg]">GOL</span>
               <span className="group-hover:text-brand-red transition-colors">HAWKS</span>
             </Link>
-            <p className="text-white/40 text-lg leading-relaxed max-w-md mb-10 font-medium">
+            <p className="p-lg max-w-md mb-10">
               Elite manufacturing based in Sialkot, Pakistan. Serving global apparel brands with technical precision and scalable production infrastructure.
             </p>
             <div className="flex gap-10">
