@@ -1,65 +1,53 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import TrustMarquee from "@/components/TrustMarquee";
+import ServicesPreview from "@/components/ServicesPreview";
+import ProductsPreview from "@/components/ProductsPreview";
+import ProcessPreview from "@/components/ProcessPreview";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import CTA from "@/components/CTA";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-brand-black selection:bg-brand-red selection:text-white">
+      <Navbar />
+      <Hero />
+      <TrustMarquee />
+      
+      {/* Value Positioning Section */}
+      <section className="py-24 bg-brand-black border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <h2 className="text-3xl md:text-5xl font-black leading-tight tracking-tighter">
+              BEYOND MANUFACTURING. <br />
+              <span className="text-white/20 italic">WE ENGINEER BRANDS.</span>
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-10">
+              {[
+                { title: "Direct Source", desc: "Sialkot based factory direct operations." },
+                { title: "Technical R&D", desc: "Prototyping and fabric engineering." },
+                { title: "Quality QC", desc: "Batch consistency and audit reports." },
+                { title: "Global Freight", desc: "Reliable distribution to all continents." },
+              ].map((item, i) => (
+                <div key={i} className="space-y-2">
+                  <h4 className="font-bold text-white tracking-tight uppercase text-xs">{item.title}</h4>
+                  <p className="text-white/40 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      <ServicesPreview />
+      <ProductsPreview />
+      <ProcessPreview />
+      <WhyChooseUs />
+      <CTA />
+      <Footer />
+      <WhatsAppButton />
+    </main>
   );
 }
