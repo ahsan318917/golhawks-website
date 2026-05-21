@@ -1,151 +1,256 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { MessageCircle, Mail, Phone } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Mail, ArrowRight, ShieldCheck, Clock, Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const CTA = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    phone: "",
+    message: ""
+  });
+  
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", company: "", phone: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        // Robust error message extraction from improved API response
+        let message = "Failed to send inquiry. Please try again.";
+        if (data.error) {
+          message = typeof data.error === "string" ? data.error : (data.message || message);
+        } else if (data.message) {
+          message = data.message;
+        }
+        setErrorMessage(message);
+      }
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage("Something went wrong. Please check your connection.");
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   return (
     <section id="contact" className="section-padding bg-gradient-to-b from-zinc-900 via-black to-zinc-950 relative overflow-hidden">
-      {/* Visual Depth - Large Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.08),transparent_70%)] blur-[150px] pointer-events-none" />
+      {/* Background elements */}
+      <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(196,18,48,0.05),transparent_50%)] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.02),transparent_50%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-white/[0.02] backdrop-blur-xl overflow-hidden border border-white/10 rounded-[3rem] relative shadow-2xl"
-        >
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-red-600/[0.03] blur-[120px] pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-1/2 h-full bg-white/[0.01] blur-[120px] pointer-events-none" />
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           
-          <div className="grid lg:grid-cols-2 gap-16 md:gap-20 p-8 md:p-24 items-center relative z-10">
-            <div className="flex flex-col">
-              <span className="text-red-500 font-black uppercase tracking-[0.4em] text-[10px] mb-8 block">Inquiry Workflow</span>
-              <h2 className="text-4xl sm:text-5xl md:text-[6.5rem] font-black mb-10 leading-[0.85] tracking-tighter uppercase text-white">
-                START YOUR <br />
-                <span className="text-red-600 italic">PROCESS</span>
-              </h2>
-              <p className="p-lg mb-14">
-                Tell us about your product vision. Our technical team will guide you from initial tech-pack audit to sampling and mass production.
-              </p>
-              
-              <motion.div 
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                variants={{
-                  hidden: {},
-                  show: {
-                    transition: {
-                      staggerChildren: 0.1,
-                      delayChildren: 0.3
-                    }
-                  }
-                }}
-                className="space-y-8"
-              >
-                <motion.div 
-                  variants={{
-                    hidden: { opacity: 0, x: -20 },
-                    show: { opacity: 1, x: 0 }
-                  }}
-                  whileHover={{ x: 10 }}
-                  className="flex items-center gap-6 group cursor-pointer w-fit"
-                >
-                  <div className="w-14 h-14 md:w-16 md:h-16 bg-black/40 border border-white/10 rounded-2xl flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white group-hover:border-transparent transition-all duration-500 premium-shadow-red backdrop-blur-sm">
-                    <Mail className="w-6 h-6 md:w-7 md:h-7" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] text-zinc-500 uppercase font-black tracking-[0.3em] mb-1">Direct Email</div>
-                    <div className="text-xl md:text-2xl font-black tracking-tight group-hover:text-red-500 transition-colors uppercase text-white">PRO@GOLHAWKS.COM</div>
-                  </div>
-                </motion.div>
-                <motion.div 
-                  variants={{
-                    hidden: { opacity: 0, x: -20 },
-                    show: { opacity: 1, x: 0 }
-                  }}
-                  whileHover={{ x: 10 }}
-                  className="flex items-center gap-6 group cursor-pointer w-fit"
-                >
-                  <div className="w-14 h-14 md:w-16 md:h-16 bg-black/40 border border-white/10 rounded-2xl flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white group-hover:border-transparent transition-all duration-500 premium-shadow-red backdrop-blur-sm">
-                    <Phone className="w-6 h-6 md:w-7 md:h-7" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] text-zinc-500 uppercase font-black tracking-[0.3em] mb-1">Elite Support</div>
-                    <div className="text-xl md:text-2xl font-black tracking-tight group-hover:text-red-500 transition-colors uppercase text-white">+92 3XX XXXXXXX</div>
-                  </div>
-                </motion.div>
-              </motion.div>
+          {/* Left Side: Impact Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:sticky lg:top-32"
+          >
+            <div className="inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/20 px-4 py-2 rounded-full mb-8">
+              <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-red">Global Inquiries Open</span>
+            </div>
+            
+            <h2 className="text-5xl sm:text-6xl md:text-8xl font-black mb-10 leading-[0.85] tracking-tighter uppercase text-white">
+              START YOUR <br />
+              <span className="text-brand-red italic">PROCESS</span>
+            </h2>
+            
+            <p className="text-xl md:text-2xl text-zinc-400 font-medium leading-relaxed mb-12 max-w-xl">
+              Tell us about your product vision. Our technical team will guide you from initial consultation to production and delivery.
+            </p>
+
+            <div className="space-y-8 mb-12">
+              <div className="flex items-center gap-6 group">
+                <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-zinc-500 group-hover:text-brand-red group-hover:border-brand-red/30 transition-all">
+                  <Mail className="w-6 h-6" />
+                </div>
+                <div>
+                  <div className="text-[10px] text-zinc-600 uppercase font-black tracking-[0.3em] mb-1">Business Email</div>
+                  <a href="mailto:info@golhawksinternational.com" className="text-lg md:text-xl font-bold text-white hover:text-brand-red transition-colors uppercase tracking-tight">
+                    info@golhawksinternational.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6 group">
+                <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-zinc-500 group-hover:text-green-500 group-hover:border-green-500/30 transition-all">
+                  <FaWhatsapp className="w-6 h-6" />
+                </div>
+                <div>
+                  <div className="text-[10px] text-zinc-600 uppercase font-black tracking-[0.3em] mb-1">WhatsApp Business</div>
+                  <a href="https://wa.me/923464208200" target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl font-bold text-white hover:text-green-500 transition-colors uppercase tracking-tight">
+                    +92 346 4208200
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="bg-black/60 backdrop-blur-3xl p-8 md:p-16 rounded-[2.5rem] md:rounded-[3rem] border border-white/10 relative overflow-hidden group shadow-2xl"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-red-600/[0.08] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-              <form className="space-y-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      className="bg-black/50 border border-white/10 rounded-2xl px-6 py-5 focus:border-red-500 focus:ring-1 focus:ring-red-500/50 outline-none transition-all duration-500 w-full placeholder:text-zinc-600 font-medium text-white"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      className="bg-black/50 border border-white/10 rounded-2xl px-6 py-5 focus:border-red-500 focus:ring-1 focus:ring-red-500/50 outline-none transition-all duration-500 w-full placeholder:text-zinc-600 font-medium text-white"
-                    />
-                  </div>
+            <div className="flex items-center gap-4 bg-white/[0.03] backdrop-blur-xl border border-white/10 px-6 py-4 rounded-2xl w-fit">
+              <Clock className="w-5 h-5 text-brand-red" />
+              <span className="text-xs font-bold uppercase tracking-widest text-white/70">Usually replies within a few hours</span>
+            </div>
+          </motion.div>
+
+          {/* Right Side: Professional Inquiry Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-white/[0.02] backdrop-blur-3xl border border-white/10 rounded-[3rem] p-8 md:p-12 relative overflow-hidden shadow-2xl"
+          >
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-red/5 blur-[100px] pointer-events-none" />
+            
+            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Full Name *</label>
+                  <input
+                    required
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="John Doe"
+                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
+                  />
                 </div>
-                <input
-                  type="text"
-                  placeholder="Business/Gym Name"
-                  className="bg-black/50 border border-white/10 rounded-2xl px-6 py-5 focus:border-red-500 focus:ring-1 focus:ring-red-500/50 outline-none transition-all duration-500 w-full placeholder:text-zinc-600 font-medium text-white"
-                />
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Email Address *</label>
+                  <input
+                    required
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="john@company.com"
+                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Company Name</label>
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Enterprise Ltd"
+                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Phone Number</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+1 (234) 567-890"
+                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Inquiry Details *</label>
                 <textarea
-                  placeholder="Tell us about your requirements..."
-                  rows={4}
-                  className="bg-black/50 border border-white/10 rounded-2xl px-6 py-5 focus:border-red-500 focus:ring-1 focus:ring-red-500/50 outline-none transition-all duration-500 w-full resize-none placeholder:text-zinc-600 font-medium text-white"
-                ></textarea>
-                <motion.button 
-                  whileHover={{ 
-                    scale: 1.02,
-                    boxShadow: "0 10px 30px -5px rgba(220, 38, 38, 0.5)"
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-red-600 text-white py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-red-700 transition-all premium-shadow-red relative overflow-hidden group/btn"
-                >
-                  <span className="relative z-10">Send Inquiry</span>
-                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
-                </motion.button>
-                
-                <div className="pt-6 text-center">
-                  <div className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-600 mb-4 text-center uppercase">Or chat instantly via</div>
-                  <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    href="https://wa.me/923XXXXXXXXX"
-                    className="inline-flex items-center gap-3 text-green-500 font-black uppercase tracking-widest text-[10px] hover:text-green-400 transition-all"
+                  required
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={5}
+                  placeholder="Tell us about your requirements, quantities, and timelines..."
+                  className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700 resize-none"
+                />
+              </div>
+
+              <motion.button
+                type="submit"
+                disabled={status === "submitting"}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className={`w-full py-5 rounded-2xl font-black uppercase tracking-[0.3em] text-xs flex items-center justify-center gap-3 transition-all relative overflow-hidden group ${
+                  status === "submitting" ? "bg-zinc-800 cursor-not-allowed" : "bg-brand-red text-white hover:bg-red-700 premium-shadow-red"
+                }`}
+              >
+                <span className="relative z-10">
+                  {status === "submitting" ? "Processing..." : "Send Inquiry"}
+                </span>
+                {status === "submitting" ? (
+                  <Loader2 className="w-4 h-4 animate-spin relative z-10" />
+                ) : (
+                  <Send className="w-4 h-4 relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                )}
+                <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+              </motion.button>
+
+              <AnimatePresence>
+                {status === "success" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    className="flex items-center gap-3 text-green-500 bg-green-500/10 border border-green-500/20 px-6 py-4 rounded-2xl"
                   >
-                    <MessageCircle className="w-5 h-5" />
-                    WhatsApp Business
-                  </motion.a>
-                </div>
-              </form>
-            </motion.div>
-          </div>
-        </motion.div>
+                    <CheckCircle2 className="w-5 h-5 shrink-0" />
+                    <span className="text-xs font-bold uppercase tracking-wider">Your inquiry has been sent successfully.</span>
+                  </motion.div>
+                )}
+
+                {status === "error" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    className="flex items-center gap-3 text-brand-red bg-brand-red/10 border border-brand-red/20 px-6 py-4 rounded-2xl"
+                  >
+                    <AlertCircle className="w-5 h-5 shrink-0" />
+                    <span className="text-xs font-bold uppercase tracking-wider">{errorMessage}</span>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </form>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );
 };
 
 export default CTA;
+
+

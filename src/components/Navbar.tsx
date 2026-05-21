@@ -2,12 +2,15 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,31 +34,56 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        {/* Logo - Always Visible */}
-        <Link href="/" className="text-xl md:text-2xl font-black tracking-tighter flex items-center gap-2 group shrink-0">
-          <span className="text-brand-red italic transition-transform group-hover:skew-x-[-10deg]">GOL</span>
-          <span className="group-hover:text-brand-red transition-colors">HAWKS</span>
+        {/* Logo Section - Enterprise Lockup */}
+        <Link href="/" className="flex items-center gap-4 group">
+          <div className="relative w-14 h-14 md:w-16 md:h-16 bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden p-1 transition-all group-hover:border-brand-red/50 group-hover:bg-brand-red/[0.02]">
+            <Image
+              src="/images/Logo (2).png"
+              alt="GolHawks International Icon"
+              fill
+              className="object-cover scale-110" // Zoom in slightly to reduce padding
+              priority
+            />
+          </div>
+          <div className="flex flex-col justify-center">
+            <span className="text-xl md:text-2xl font-black tracking-[-0.05em] leading-none flex items-center">
+              <span className="text-white">GOL</span>
+              <span className="text-brand-red italic">HAWKS</span>
+            </span>
+            <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-[0.4em] text-white/40 mt-1.5 group-hover:text-white/60 transition-colors">
+              International
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav - Hidden on Mobile */}
         <div className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-[10px] uppercase tracking-[0.2em] font-black text-white/60 hover:text-white transition-all pb-1 relative group"
-            >
-              {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-brand-red transition-all group-hover:w-full" />
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`text-[10px] uppercase tracking-[0.2em] font-black transition-all pb-1 relative group ${
+                  isActive ? "text-brand-red" : "text-white/60 hover:text-white"
+                }`}
+              >
+                {link.name}
+                <span className={`absolute bottom-0 left-0 h-[1px] bg-brand-red transition-all ${
+                  isActive ? "w-full" : "w-0 group-hover:w-full"
+                }`} />
+              </Link>
+            );
+          })}
         </div>
 
         {/* Action Buttons */}
         <div className="flex items-center gap-3 md:gap-6">
           <Link
             href="/contact"
-            className="bg-brand-red hover:bg-red-700 text-white px-5 md:px-8 py-2.5 md:py-4 rounded-full text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] transition-all hover:scale-105 active:scale-95 premium-shadow-red shrink-0"
+            className={`bg-brand-red hover:bg-red-700 text-white px-5 md:px-8 py-2.5 md:py-4 rounded-full text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] transition-all hover:scale-105 active:scale-95 premium-shadow-red shrink-0 ${
+              pathname === "/contact" ? "ring-2 ring-white/20" : ""
+            }`}
           >
             Get Quote
           </Link>
@@ -81,22 +109,27 @@ const Navbar = () => {
             className="fixed inset-0 top-0 z-[90] lg:hidden bg-brand-black flex flex-col justify-center px-8"
           >
             <div className="flex flex-col gap-8">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 + 0.2 }}
-                >
-                  <Link
-                    href={link.href}
-                    className="text-5xl sm:text-6xl font-black uppercase tracking-tighter hover:text-brand-red transition-colors block"
-                    onClick={() => setIsOpen(false)}
+              {navLinks.map((link, i) => {
+                const isActive = pathname === link.href;
+                return (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 + 0.2 }}
                   >
-                    {link.name}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      href={link.href}
+                      className={`text-5xl sm:text-6xl font-black uppercase tracking-tighter transition-colors block ${
+                        isActive ? "text-brand-red" : "hover:text-brand-red"
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                );
+              })}
               
               <motion.div 
                 initial={{ opacity: 0 }}

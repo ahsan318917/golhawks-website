@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { MessageCircle, ArrowRight } from "lucide-react";
 
 const Hero = () => {
@@ -78,20 +79,22 @@ const Hero = () => {
             </motion.p>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 md:gap-10">
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
-                className="bg-brand-red text-white px-8 md:px-14 py-4 md:py-6 rounded-full font-black uppercase tracking-[0.2em] text-[10px] flex items-center justify-center gap-4 transition-all premium-shadow-red relative group overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-white/10 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500" />
-                <span className="relative z-10 flex items-center gap-4">
-                  Start Your Production
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </motion.button>
+              <Link href="/contact" className="block">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="bg-brand-red text-white px-8 md:px-14 py-4 md:py-6 rounded-full font-black uppercase tracking-[0.2em] text-[10px] flex items-center justify-center gap-4 transition-all premium-shadow-red relative group overflow-hidden cursor-pointer"
+                >
+                  <div className="absolute inset-0 bg-white/10 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500" />
+                  <span className="relative z-10 flex items-center gap-4">
+                    Start Your Production
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </motion.div>
+              </Link>
 
               <motion.a
                 initial={{ opacity: 0, y: 20 }}
@@ -99,7 +102,7 @@ const Hero = () => {
                 transition={{ delay: 0.6, duration: 0.8 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
-                href="https://wa.me/923XXXXXXXXX"
+                href="https://wa.me/923464208200"
                 className="text-white/60 hover:text-white px-6 py-4 md:py-3 rounded-full font-black uppercase tracking-[0.2em] text-[10px] flex items-center justify-center gap-4 transition-all border border-white/10 sm:border-transparent hover:border-white/20"
               >
                 <MessageCircle className="w-4 h-4 text-green-500/60" />

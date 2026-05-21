@@ -9,19 +9,25 @@ const brands = [
 
 const TrustMarquee = () => {
   return (
-    <section className="py-12 bg-brand-black border-y border-white/5 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
-        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20">Trusted by growing brands worldwide</span>
+    <section className="py-16 bg-brand-black border-y border-white/5 overflow-hidden relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-black via-transparent to-brand-black z-10 pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
+        <div className="inline-flex items-center gap-4">
+          <div className="h-[1px] w-8 bg-brand-red/30" />
+          <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white/20">Manufacturing Partners & Global Brands</span>
+          <div className="h-[1px] w-8 bg-brand-red/30" />
+        </div>
       </div>
       
-      <div className="flex whitespace-nowrap overflow-hidden">
+      <div className="flex whitespace-nowrap overflow-hidden relative z-0">
         <motion.div 
           animate={{ x: [0, -1000] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="flex gap-24 items-center"
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          className="flex gap-32 items-center"
         >
           {brands.map((brand, i) => (
-            <span key={i} className="text-3xl md:text-5xl font-black text-white/10 hover:text-white/30 transition-colors cursor-default select-none tracking-tighter italic uppercase">
+            <span key={i} className="text-4xl md:text-6xl font-black text-white/[0.03] hover:text-brand-red/20 transition-all duration-700 cursor-default select-none tracking-tighter italic uppercase">
               {brand}
             </span>
           ))}

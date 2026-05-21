@@ -62,7 +62,7 @@ export default function AboutPage() {
               <div>
                 <h2 className="h-md mb-6 uppercase text-white">Direct-to-Brand Infrastructure</h2>
                 <p className="p-lg text-zinc-400">
-                  Golhawks International was founded to eliminate the friction between design and mass production. By owning our facility in Sialkot, the world's hub for sportswear, we provide brands with direct control over their supply chain.
+                  GolHawks International was founded to eliminate the friction between design and mass production. By owning our facility in Sialkot, the world's hub for sportswear, we provide brands with direct control over their supply chain.
                 </p>
               </div>
 
