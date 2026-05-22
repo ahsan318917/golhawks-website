@@ -15,6 +15,12 @@
   --foreground: #ffffff;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 @layer base {
   body {
     @apply bg-brand-black text-white/90 antialiased selection:bg-brand-red selection:text-white leading-relaxed tracking-wide;
@@ -23,6 +29,8 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-black tracking-tight text-white uppercase;
     letter-spacing: -0.02em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 }
 
@@ -32,7 +40,7 @@
   }
   
   .glass-card {
-    @apply bg-white/[0.03] backdrop-blur-3xl border border-white/10 rounded-[2rem] transition-all duration-700;
+    @apply bg-white/[0.03] backdrop-blur-3xl border border-white/10 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-700;
   }
 
   .premium-shadow-red {
@@ -60,14 +68,14 @@
   @apply transition-all duration-500 ease-out;
 }
 
-/* Section Spacing System */
+/* Section Spacing System - Refined for Mobile Density */
 .section-padding {
-  @apply py-10 sm:py-14 md:py-20 lg:py-28;
+  @apply py-12 sm:py-16 md:py-24 lg:py-32;
 }
 
-/* Typography Scaling */
-.h-xl { @apply text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter; }
-.h-lg { @apply text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter; }
-.h-md { @apply text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black tracking-tighter; }
-.p-lg { @apply text-base md:text-lg text-zinc-400 leading-relaxed font-medium; }
-.p-sm { @apply text-sm text-zinc-500 leading-relaxed font-medium; }
+/* Typography Scaling - Refined for responsiveness and no overflow */
+.h-xl { @apply text-[2.5rem] leading-[1] sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter; }
+.h-lg { @apply text-[2rem] leading-[1] sm:text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter; }
+.h-md { @apply text-[1.5rem] leading-[1.1] sm:text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter; }
+.p-lg { @apply text-sm sm:text-base md:text-lg text-zinc-400 leading-relaxed font-medium; }
+.p-sm { @apply text-xs sm:text-sm text-zinc-500 leading-relaxed font-medium; }

@@ -30,13 +30,13 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-in-out ${
-        scrolled ? "bg-brand-black/90 backdrop-blur-2xl border-b border-white/5 py-3 md:py-4 shadow-2xl" : "bg-transparent py-6 md:py-8"
+        scrolled ? "bg-brand-black/90 backdrop-blur-2xl border-b border-white/5 py-2.5 md:py-4 shadow-2xl" : "bg-transparent py-4 md:py-8"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-5 md:px-12 flex justify-between items-center">
         {/* Logo Section - Enterprise Lockup */}
-        <Link href="/" className="flex items-center gap-4 group">
-          <div className="relative w-14 h-14 md:w-16 md:h-16 bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden p-1 transition-all group-hover:border-brand-red/50 group-hover:bg-brand-red/[0.02]">
+        <Link href="/" className="flex items-center gap-3 md:gap-4 group">
+          <div className="relative w-10 h-10 md:w-16 md:h-16 bg-white/[0.03] border border-white/10 rounded-lg md:rounded-xl overflow-hidden p-1 transition-all group-hover:border-brand-red/50 group-hover:bg-brand-red/[0.02]">
             <Image
               src="/images/Logo (2).png"
               alt="GolHawks International Icon"
@@ -46,11 +46,11 @@ const Navbar = () => {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <span className="text-xl md:text-2xl font-black tracking-[-0.05em] leading-none flex items-center">
+            <span className="text-lg md:text-2xl font-black tracking-[-0.05em] leading-none flex items-center">
               <span className="text-white">GOL</span>
               <span className="text-brand-red italic">HAWKS</span>
             </span>
-            <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-[0.4em] text-white/40 mt-1.5 group-hover:text-white/60 transition-colors">
+            <span className="text-[7px] md:text-[9px] font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-white/40 mt-1 group-hover:text-white/60 transition-colors">
               International
             </span>
           </div>
@@ -78,10 +78,10 @@ const Navbar = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-3 md:gap-6">
+        <div className="flex items-center gap-2 md:gap-6">
           <Link
             href="/contact"
-            className={`bg-brand-red hover:bg-red-700 text-white px-5 md:px-8 py-2.5 md:py-4 rounded-full text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] transition-all hover:scale-105 active:scale-95 premium-shadow-red shrink-0 ${
+            className={`bg-brand-red hover:bg-red-700 text-white px-4 md:px-8 py-2 md:py-4 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] transition-all hover:scale-105 active:scale-95 premium-shadow-red shrink-0 ${
               pathname === "/contact" ? "ring-2 ring-white/20" : ""
             }`}
           >
@@ -90,11 +90,11 @@ const Navbar = () => {
 
           {/* Mobile Toggle */}
           <button 
-            className="lg:hidden text-white p-2.5 bg-white/5 hover:bg-white/10 rounded-full transition-colors border border-white/5" 
+            className="lg:hidden text-white p-2 bg-white/5 hover:bg-white/10 rounded-full transition-colors border border-white/5" 
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
           >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
         </div>
       </div>

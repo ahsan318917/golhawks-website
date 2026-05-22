@@ -80,44 +80,44 @@ const CTA = () => {
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-red">Global Inquiries Open</span>
             </div>
             
-            <h2 className="text-5xl sm:text-6xl md:text-8xl font-black mb-10 leading-[0.85] tracking-tighter uppercase text-white">
+            <h2 className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 md:mb-10 leading-[0.9] md:leading-[0.85] tracking-tighter uppercase text-white">
               START YOUR <br />
               <span className="text-brand-red italic">PROCESS</span>
             </h2>
             
-            <p className="text-xl md:text-2xl text-zinc-400 font-medium leading-relaxed mb-12 max-w-xl">
+            <p className="text-lg md:text-2xl text-zinc-400 font-medium leading-relaxed mb-8 md:mb-12 max-w-xl">
               Tell us about your product vision. Our technical team will guide you from initial consultation to production and delivery.
             </p>
 
-            <div className="space-y-8 mb-12">
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-zinc-500 group-hover:text-brand-red group-hover:border-brand-red/30 transition-all">
-                  <Mail className="w-6 h-6" />
+            <div className="space-y-6 md:space-y-8 mb-10 md:mb-12">
+              <div className="flex items-center gap-4 md:gap-6 group">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-white/5 border border-white/10 rounded-xl md:rounded-2xl flex items-center justify-center text-zinc-500 md:group-hover:text-brand-red md:group-hover:border-brand-red/30 transition-all">
+                  <Mail className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <div>
-                  <div className="text-[10px] text-zinc-600 uppercase font-black tracking-[0.3em] mb-1">Business Email</div>
-                  <a href="mailto:info@golhawksinternational.com" className="text-lg md:text-xl font-bold text-white hover:text-brand-red transition-colors uppercase tracking-tight">
+                <div className="flex-1 min-w-0">
+                  <div className="text-[8px] md:text-[10px] text-zinc-600 uppercase font-black tracking-[0.2em] md:tracking-[0.3em] mb-0.5 md:mb-1">Business Email</div>
+                  <a href="mailto:info@golhawksinternational.com" className="text-sm sm:text-lg md:text-xl font-bold text-white md:hover:text-brand-red transition-colors uppercase tracking-tight block truncate">
                     info@golhawksinternational.com
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-zinc-500 group-hover:text-green-500 group-hover:border-green-500/30 transition-all">
-                  <FaWhatsapp className="w-6 h-6" />
+              <div className="flex items-center gap-4 md:gap-6 group">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-white/5 border border-white/10 rounded-xl md:rounded-2xl flex items-center justify-center text-zinc-500 md:group-hover:text-green-500 md:group-hover:border-green-500/30 transition-all">
+                  <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <div>
-                  <div className="text-[10px] text-zinc-600 uppercase font-black tracking-[0.3em] mb-1">WhatsApp Business</div>
-                  <a href="https://wa.me/923464208200" target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl font-bold text-white hover:text-green-500 transition-colors uppercase tracking-tight">
+                <div className="flex-1 min-w-0">
+                  <div className="text-[8px] md:text-[10px] text-zinc-600 uppercase font-black tracking-[0.2em] md:tracking-[0.3em] mb-0.5 md:mb-1">WhatsApp Business</div>
+                  <a href="https://wa.me/923464208200" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-lg md:text-xl font-bold text-white md:hover:text-green-500 transition-colors uppercase tracking-tight block">
                     +92 346 4208200
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 bg-white/[0.03] backdrop-blur-xl border border-white/10 px-6 py-4 rounded-2xl w-fit">
-              <Clock className="w-5 h-5 text-brand-red" />
-              <span className="text-xs font-bold uppercase tracking-widest text-white/70">Usually replies within a few hours</span>
+            <div className="flex items-center gap-3 md:gap-4 bg-white/[0.03] backdrop-blur-xl border border-white/10 px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl w-fit">
+              <Clock className="w-4 h-4 md:w-5 md:h-5 text-brand-red" />
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/70">Replies within 4 hours</span>
             </div>
           </motion.div>
 
@@ -127,14 +127,14 @@ const CTA = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white/[0.02] backdrop-blur-3xl border border-white/10 rounded-[3rem] p-8 md:p-12 relative overflow-hidden shadow-2xl"
+            className="bg-white/[0.02] backdrop-blur-3xl border border-white/10 rounded-[2rem] md:rounded-[3rem] p-6 md:p-12 relative overflow-hidden shadow-2xl"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-red/5 blur-[100px] pointer-events-none" />
             
-            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Full Name *</label>
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 relative z-10">
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                <div className="space-y-1.5 md:space-y-2">
+                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Full Name *</label>
                   <input
                     required
                     type="text"
@@ -142,11 +142,11 @@ const CTA = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="John Doe"
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Email Address *</label>
+                <div className="space-y-1.5 md:space-y-2">
+                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Email Address *</label>
                   <input
                     required
                     type="email"
@@ -154,55 +154,55 @@ const CTA = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@company.com"
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
                   />
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Company Name</label>
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                <div className="space-y-1.5 md:space-y-2">
+                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Company Name</label>
                   <input
                     type="text"
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Enterprise Ltd"
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Phone Number</label>
+                <div className="space-y-1.5 md:space-y-2">
+                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Phone Number</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+1 (234) 567-890"
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
                   />
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Inquiry Details *</label>
+              <div className="space-y-1.5 md:space-y-2">
+                <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Inquiry Details *</label>
                 <textarea
                   required
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={5}
-                  placeholder="Tell us about your requirements, quantities, and timelines..."
-                  className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700 resize-none"
+                  rows={4}
+                  placeholder="Tell us about your requirements..."
+                  className="w-full bg-black/40 border border-white/10 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700 resize-none"
                 />
               </div>
 
               <motion.button
                 type="submit"
                 disabled={status === "submitting"}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`w-full py-5 rounded-2xl font-black uppercase tracking-[0.3em] text-xs flex items-center justify-center gap-3 transition-all relative overflow-hidden group ${
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
+                className={`w-full py-4 md:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs flex items-center justify-center gap-3 transition-all relative overflow-hidden group ${
                   status === "submitting" ? "bg-zinc-800 cursor-not-allowed" : "bg-brand-red text-white hover:bg-red-700 premium-shadow-red"
                 }`}
               >

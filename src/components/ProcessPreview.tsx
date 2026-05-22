@@ -23,16 +23,16 @@ const ProcessPreview = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-20 md:mb-32 gap-8 md:gap-10"
+          className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-32 gap-6 md:gap-10"
         >
           <div>
-            <span className="text-red-500 font-black uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-4 md:mb-6 block">Workflow</span>
-            <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black leading-[0.85] tracking-tighter uppercase text-white">THE PRODUCTION <br /><span className="text-zinc-800 italic">LINE</span></h2>
+            <span className="text-red-500 font-black uppercase tracking-[0.2em] md:tracking-[0.4em] text-[7px] md:text-[10px] mb-2 md:mb-6 block">Workflow</span>
+            <h2 className="text-[2.2rem] sm:text-6xl md:text-8xl lg:text-9xl font-black leading-[0.9] tracking-tighter uppercase text-white">THE PRODUCTION <br /><span className="text-zinc-800 italic">LINE</span></h2>
           </div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/process" className="group flex items-center gap-4 text-white hover:text-red-500 transition-all font-black uppercase tracking-[0.2em] text-[9px] md:text-[10px] border-b border-white/10 pb-3 md:pb-4 w-fit">
+            <Link href="/process" className="group flex items-center gap-3 text-white hover:text-red-500 transition-all font-black uppercase tracking-[0.2em] text-[8px] md:text-[10px] border-b border-white/10 pb-2 md:pb-4 w-fit">
               See Full Process
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+              <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-2 transition-transform" />
             </Link>
           </motion.div>
         </motion.div>
@@ -49,7 +49,7 @@ const ProcessPreview = () => {
           </div>
 
           {/* Connecting Line - Mobile (Vertical) */}
-          <div className="absolute left-[31px] top-0 w-[1px] h-full bg-white/5 lg:hidden overflow-hidden">
+          <div className="absolute left-[23px] top-0 w-[1px] h-full bg-white/5 lg:hidden overflow-hidden">
             <motion.div 
               animate={{ y: ["-100%", "100%"] }}
               transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
@@ -63,9 +63,9 @@ const ProcessPreview = () => {
             viewport={{ once: true }}
             variants={{
               hidden: {},
-              show: { transition: { staggerChildren: 0.2 } }
+              show: { transition: { staggerChildren: 0.1 } }
             }}
-            className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8"
+            className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-8"
           >
             {steps.map((step, i) => (
               <motion.div
@@ -74,7 +74,7 @@ const ProcessPreview = () => {
                   hidden: { opacity: 0, y: 20 },
                   show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
                 }}
-                className="group relative flex items-start lg:flex-col lg:items-center text-left lg:text-center gap-6 lg:gap-0"
+                className="group relative flex items-start lg:flex-col lg:items-center text-left lg:text-center gap-4 lg:gap-0"
               >
                 {/* Node Container */}
                 <div className="relative z-10 shrink-0">
@@ -86,7 +86,7 @@ const ProcessPreview = () => {
                   <motion.div 
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-16 h-16 md:w-24 md:h-24 bg-black border border-white/10 rounded-full flex items-center justify-center group-hover:border-red-600 group-hover:shadow-[0_0_30px_rgba(220,38,38,0.2)] transition-all duration-500 relative overflow-hidden backdrop-blur-md"
+                    className="w-12 h-12 md:w-24 md:h-24 bg-black border border-white/10 rounded-full flex items-center justify-center group-hover:border-red-600 group-hover:shadow-[0_0_30px_rgba(220,38,38,0.2)] transition-all duration-500 relative overflow-hidden backdrop-blur-md"
                   >
                     <div className="absolute inset-0 bg-red-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
                     
@@ -95,17 +95,19 @@ const ProcessPreview = () => {
                     <div className="absolute top-1/2 right-0 w-2 h-2 -translate-y-1/2 translate-x-1/2 bg-red-500/0 group-hover:bg-red-500 rounded-full blur-sm hidden lg:block transition-all" />
 
                     <div className="text-zinc-400 relative z-10 transition-all duration-500 group-hover:scale-110 group-hover:text-white">
-                      {step.icon}
+                      <div className="scale-75 md:scale-100">
+                        {step.icon}
+                      </div>
                     </div>
                   </motion.div>
                 </div>
 
                 {/* Text Content */}
-                <div className="lg:mt-10">
-                  <div className="lg:hidden mb-1">
-                    <span className="text-[9px] font-black text-red-600 tracking-[0.3em] uppercase">{step.num}</span>
+                <div className="lg:mt-10 pt-1">
+                  <div className="lg:hidden mb-0.5">
+                    <span className="text-[7px] font-black text-red-600 tracking-[0.2em] uppercase">{step.num}</span>
                   </div>
-                  <h4 className="text-[11px] md:text-xs font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-zinc-500 group-hover:text-white transition-colors duration-500 max-w-[150px]">
+                  <h4 className="text-[10px] md:text-xs font-black uppercase tracking-[0.15em] md:tracking-[0.3em] text-zinc-500 group-hover:text-white transition-colors duration-500 max-w-[150px]">
                     {step.title}
                   </h4>
                 </div>
