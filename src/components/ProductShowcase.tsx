@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const categories = [
   {
@@ -79,10 +80,13 @@ const ProductShowcase = () => {
               transition={{ delay: i * 0.1, duration: 1 }}
               className="relative group cursor-pointer overflow-hidden rounded-[1.5rem] md:rounded-[3rem] aspect-[4/5] md:aspect-[3/4] border border-white/10"
             >
-              <img
+              <Image
                 src={cat.image}
                 alt={cat.title}
-                className="w-full h-full object-cover md:group-hover:scale-110 transition-transform duration-[2s] ease-out contrast-110 brightness-75 md:group-hover:brightness-50"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover md:group-hover:scale-110 transition-transform duration-[2s] ease-out contrast-110 brightness-75 md:group-hover:brightness-50"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-transparent opacity-80" />
               

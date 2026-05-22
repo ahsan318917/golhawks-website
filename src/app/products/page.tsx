@@ -145,10 +145,14 @@ export default function ProductsPage() {
                 className="w-full lg:w-1/2 group"
               >
                 <div className="relative aspect-[4/5] rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
-                  <img
+                  <Image
                     src={category.image}
                     alt={category.title}
-                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 grayscale hover:grayscale-0"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-[2s] group-hover:scale-110 grayscale hover:grayscale-0"
+                    priority={i < 1}
+                    loading={i < 1 ? "eager" : "lazy"}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60" />
                   

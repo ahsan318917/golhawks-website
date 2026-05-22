@@ -41,6 +41,7 @@ const Navbar = () => {
               src="/images/Logo (2).png"
               alt="GolHawks International Icon"
               fill
+              sizes="(max-width: 768px) 40px, 64px"
               className="object-cover scale-110" // Zoom in slightly to reduce padding
               priority
             />

@@ -17,6 +17,7 @@ const Footer = () => {
                   src="/images/Logo (2).png"
                   alt="GolHawks International Logo"
                   fill
+                  sizes="(max-width: 768px) 56px, 96px"
                   className="object-cover scale-110"
                 />
               </div>

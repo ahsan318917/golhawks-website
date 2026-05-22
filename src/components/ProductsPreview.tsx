@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const categories = [
   {
@@ -68,10 +69,14 @@ const ProductsPreview = () => {
               }}
               className="relative group cursor-pointer overflow-hidden rounded-[1.5rem] md:rounded-[3rem] aspect-[16/10] md:aspect-[16/9] border border-white/10 active:scale-[0.98] transition-all duration-700"
             >
-              <img
+              <Image
                 src={cat.image}
                 alt={cat.title}
-                className="w-full h-full object-cover transition-transform duration-[2s] ease-out contrast-110 brightness-75 group-hover:brightness-50 group-hover:scale-110"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-[2s] ease-out contrast-110 brightness-75 group-hover:brightness-50 group-hover:scale-110"
+                loading={i < 2 ? "eager" : "lazy"}
+                priority={i < 2}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
               

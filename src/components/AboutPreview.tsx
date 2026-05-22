@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const AboutPreview = () => {
   return (
@@ -20,10 +21,13 @@ const AboutPreview = () => {
             className="space-y-6"
           >
             <div className="group relative rounded-[2rem] overflow-hidden aspect-[4/5] border border-white/10 shadow-2xl">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1555529733-0e670560f7e1?q=80&w=2070&auto=format&fit=crop" 
                 alt="Garment Production Line"
-                className="w-full h-full object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-105 contrast-110"
+                fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-105 contrast-110"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="absolute bottom-8 left-8">
@@ -33,10 +37,13 @@ const AboutPreview = () => {
             </div>
             
             <div className="group relative rounded-[2rem] overflow-hidden aspect-square border border-white/10 shadow-2xl text-white">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop" 
                 alt="Quality Inspection"
-                className="w-full h-full object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-105 contrast-110"
+                fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-105 contrast-110"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="absolute bottom-8 left-8">
@@ -55,10 +62,13 @@ const AboutPreview = () => {
             className="space-y-6 pt-12"
           >
             <div className="group relative rounded-[2rem] overflow-hidden aspect-square border border-white/10 shadow-2xl">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2070&auto=format&fit=crop" 
                 alt="Technical Fabric"
-                className="w-full h-full object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-105 contrast-110"
+                fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-105 contrast-110"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="absolute bottom-8 left-8">
@@ -68,10 +78,13 @@ const AboutPreview = () => {
             </div>
 
             <div className="group relative rounded-[2rem] overflow-hidden aspect-[4/5] border border-white/10 shadow-2xl">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop" 
                 alt="Logistics Warehouse"
-                className="w-full h-full object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-105 contrast-110"
+                fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-105 contrast-110"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="absolute bottom-8 left-8">
