@@ -108,8 +108,8 @@ const CTA = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="text-[8px] md:text-[10px] text-zinc-600 uppercase font-black tracking-[0.2em] md:tracking-[0.3em] mb-0.5 md:mb-1">WhatsApp Business</div>
-                  <a href="https://wa.me/923464208200" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-lg md:text-xl font-bold text-white md:hover:text-green-500 transition-colors uppercase tracking-tight block">
-                    +92 346 4208200
+                  <a href="https://wa.me/923712362363" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-lg md:text-xl font-bold text-white md:hover:text-green-500 transition-colors uppercase tracking-tight block">
+                    +92 371 2362363
                   </a>
                 </div>
               </div>

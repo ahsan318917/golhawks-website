@@ -102,7 +102,7 @@ const Hero = () => {
                 transition={{ delay: 0.6, duration: 0.8 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
-                href="https://wa.me/923464208200"
+                href="https://wa.me/923712362363"
                 className="text-white/60 hover:text-white px-6 py-4 md:py-3 rounded-full font-black uppercase tracking-[0.2em] text-[9px] md:text-[10px] flex items-center justify-center gap-3 transition-all border border-white/10 sm:border-transparent hover:border-white/20"
               >
                 <MessageCircle className="w-4 h-4 text-green-500/60" />

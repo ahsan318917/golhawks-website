@@ -85,8 +85,8 @@ export default function ContactPage() {
               <div className="text-brand-red font-black uppercase tracking-widest text-[8px] md:text-[10px]">Direct Support</div>
               <div className="flex items-start gap-3 md:gap-4">
                 <FaWhatsapp className="w-4 h-4 md:w-5 md:h-5 text-white/40 shrink-0" />
-                <a href="https://wa.me/923464208200" className="text-zinc-400 font-medium md:hover:text-white transition-colors text-xs md:text-sm uppercase">
-                  +92 346 4208200
+                <a href="https://wa.me/923712362363" className="text-zinc-400 font-medium md:hover:text-white transition-colors text-xs md:text-sm uppercase">
+                  +92 371 2362363
                 </a>
               </div>
             </motion.div>
