@@ -75,14 +75,14 @@ const ServicesPreview = () => {
                 borderColor: "rgba(239, 68, 68, 0.4)",
                 boxShadow: "0 0 30px rgba(220, 38, 38, 0.2)"
               }}
-              className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-[2rem] p-8 md:p-10 transition-all duration-500 relative overflow-hidden group active:scale-[0.98]"
+              className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-[2rem] p-6 md:p-10 transition-all duration-500 relative overflow-hidden group active:scale-[0.98]"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-red-600/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <div className="mb-6 md:mb-8 p-4 md:p-5 bg-black/40 border border-white/10 rounded-2xl w-fit relative z-10 group-hover:border-red-500/30 transition-colors">
+              <div className="mb-4 md:mb-8 p-3 md:p-5 bg-black/40 border border-white/10 rounded-xl md:rounded-2xl w-fit relative z-10 group-hover:border-red-500/30 transition-colors">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-black mb-3 md:mb-4 tracking-tight relative z-10 text-white uppercase">{service.title}</h3>
+              <h3 className="text-lg md:text-xl font-black mb-2 md:mb-4 tracking-tight relative z-10 text-white uppercase">{service.title}</h3>
               <p className="p-sm relative z-10 group-hover:text-zinc-300 transition-colors">{service.description}</p>
             </motion.div>
           ))}

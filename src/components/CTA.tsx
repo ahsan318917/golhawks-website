@@ -127,14 +127,16 @@ const CTA = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white/[0.02] backdrop-blur-3xl border border-white/10 rounded-[2rem] md:rounded-[3rem] p-6 md:p-12 relative overflow-hidden shadow-2xl"
+            className="bg-white/[0.02] backdrop-blur-3xl border border-white/20 rounded-[2rem] md:rounded-[3rem] p-6 md:p-12 relative overflow-hidden shadow-2xl"
           >
+            {/* Inner highlight edge */}
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-red/5 blur-[100px] pointer-events-none" />
             
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 relative z-10">
               <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 <div className="space-y-1.5 md:space-y-2">
-                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Full Name *</label>
+                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-300 ml-4">Full Name *</label>
                   <input
                     required
                     type="text"
@@ -142,11 +144,11 @@ const CTA = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="John Doe"
-                    className="w-full bg-black/40 border border-white/10 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
+                    className="w-full bg-zinc-900/40 border border-white/20 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-500"
                   />
                 </div>
                 <div className="space-y-1.5 md:space-y-2">
-                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Email Address *</label>
+                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-300 ml-4">Email Address *</label>
                   <input
                     required
                     type="email"
@@ -154,38 +156,38 @@ const CTA = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@company.com"
-                    className="w-full bg-black/40 border border-white/10 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
+                    className="w-full bg-zinc-900/40 border border-white/20 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-500"
                   />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 <div className="space-y-1.5 md:space-y-2">
-                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Company Name</label>
+                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-300 ml-4">Company Name</label>
                   <input
                     type="text"
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Enterprise Ltd"
-                    className="w-full bg-black/40 border border-white/10 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
+                    className="w-full bg-zinc-900/40 border border-white/20 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-500"
                   />
                 </div>
                 <div className="space-y-1.5 md:space-y-2">
-                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Phone Number</label>
+                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-300 ml-4">Phone Number</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+1 (234) 567-890"
-                    className="w-full bg-black/40 border border-white/10 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700"
+                    className="w-full bg-zinc-900/40 border border-white/20 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-500"
                   />
                 </div>
               </div>
 
               <div className="space-y-1.5 md:space-y-2">
-                <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 ml-4">Inquiry Details *</label>
+                <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-300 ml-4">Inquiry Details *</label>
                 <textarea
                   required
                   name="message"
@@ -193,7 +195,7 @@ const CTA = () => {
                   onChange={handleChange}
                   rows={4}
                   placeholder="Tell us about your requirements..."
-                  className="w-full bg-black/40 border border-white/10 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red outline-none transition-all placeholder:text-zinc-700 resize-none"
+                  className="w-full bg-zinc-900/40 border border-white/20 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-500 resize-none"
                 />
               </div>
 

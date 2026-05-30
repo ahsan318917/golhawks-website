@@ -86,7 +86,7 @@ const ProcessPreview = () => {
                   <motion.div 
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-12 h-12 md:w-24 md:h-24 bg-black border border-white/10 rounded-full flex items-center justify-center group-hover:border-red-600 group-hover:shadow-[0_0_30px_rgba(220,38,38,0.2)] transition-all duration-500 relative overflow-hidden backdrop-blur-md"
+                    className="w-16 h-16 md:w-24 md:h-24 bg-black border border-white/10 rounded-full flex items-center justify-center group-hover:border-red-600 group-hover:shadow-[0_0_30px_rgba(220,38,38,0.2)] transition-all duration-500 relative overflow-hidden backdrop-blur-md"
                   >
                     <div className="absolute inset-0 bg-red-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
                     
@@ -95,7 +95,7 @@ const ProcessPreview = () => {
                     <div className="absolute top-1/2 right-0 w-2 h-2 -translate-y-1/2 translate-x-1/2 bg-red-500/0 group-hover:bg-red-500 rounded-full blur-sm hidden lg:block transition-all" />
 
                     <div className="text-zinc-400 relative z-10 transition-all duration-500 group-hover:scale-110 group-hover:text-white">
-                      <div className="scale-75 md:scale-100">
+                      <div className="scale-100 md:scale-100">
                         {step.icon}
                       </div>
                     </div>
@@ -104,10 +104,10 @@ const ProcessPreview = () => {
 
                 {/* Text Content */}
                 <div className="lg:mt-10 pt-1">
-                  <div className="lg:hidden mb-0.5">
-                    <span className="text-[7px] font-black text-red-600 tracking-[0.2em] uppercase">{step.num}</span>
+                  <div className="lg:hidden mb-1">
+                    <span className="text-[9px] font-black text-red-600 tracking-[0.2em] uppercase">{step.num}</span>
                   </div>
-                  <h4 className="text-[10px] md:text-xs font-black uppercase tracking-[0.15em] md:tracking-[0.3em] text-zinc-500 group-hover:text-white transition-colors duration-500 max-w-[150px]">
+                  <h4 className="text-[13px] md:text-xs font-black uppercase tracking-[0.15em] md:tracking-[0.3em] text-zinc-500 group-hover:text-white transition-colors duration-500 max-w-[150px]">
                     {step.title}
                   </h4>
                 </div>

@@ -48,21 +48,21 @@ const Services = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -10 }}
-              className="glass-card p-12 group hover:bg-brand-red/[0.04] transition-all duration-700 border-white/[0.05] hover:border-brand-red/30 premium-shadow-red relative overflow-hidden"
+              className="glass-card p-8 md:p-12 group hover:bg-brand-red/[0.04] transition-all duration-700 border-white/[0.05] hover:border-brand-red/30 premium-shadow-red relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-brand-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               
-              <div className="mb-12 p-6 bg-brand-black border border-white/5 rounded-[2rem] w-fit group-hover:border-brand-red/40 transition-all duration-700 relative z-10">
+              <div className="mb-6 md:mb-12 p-4 md:p-6 bg-brand-black border border-white/5 rounded-[1.5rem] md:rounded-[2rem] w-fit group-hover:border-brand-red/40 transition-all duration-700 relative z-10">
                 <div className="group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700">
                   {service.icon}
                 </div>
               </div>
-              <h3 className="text-2xl font-black mb-6 tracking-tighter group-hover:text-white transition-colors relative z-10">{service.title}</h3>
-              <p className="text-white/40 text-base leading-[1.8] font-medium group-hover:text-white/60 transition-colors mb-10 relative z-10">
+              <h3 className="text-xl md:text-2xl font-black mb-4 md:mb-6 tracking-tighter group-hover:text-white transition-colors relative z-10">{service.title}</h3>
+              <p className="text-white/40 text-sm md:text-base leading-[1.6] md:leading-[1.8] font-medium group-hover:text-white/60 transition-colors mb-6 md:mb-10 relative z-10">
                 {service.description}
               </p>
               
-              <div className="pt-8 border-t border-white/5 relative z-10">
+              <div className="pt-6 md:pt-8 border-t border-white/5 relative z-10">
                 <p className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-red/60 group-hover:text-brand-red transition-colors">
                   {service.meta}
                 </p>
