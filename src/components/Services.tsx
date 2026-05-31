@@ -32,11 +32,11 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-32 bg-brand-gray/30 relative overflow-hidden">
+    <section id="services" className="py-16 md:py-32 bg-brand-gray/30 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center mb-24">
+        <div className="text-center mb-12 md:mb-24">
           <span className="text-brand-red font-black uppercase tracking-[0.4em] text-[10px] mb-8 block">B2B Core Systems</span>
-          <h2 className="text-4xl md:text-7xl font-black mb-6 tracking-tighter">MANUFACTURING <br /><span className="text-white/20 italic">SOLUTIONS</span></h2>
+          <h2 className="text-[1.75rem] sm:text-4xl md:text-7xl font-black mb-6 tracking-tighter">MANUFACTURING <br /><span className="text-white/20 italic">SOLUTIONS</span></h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -48,21 +48,21 @@ const Services = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -10 }}
-              className="glass-card p-8 md:p-12 group hover:bg-brand-red/[0.04] transition-all duration-700 border-white/[0.05] hover:border-brand-red/30 premium-shadow-red relative overflow-hidden"
+              className="glass-card p-4 md:p-12 group hover:bg-brand-red/[0.04] transition-all duration-700 border-white/[0.05] hover:border-brand-red/30 premium-shadow-red relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-brand-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               
-              <div className="mb-6 md:mb-12 p-4 md:p-6 bg-brand-black border border-white/5 rounded-[1.5rem] md:rounded-[2rem] w-fit group-hover:border-brand-red/40 transition-all duration-700 relative z-10">
+              <div className="mb-3 md:mb-12 p-4 md:p-6 bg-brand-black border border-white/5 rounded-[1.5rem] md:rounded-[2rem] w-fit group-hover:border-brand-red/40 transition-all duration-700 relative z-10">
                 <div className="group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700">
                   {service.icon}
                 </div>
               </div>
-              <h3 className="text-xl md:text-2xl font-black mb-4 md:mb-6 tracking-tighter group-hover:text-white transition-colors relative z-10">{service.title}</h3>
-              <p className="text-white/40 text-sm md:text-base leading-[1.6] md:leading-[1.8] font-medium group-hover:text-white/60 transition-colors mb-6 md:mb-10 relative z-10">
+              <h3 className="text-xl md:text-2xl font-black mb-2 md:mb-6 tracking-tighter group-hover:text-white transition-colors relative z-10 whitespace-normal break-keep max-w-[10rem] md:max-w-none">{service.title}</h3>
+              <p className="text-white/40 text-sm md:text-base leading-[1.6] md:leading-[1.8] font-medium group-hover:text-white/60 transition-colors mb-3 md:mb-10 relative z-10">
                 {service.description}
               </p>
               
-              <div className="pt-6 md:pt-8 border-t border-white/5 relative z-10">
+              <div className="pt-3 md:pt-8 border-t border-white/5 relative z-10">
                 <p className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-red/60 group-hover:text-brand-red transition-colors">
                   {service.meta}
                 </p>
