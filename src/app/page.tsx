@@ -9,6 +9,22 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Golhawks International | Custom Sportswear Manufacturing & Private Label Production",
+  description: "Custom sportswear manufacturing, private label apparel production, sourcing, quality control, and global fulfillment from Sialkot, Pakistan.",
+  openGraph: {
+    title: "Golhawks International | Custom Sportswear Manufacturing & Private Label Production",
+    description: "Custom sportswear manufacturing, private label apparel production, sourcing, quality control, and global fulfillment from Sialkot, Pakistan.",
+    url: "https://golhawksinternational.com/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Golhawks International | Custom Sportswear Manufacturing & Private Label Production",
+    description: "Custom sportswear manufacturing, private label apparel production, sourcing, quality control, and global fulfillment from Sialkot, Pakistan.",
+  },
+};
 
 export default function Home() {
   return (
