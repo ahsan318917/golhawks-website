@@ -2,7 +2,7 @@ import { Variants } from 'framer-motion';
 
 // Premium Easing Curve
 // This matches the smooth, editorial feel of high-end brands.
-export const premiumEasing = [0.23, 1, 0.32, 1]; // cubic-bezier(0.23, 1, 0.32, 1)
+export const premiumEasing: [number, number, number, number] = [0.23, 1, 0.32, 1]; // cubic-bezier(0.23, 1, 0.32, 1)
 
 // Transition Durations
 export const durations = {
