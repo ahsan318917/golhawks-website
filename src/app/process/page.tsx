@@ -41,10 +41,10 @@ const steps = [
 
 export default function ProcessPage() {
   return (
-    <main className="min-h-screen bg-black selection:bg-red-600 selection:text-white overflow-x-hidden">
+    <main className="min-h-screen bg-zinc-950 selection:bg-red-600 selection:text-white overflow-x-hidden">
       <Navbar />
       
-      <section className="pt-32 md:pt-48 pb-14 md:pb-24 border-b border-white/5 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 relative overflow-hidden">
+      <section className="pt-32 md:pt-48 pb-14 md:pb-24 border-b border-zinc-800 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 relative overflow-hidden">
         {/* Cinematic Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.08),transparent_70%)] blur-[120px] pointer-events-none" />
 
@@ -55,7 +55,7 @@ export default function ProcessPage() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-4xl"
           >
-            <span className="text-red-500 font-black uppercase tracking-[0.4em] text-[10px] mb-8 block">Our Systems</span>
+            <span className="text-red-500 font-black uppercase tracking-[0.4em] text-xs mb-8 block">Our Systems</span>
             <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black leading-[0.85] tracking-tighter mb-12 uppercase text-white">
               PRODUCTION <br />
               <span className="text-zinc-700 italic">LINE</span>
@@ -85,19 +85,19 @@ export default function ProcessPage() {
                 <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
                   <motion.div 
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-20 h-20 md:w-24 md:h-24 rounded-[1.5rem] md:rounded-[2rem] bg-black/60 border border-red-600/30 flex items-center justify-center text-red-600 mb-10 shadow-[0_0_50px_-10px_rgba(220,38,38,0.2)] backdrop-blur-md"
+                    className="w-20 h-20 md:w-24 md:h-24 rounded-[1.5rem] md:rounded-[2rem] bg-zinc-900/90 border border-red-600/30 flex items-center justify-center text-red-600 mb-10 shadow-[0_0_50px_-10px_rgba(220,38,38,0.2)] backdrop-blur-md"
                   >
                     {step.icon}
                   </motion.div>
                   <h2 className="h-md mb-8 uppercase text-white">{step.title}</h2>
-                  <p className="p-lg mb-12 text-zinc-400">
+                  <p className="p-lg mb-12 text-zinc-200">
                     {step.desc}
                   </p>
                   
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full border-t border-white/5 pt-10 text-left">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full border-t border-zinc-800 pt-10 text-left">
                     {step.expect.map((item, j) => (
                       <div key={j} className="space-y-1 group">
-                        <div className="text-[10px] font-black uppercase tracking-widest text-red-600">Expectation</div>
+                        <div className="text-xs font-black uppercase tracking-widest text-red-600">Expectation</div>
                         <div className="text-zinc-200 font-bold tracking-tight uppercase text-xs md:text-sm italic group-hover:text-white transition-colors">{item}</div>
                       </div>
                     ))}

@@ -60,6 +60,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { QuoteProvider } from "@/context/QuoteContext";
+import QuoteBagDrawer from "@/components/QuoteBagDrawer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -68,9 +71,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
-        <Analytics />
-        <SpeedInsights />
+        <QuoteProvider>
+          {children}
+          <QuoteBagDrawer />
+          <Analytics />
+          <SpeedInsights />
+        </QuoteProvider>
       </body>
     </html>
   );

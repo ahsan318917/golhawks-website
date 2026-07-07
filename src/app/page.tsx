@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-zinc-950 selection:bg-brand-red selection:text-white overflow-x-hidden">
+    <main className="min-h-screen bg-zinc-900 selection:bg-brand-red selection:text-white overflow-x-hidden">
       <Navbar />
       <Hero />
       <TrustMarquee />

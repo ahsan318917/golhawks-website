@@ -53,7 +53,7 @@ const categories = [
 
 const ProductShowcase = () => {
   return (
-    <section id="products" className="py-20 md:py-32 bg-brand-black">
+    <section id="products" className="py-20 md:py-32 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-24 gap-6 md:gap-10">
           <motion.div
@@ -62,7 +62,7 @@ const ProductShowcase = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-brand-red font-black uppercase tracking-[0.2em] md:tracking-[0.4em] text-[8px] md:text-[10px] mb-4 md:mb-6 block">Product Categories</span>
+            <span className="text-brand-red font-black uppercase tracking-[0.2em] md:tracking-[0.4em] text-[8px] md:text-xs mb-4 md:mb-6 block">Product Categories</span>
             <h2 className="text-4xl md:text-8xl font-black leading-[0.9] tracking-tighter">
               BATTLE <br />
               <span className="text-white/20 italic">CERTIFIED</span>
@@ -78,7 +78,7 @@ const ProductShowcase = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 1 }}
-              className="relative group cursor-pointer overflow-hidden rounded-[1.5rem] md:rounded-[3rem] aspect-[4/5] md:aspect-[3/4] border border-white/10"
+              className="relative group cursor-pointer overflow-hidden rounded-[1.5rem] md:rounded-[3rem] aspect-[4/5] md:aspect-[3/4] border border-zinc-700"
             >
               <Image
                 src={cat.image}
@@ -92,7 +92,7 @@ const ProductShowcase = () => {
               
               <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
                 <div className="overflow-hidden mb-2 md:mb-4">
-                  <p className="text-brand-red font-black text-[7px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.4em] md:opacity-0 md:group-hover:opacity-100 transition-all duration-700 md:translate-y-full md:group-hover:translate-y-0">
+                  <p className="text-brand-red font-black text-[7px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.4em] md:opacity-0 md:group-hover:opacity-100 transition-all duration-700 md:translate-y-full md:group-hover:translate-y-0">
                     {cat.tech}
                   </p>
                 </div>

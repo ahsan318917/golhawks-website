@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <span className="text-red-500 font-black uppercase tracking-[0.4em] text-[10px] mb-8 block">Operational Trust</span>
+            <span className="text-red-500 font-black uppercase tracking-[0.4em] text-xs mb-8 block">Operational Trust</span>
             <h2 className="text-[1.75rem] sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-10 leading-[0.9] tracking-tighter uppercase">
               BUILT FOR <br />
               <span className="text-zinc-800 italic">CONSISTENCY</span>
@@ -49,14 +49,14 @@ const WhyChooseUs = () => {
               Every order follows a defined quality control workflow. We eliminate manufacturing variables to ensure your brand's reputation remains secure.
             </p>
             
-            <div className="pt-8 border-t border-white/5 flex gap-12 md:gap-16">
+            <div className="pt-8 border-t border-zinc-800 flex gap-12 md:gap-16">
               <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.3 }}>
                 <div className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-1 italic">AUDITED</div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-red-500/60">Factory Operations</div>
+                <div className="text-xs font-black uppercase tracking-widest text-red-500/60">Factory Operations</div>
               </motion.div>
               <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.4 }}>
                 <div className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-1 italic">ACTIVE</div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-red-500/60">Global Distribution</div>
+                <div className="text-xs font-black uppercase tracking-widest text-red-500/60">Global Distribution</div>
               </motion.div>
             </div>
           </motion.div>
@@ -74,7 +74,7 @@ const WhyChooseUs = () => {
                 }
               }
             }}
-            className="grid sm:grid-cols-2 gap-6 md:gap-8"
+            className="grid sm:grid-cols-2 gap-6 md:gap-10"
           >
             {features.map((f, i) => (
               <motion.div
@@ -88,13 +88,13 @@ const WhyChooseUs = () => {
                   borderColor: "rgba(239, 68, 68, 0.4)",
                   boxShadow: "0 0 30px rgba(220, 38, 38, 0.2)"
                 }}
-                className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-[2rem] p-5 md:p-10 transition-all duration-500 group active:scale-[0.98]"
+                className="bg-white/[0.03] backdrop-blur-md border border-zinc-700 rounded-[2rem] p-5 md:p-10 transition-all duration-500 group active:scale-[0.98]"
               >
-                <div className="bg-black/40 w-14 h-14 md:w-16 md:h-16 rounded-2xl border border-white/10 flex items-center justify-center mb-4 md:mb-8 text-red-600 group-hover:bg-red-600 group-hover:text-white group-hover:border-transparent transition-all duration-500 premium-shadow-red">
+                <div className="bg-zinc-900 w-14 h-14 md:w-16 md:h-16 rounded-2xl border border-zinc-700 flex items-center justify-center mb-4 md:mb-8 text-red-600 group-hover:bg-red-600 group-hover:text-white group-hover:border-transparent transition-all duration-500 premium-shadow-red">
                   {f.icon}
                 </div>
                 <h3 className="text-xl md:text-2xl font-black text-white mb-3 md:mb-4 tracking-tight group-hover:text-white uppercase whitespace-normal break-keep max-w-[10rem] md:max-w-none">{f.title}</h3>
-                <p className="p-sm group-hover:text-zinc-300 transition-colors">{f.desc}</p>
+                <p className="p-sm group-hover:text-zinc-200 transition-colors">{f.desc}</p>
               </motion.div>
             ))}
           </motion.div>

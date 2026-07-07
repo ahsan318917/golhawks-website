@@ -77,7 +77,7 @@ const CTA = () => {
           >
             <div className="inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/20 px-4 py-2 rounded-full mb-8">
               <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-red">Global Inquiries Open</span>
+              <span className="text-xs font-black uppercase tracking-[0.3em] text-brand-red">Global Inquiries Open</span>
             </div>
             
             <h2 className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 md:mb-10 leading-[0.9] md:leading-[0.85] tracking-tighter uppercase text-white">
@@ -85,17 +85,17 @@ const CTA = () => {
               <span className="text-brand-red italic">PROCESS</span>
             </h2>
             
-            <p className="text-lg md:text-2xl text-zinc-400 font-medium leading-relaxed mb-8 md:mb-12 max-w-xl">
+            <p className="text-lg md:text-2xl text-zinc-200 font-medium leading-relaxed mb-8 md:mb-12 max-w-xl">
               Tell us about your product vision. Our technical team will guide you from initial consultation to production and delivery.
             </p>
 
             <div className="space-y-6 md:space-y-8 mb-10 md:mb-12">
               <div className="flex items-center gap-4 md:gap-6 group">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-white/5 border border-white/10 rounded-xl md:rounded-2xl flex items-center justify-center text-zinc-500 md:group-hover:text-brand-red md:group-hover:border-brand-red/30 transition-all">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-zinc-800 border border-zinc-700 rounded-xl md:rounded-2xl flex items-center justify-center text-zinc-300 md:group-hover:text-brand-red md:group-hover:border-brand-red/30 transition-all">
                   <Mail className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[8px] md:text-[10px] text-zinc-600 uppercase font-black tracking-[0.2em] md:tracking-[0.3em] mb-0.5 md:mb-1">Business Email</div>
+                  <div className="text-[8px] md:text-xs text-zinc-300 uppercase font-black tracking-[0.2em] md:tracking-[0.3em] mb-0.5 md:mb-1">Business Email</div>
                   <a href="mailto:info@golhawksinternational.com" className="text-sm sm:text-lg md:text-xl font-bold text-white md:hover:text-brand-red transition-colors uppercase tracking-tight block truncate">
                     info@golhawksinternational.com
                   </a>
@@ -103,11 +103,11 @@ const CTA = () => {
               </div>
 
               <div className="flex items-center gap-4 md:gap-6 group">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-white/5 border border-white/10 rounded-xl md:rounded-2xl flex items-center justify-center text-zinc-500 md:group-hover:text-green-500 md:group-hover:border-green-500/30 transition-all">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-zinc-800 border border-zinc-700 rounded-xl md:rounded-2xl flex items-center justify-center text-zinc-300 md:group-hover:text-green-500 md:group-hover:border-green-500/30 transition-all">
                   <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[8px] md:text-[10px] text-zinc-600 uppercase font-black tracking-[0.2em] md:tracking-[0.3em] mb-0.5 md:mb-1">WhatsApp Business</div>
+                  <div className="text-[8px] md:text-xs text-zinc-300 uppercase font-black tracking-[0.2em] md:tracking-[0.3em] mb-0.5 md:mb-1">WhatsApp Business</div>
                   <a href="https://wa.me/923712362363" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-lg md:text-xl font-bold text-white md:hover:text-green-500 transition-colors uppercase tracking-tight block">
                     +92 371 2362363
                   </a>
@@ -115,9 +115,9 @@ const CTA = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 md:gap-4 bg-white/[0.03] backdrop-blur-xl border border-white/10 px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl w-fit">
+            <div className="flex items-center gap-3 md:gap-4 bg-white/[0.03] backdrop-blur-xl border border-zinc-700 px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl w-fit">
               <Clock className="w-4 h-4 md:w-5 md:h-5 text-brand-red" />
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/70">Replies within 4 hours</span>
+              <span className="text-xs md:text-xs font-bold uppercase tracking-widest text-white/70">Replies within 4 hours</span>
             </div>
           </motion.div>
 
@@ -127,7 +127,7 @@ const CTA = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white/[0.02] backdrop-blur-3xl border border-white/20 rounded-[2rem] md:rounded-[3rem] p-6 md:p-12 relative overflow-hidden shadow-2xl"
+            className="bg-zinc-900 backdrop-blur-3xl border border-zinc-600 rounded-[2rem] md:rounded-[3rem] p-6 md:p-12 relative overflow-hidden shadow-2xl"
           >
             {/* Inner highlight edge */}
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
@@ -136,75 +136,80 @@ const CTA = () => {
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 relative z-10">
               <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 <div className="space-y-1.5 md:space-y-2">
-                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-300 ml-4">Full Name *</label>
+                  <label htmlFor="name" className="text-[8px] md:text-xs font-black uppercase tracking-[0.2em] text-zinc-200 ml-4">Full Name *</label>
                   <input
+                    id="name"
                     required
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="John Doe"
-                    className="w-full bg-zinc-900/40 border border-white/20 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-500"
+                    className="w-full bg-zinc-900/40 border border-zinc-600 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-300"
                   />
                 </div>
                 <div className="space-y-1.5 md:space-y-2">
-                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-300 ml-4">Email Address *</label>
+                  <label htmlFor="email" className="text-[8px] md:text-xs font-black uppercase tracking-[0.2em] text-zinc-200 ml-4">Email Address *</label>
                   <input
+                    id="email"
                     required
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@company.com"
-                    className="w-full bg-zinc-900/40 border border-white/20 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-500"
+                    className="w-full bg-zinc-900/40 border border-zinc-600 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-300"
                   />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 <div className="space-y-1.5 md:space-y-2">
-                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-300 ml-4">Company Name</label>
+                  <label htmlFor="company" className="text-[8px] md:text-xs font-black uppercase tracking-[0.2em] text-zinc-200 ml-4">Company Name</label>
                   <input
+                    id="company"
                     type="text"
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Enterprise Ltd"
-                    className="w-full bg-zinc-900/40 border border-white/20 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-500"
+                    className="w-full bg-zinc-900/40 border border-zinc-600 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-300"
                   />
                 </div>
                 <div className="space-y-1.5 md:space-y-2">
-                  <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-300 ml-4">Phone Number</label>
+                  <label htmlFor="phone" className="text-[8px] md:text-xs font-black uppercase tracking-[0.2em] text-zinc-200 ml-4">Phone Number</label>
                   <input
+                    id="phone"
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+1 (234) 567-890"
-                    className="w-full bg-zinc-900/40 border border-white/20 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-500"
+                    className="w-full bg-zinc-900/40 border border-zinc-600 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-300"
                   />
                 </div>
               </div>
 
               <div className="space-y-1.5 md:space-y-2">
-                <label className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-zinc-300 ml-4">Inquiry Details *</label>
+                <label htmlFor="message" className="text-[8px] md:text-xs font-black uppercase tracking-[0.2em] text-zinc-200 ml-4">Inquiry Details *</label>
                 <textarea
+                  id="message"
                   required
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
                   placeholder="Tell us about your requirements..."
-                  className="w-full bg-zinc-900/40 border border-white/20 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-500 resize-none"
+                  className="w-full bg-zinc-900/40 border border-zinc-600 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 outline-none transition-all placeholder:text-zinc-300 resize-none"
                 />
               </div>
 
               <motion.button
                 type="submit"
                 disabled={status === "submitting"}
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
-                className={`w-full py-4 md:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs flex items-center justify-center gap-3 transition-all relative overflow-hidden group ${
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98, y: 0 }}
+                className={`w-full py-4 md:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-xs flex items-center justify-center gap-3 transition-all relative overflow-hidden group ${
                   status === "submitting" ? "bg-zinc-800 cursor-not-allowed" : "bg-brand-red text-white hover:bg-red-700 premium-shadow-red"
                 }`}
               >
@@ -216,7 +221,7 @@ const CTA = () => {
                 ) : (
                   <Send className="w-4 h-4 relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 )}
-                <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-zinc-700 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
               </motion.button>
 
               <AnimatePresence>

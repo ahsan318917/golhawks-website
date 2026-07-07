@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const AboutPreview = () => {
   return (
-    <section id="about" className="py-32 bg-brand-black relative overflow-hidden font-sans">
+    <section id="about" className="py-32 bg-zinc-950 relative overflow-hidden font-sans">
       <div className="absolute inset-0 noise-bg opacity-[0.03]" />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -20,7 +20,7 @@ const AboutPreview = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-6"
           >
-            <div className="group relative rounded-[2rem] overflow-hidden aspect-[4/5] border border-white/10 shadow-2xl">
+            <div className="group relative rounded-[2rem] overflow-hidden aspect-[4/5] border border-zinc-700 shadow-2xl">
               <Image 
                 src="https://images.unsplash.com/photo-1555529733-0e670560f7e1?q=80&w=2070&auto=format&fit=crop" 
                 alt="Garment Production Line"
@@ -31,12 +31,12 @@ const AboutPreview = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="absolute bottom-8 left-8">
-                <p className="text-brand-red font-black text-[10px] uppercase tracking-[0.3em] mb-1">Infrastructure</p>
+                <p className="text-brand-red font-black text-xs uppercase tracking-[0.3em] mb-1">Infrastructure</p>
                 <h4 className="text-xl font-black text-white italic">Production Line</h4>
               </div>
             </div>
             
-            <div className="group relative rounded-[2rem] overflow-hidden aspect-square border border-white/10 shadow-2xl text-white">
+            <div className="group relative rounded-[2rem] overflow-hidden aspect-square border border-zinc-700 shadow-2xl text-white">
               <Image 
                 src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop" 
                 alt="Quality Inspection"
@@ -47,7 +47,7 @@ const AboutPreview = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="absolute bottom-8 left-8">
-                <p className="text-brand-red font-black text-[10px] uppercase tracking-[0.3em] mb-1">Standard</p>
+                <p className="text-brand-red font-black text-xs uppercase tracking-[0.3em] mb-1">Standard</p>
                 <h4 className="text-xl font-black text-white italic">QC Inspection</h4>
               </div>
             </div>
@@ -61,7 +61,7 @@ const AboutPreview = () => {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-6 pt-12"
           >
-            <div className="group relative rounded-[2rem] overflow-hidden aspect-square border border-white/10 shadow-2xl">
+            <div className="group relative rounded-[2rem] overflow-hidden aspect-square border border-zinc-700 shadow-2xl">
               <Image 
                 src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2070&auto=format&fit=crop" 
                 alt="Technical Fabric"
@@ -72,12 +72,12 @@ const AboutPreview = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="absolute bottom-8 left-8">
-                <p className="text-brand-red font-black text-[10px] uppercase tracking-[0.3em] mb-1">Materials</p>
+                <p className="text-brand-red font-black text-xs uppercase tracking-[0.3em] mb-1">Materials</p>
                 <h4 className="text-xl font-black text-white italic">Technical Fabric</h4>
               </div>
             </div>
 
-            <div className="group relative rounded-[2rem] overflow-hidden aspect-[4/5] border border-white/10 shadow-2xl">
+            <div className="group relative rounded-[2rem] overflow-hidden aspect-[4/5] border border-zinc-700 shadow-2xl">
               <Image 
                 src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop" 
                 alt="Logistics Warehouse"
@@ -88,7 +88,7 @@ const AboutPreview = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="absolute bottom-8 left-8">
-                <p className="text-brand-red font-black text-[10px] uppercase tracking-[0.3em] mb-1">Global</p>
+                <p className="text-brand-red font-black text-xs uppercase tracking-[0.3em] mb-1">Global</p>
                 <h4 className="text-xl font-black text-white italic">Export Logistics</h4>
               </div>
             </div>
@@ -102,14 +102,14 @@ const AboutPreview = () => {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="lg:pl-10 pt-12 lg:pt-24 text-white"
           >
-            <span className="text-brand-red font-black uppercase tracking-[0.4em] text-[10px] mb-8 block">Factory Operations</span>
+            <span className="text-brand-red font-black uppercase tracking-[0.4em] text-xs mb-8 block">Factory Operations</span>
             <h2 className="text-4xl md:text-7xl font-black mb-10 leading-[0.85] tracking-tighter">
               PRECISION <br />
               <span className="text-white/20 italic text-8xl">CONTROL</span>
             </h2>
             
             <div className="mb-12">
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30 mb-8 block underline decoration-brand-red underline-offset-8">What This Means For Your Brand</span>
+              <span className="text-xs font-black uppercase tracking-[0.3em] text-white/30 mb-8 block underline decoration-brand-red underline-offset-8">What This Means For Your Brand</span>
               <div className="space-y-10">
                 {[
                   { title: "Defect Mitigation", desc: "Surgical precision through controlled production workflows." },
@@ -130,7 +130,7 @@ const AboutPreview = () => {
               </div>
             </div>
 
-            <button className="group relative bg-white/5 hover:bg-white/10 border border-white/10 px-12 py-5 rounded-full font-black uppercase tracking-[0.2em] text-[10px] transition-all flex items-center gap-4">
+            <button className="group relative bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 px-12 py-5 rounded-full font-black uppercase tracking-[0.2em] text-xs transition-all flex items-center gap-4">
               Audit Our Facility
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>

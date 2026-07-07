@@ -27,11 +27,11 @@ const proofImages = [
 
 const ProofSection = () => {
   return (
-    <section className="py-32 bg-brand-black relative">
+    <section className="py-32 bg-zinc-950 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-10">
           <div>
-            <span className="text-brand-red font-black uppercase tracking-[0.4em] text-[10px] mb-6 block">Production Insight</span>
+            <span className="text-brand-red font-black uppercase tracking-[0.4em] text-xs mb-6 block">Production Insight</span>
             <h2 className="text-4xl md:text-8xl font-black tracking-tighter text-white">INSIDE OUR <br /><span className="text-white/20 italic">FACILITY</span></h2>
           </div>
         </div>
@@ -44,7 +44,7 @@ const ProofSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden group border border-white/10 shadow-2xl"
+              className="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden group border border-zinc-700 shadow-2xl"
             >
               <img 
                 src={img.url} 
@@ -54,7 +54,7 @@ const ProofSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent" />
               
               <div className="absolute inset-0 p-8 flex flex-col justify-end transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <span className="text-brand-red font-black uppercase tracking-[0.3em] text-[10px] mb-2">{img.label}</span>
+                <span className="text-brand-red font-black uppercase tracking-[0.3em] text-xs mb-2">{img.label}</span>
                 <p className="text-white text-sm font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                   {img.desc}
                 </p>

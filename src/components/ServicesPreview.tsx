@@ -34,15 +34,15 @@ const ServicesPreview = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-20 gap-6 md:gap-10"
+          className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-24 gap-6 md:gap-10"
         >
           <div className="max-w-xl">
-            <span className="text-red-500 font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[8px] md:text-[10px] mb-3 md:mb-6 block">Capabilities</span>
+            <span className="text-red-500 font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[8px] md:text-xs mb-3 md:mb-6 block">Capabilities</span>
             <h2 className="h-lg mb-4 md:mb-6 uppercase text-white">OUR SOLUTIONS</h2>
             <p className="p-lg">Integrated manufacturing systems designed for elite athletic performance and brand scalability.</p>
           </div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/services" className="group inline-flex items-center gap-4 text-white hover:text-red-500 transition-all font-black uppercase tracking-[0.2em] text-[9px] md:text-[10px] border-b border-white/10 pb-3 md:pb-4 w-fit">
+            <Link href="/services" className="group inline-flex items-center gap-4 text-white hover:text-red-500 transition-all font-black uppercase tracking-[0.2em] text-[11px] md:text-xs border-b border-zinc-700 pb-3 md:pb-4 w-fit">
               View All Services
               <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
             </Link>
@@ -61,7 +61,7 @@ const ServicesPreview = () => {
               }
             }
           }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12"
         >
           {services.map((service, i) => (
             <motion.div
@@ -75,15 +75,15 @@ const ServicesPreview = () => {
                 borderColor: "rgba(239, 68, 68, 0.4)",
                 boxShadow: "0 0 30px rgba(220, 38, 38, 0.2)"
               }}
-              className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-[2rem] p-4 md:p-10 transition-all duration-500 relative overflow-hidden group active:scale-[0.98]"
+              className="bg-white/[0.03] backdrop-blur-md border border-zinc-700 rounded-[2rem] p-4 md:p-10 transition-all duration-500 relative overflow-hidden group active:scale-[0.98]"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-red-600/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <div className="mb-3 md:mb-8 p-3 md:p-5 bg-black/40 border border-white/10 rounded-xl md:rounded-2xl w-fit relative z-10 group-hover:border-red-500/30 transition-colors">
+              <div className="mb-3 md:mb-8 p-3 md:p-5 bg-zinc-900 border border-zinc-700 rounded-xl md:rounded-2xl w-fit relative z-10 group-hover:border-red-500/30 transition-colors">
                 {service.icon}
               </div>
               <h3 className="text-lg md:text-xl font-black mb-2 md:mb-4 tracking-tight relative z-10 text-white uppercase whitespace-normal break-keep max-w-[10rem] md:max-w-none">{service.title}</h3>
-              <p className="p-sm relative z-10 group-hover:text-zinc-300 transition-colors">{service.description}</p>
+              <p className="p-sm relative z-10 group-hover:text-zinc-200 transition-colors">{service.description}</p>
             </motion.div>
           ))}
         </motion.div>

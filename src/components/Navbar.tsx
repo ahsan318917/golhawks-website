@@ -4,13 +4,18 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Search, ShoppingBag } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useQuoteCart } from "@/context/QuoteContext";
+import SearchOverlay from "@/components/SearchOverlay";
+import Topbar from "@/components/Topbar";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const { items, toggleCart } = useQuoteCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,22 +26,25 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
+    { name: "Shop All", href: "/products" },
     { name: "Services", href: "/services" },
-    { name: "Products", href: "/products" },
-    { name: "Process", href: "/process" },
     { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-in-out ${
-        scrolled ? "bg-brand-black/90 backdrop-blur-2xl border-b border-white/5 py-2.5 md:py-4 shadow-2xl" : "bg-transparent py-4 md:py-8"
+        scrolled ? "bg-zinc-950/90 backdrop-blur-2xl border-b border-zinc-800 shadow-2xl" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-5 md:px-12 flex justify-between items-center">
+      <div className={`transition-all duration-500 overflow-hidden ${scrolled ? 'h-0 opacity-0' : 'h-auto opacity-100'}`}>
+        <Topbar />
+      </div>
+      <div className={`max-w-7xl mx-auto px-5 md:px-12 flex justify-between items-center transition-all duration-500 ${scrolled ? 'py-2.5 md:py-4' : 'py-4 md:py-6'}`}>
         {/* Logo Section - Enterprise Lockup */}
         <Link href="/" className="flex items-center gap-3 md:gap-4 group">
-          <div className="relative w-10 h-10 md:w-16 md:h-16 bg-white/[0.03] border border-white/10 rounded-lg md:rounded-xl overflow-hidden p-1 transition-all group-hover:border-brand-red/50 group-hover:bg-brand-red/[0.02]">
+          <div className="relative w-10 h-10 md:w-16 md:h-16 bg-white/[0.03] border border-zinc-700 rounded-lg md:rounded-xl overflow-hidden p-1 transition-all group-hover:border-brand-red/50 group-hover:bg-brand-red/[0.02]">
             <Image
               src="/images/Logo (2).png"
               alt="GolHawks International Icon"
@@ -51,7 +59,7 @@ const Navbar = () => {
               <span className="text-white">GOL</span>
               <span className="text-brand-red italic">HAWKS</span>
             </span>
-            <span className="text-[7px] md:text-[9px] font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-white/40 mt-1 group-hover:text-white/60 transition-colors">
+            <span className="text-[7px] md:text-[11px] font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-white/40 mt-1 group-hover:text-white/60 transition-colors">
               International
             </span>
           </div>
@@ -62,36 +70,48 @@ const Navbar = () => {
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`text-[10px] uppercase tracking-[0.2em] font-black transition-all pb-1 relative group ${
-                  isActive ? "text-brand-red" : "text-white/60 hover:text-white"
-                }`}
-              >
-                {link.name}
-                <span className={`absolute bottom-0 left-0 h-[1px] bg-brand-red transition-all ${
-                  isActive ? "w-full" : "w-0 group-hover:w-full"
-                }`} />
-              </Link>
+               <Link
+                 key={link.name}
+                 href={link.href}
+                 className={`text-xs uppercase tracking-[0.2em] font-black transition-all pb-1 relative group ${
+                   isActive ? "text-brand-red" : "text-white/60 hover:text-white"
+                 }`}
+               >
+                 {link.name}
+                 <span className={`absolute bottom-0 left-0 h-[1px] bg-brand-red transition-all ${
+                   isActive ? "w-full" : "w-0 group-hover:w-full"
+                 }`} />
+               </Link>
             );
           })}
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex items-center gap-2 md:gap-6">
-          <Link
-            href="/contact"
-            className={`bg-brand-red hover:bg-red-700 text-white px-4 md:px-8 py-2 md:py-4 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] transition-all hover:scale-105 active:scale-95 premium-shadow-red shrink-0 ${
-              pathname === "/contact" ? "ring-2 ring-white/20" : ""
-            }`}
+        {/* Action Buttons & Icons (E-Commerce Style) */}
+        <div className="flex items-center gap-4 md:gap-8">
+          {/* Search Icon */}
+          <button 
+            onClick={() => setIsSearchOpen(true)}
+            className="text-white/60 hover:text-white transition-colors cursor-pointer"
           >
-            Get Quote
-          </Link>
+            <Search className="w-5 h-5 md:w-6 md:h-6" />
+          </button>
+          
+          {/* Quote Bag (Shopping Cart) */}
+          <button 
+            onClick={toggleCart}
+            className="relative text-white/60 hover:text-white transition-colors group cursor-pointer"
+          >
+            <ShoppingBag className="w-5 h-5 md:w-6 md:h-6" />
+            {items.length > 0 && (
+              <span className="absolute -top-1.5 -right-2 bg-brand-red text-white text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                {items.length}
+              </span>
+            )}
+          </button>
 
           {/* Mobile Toggle */}
           <button 
-            className="lg:hidden text-white p-2 bg-white/5 hover:bg-white/10 rounded-full transition-colors border border-white/5" 
+            className="lg:hidden text-white p-2 bg-zinc-800 hover:bg-zinc-700 rounded-full transition-colors border border-zinc-800 ml-2" 
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
           >
@@ -107,7 +127,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
-            className="fixed inset-0 top-0 z-[90] lg:hidden bg-brand-black flex flex-col justify-center px-8"
+            className="fixed inset-0 top-0 z-[90] lg:hidden bg-zinc-950 flex flex-col justify-center px-8"
           >
             <div className="flex flex-col gap-8">
               {navLinks.map((link, i) => {
@@ -136,9 +156,9 @@ const Navbar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
-                className="mt-12 pt-12 border-t border-white/5"
+                className="mt-12 pt-12 border-t border-zinc-800"
               >
-                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20 mb-6">Operational Base</p>
+                <p className="text-xs font-black uppercase tracking-[0.4em] text-white/20 mb-6">Operational Base</p>
                 <div className="flex items-center gap-4">
                   <span className="w-8 h-[1px] bg-brand-red" />
                   <p className="text-lg font-bold text-white/60 italic">Sialkot, Pakistan</p>
@@ -148,6 +168,8 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </nav>
   );
 };

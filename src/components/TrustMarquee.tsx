@@ -3,13 +3,13 @@
 import { motion } from "framer-motion";
 
 const brands = [
-  "ELITE GYM", "PRO STRIKE", "CORE WEAR", "APEX ATHLETICS", "TITAN GEAR", 
-  "ELITE GYM", "PRO STRIKE", "CORE WEAR", "APEX ATHLETICS", "TITAN GEAR"
+  "PRIVATE LABEL BRANDS", "SPORTSWEAR BRANDS", "MMA ACADEMIES", "FITNESS STARTUPS", "TEAMWEAR COMPANIES", "OUTDOOR APPAREL",
+  "PRIVATE LABEL BRANDS", "SPORTSWEAR BRANDS", "MMA ACADEMIES", "FITNESS STARTUPS", "TEAMWEAR COMPANIES", "OUTDOOR APPAREL"
 ];
 
 const TrustMarquee = () => {
   return (
-    <section className="py-16 bg-black border-y border-white/5 overflow-hidden relative">
+    <section className="py-12 md:py-24 bg-zinc-950 border-y border-zinc-800 overflow-hidden relative">
       <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black z-10 pointer-events-none" />
       
       {/* Subtle depth glow */}
@@ -18,7 +18,7 @@ const TrustMarquee = () => {
       <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
         <div className="inline-flex items-center gap-4">
           <div className="h-[1px] w-8 bg-brand-red/30" />
-          <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white/60">Manufacturing Partners & Global Brands</span>
+          <span className="text-xs font-black uppercase tracking-[0.5em] text-white/60">Manufacturing Partners & Global Brands</span>
           <div className="h-[1px] w-8 bg-brand-red/30" />
         </div>
       </div>

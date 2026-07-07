@@ -11,7 +11,7 @@ const features = [
 
 const ValueProp = () => {
   return (
-    <section className="section-padding bg-gradient-to-b from-black via-zinc-950 to-zinc-900 border-b border-white/5 relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-b from-black via-zinc-950 to-zinc-900 border-b border-zinc-800 relative overflow-hidden">
       {/* Visual Depth - Glow */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(196,18,48,0.08),transparent_70%)] blur-[80px] -mr-32 -mt-32 pointer-events-none" />
       
@@ -21,12 +21,13 @@ const ValueProp = () => {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.9] tracking-tighter uppercase text-white">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.9] tracking-tighter uppercase text-white mb-6 md:mb-8">
               BEYOND MANUFACTURING. <br />
               <span className="text-zinc-700 italic">WE ENGINEER BRANDS.</span>
             </h2>
+            <div className="w-12 h-1 bg-brand-red mb-8" />
           </motion.div>
           
           <motion.div 
@@ -56,7 +57,7 @@ const ValueProp = () => {
               >
                 <div className="flex items-center gap-3">
                   <span className="w-6 h-[1px] bg-red-600 group-hover:w-10 transition-all duration-500" />
-                  <h4 className="font-black text-white tracking-widest uppercase text-[10px] md:text-xs group-hover:text-red-500 transition-colors">{item.title}</h4>
+                  <h4 className="font-black text-white tracking-widest uppercase text-xs md:text-xs group-hover:text-red-500 transition-colors">{item.title}</h4>
                 </div>
                 <p className="p-sm">{item.desc}</p>
               </motion.div>

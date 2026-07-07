@@ -35,10 +35,10 @@ const fullServices = [
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-black selection:bg-red-600 selection:text-white overflow-x-hidden">
+    <main className="min-h-screen bg-zinc-950 selection:bg-red-600 selection:text-white overflow-x-hidden">
       <Navbar />
       
-      <section className="pt-32 md:pt-48 pb-14 md:pb-24 border-b border-white/5 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 relative overflow-hidden">
+      <section className="pt-32 md:pt-48 pb-14 md:pb-24 border-b border-zinc-800 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 relative overflow-hidden">
         {/* Cinematic Glow */}
         <div className="absolute top-1/2 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.08),transparent_70%)] blur-[100px] translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
@@ -49,7 +49,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-4xl"
           >
-            <span className="text-red-500 font-black uppercase tracking-[0.4em] text-[10px] mb-8 block">Core Capabilities</span>
+            <span className="text-red-500 font-black uppercase tracking-[0.4em] text-xs mb-8 block">Core Capabilities</span>
             <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black leading-[0.85] tracking-tighter mb-12 uppercase text-white">
               INDUSTRIAL <br />
               <span className="text-zinc-700 italic">SOLUTIONS</span>
@@ -76,18 +76,18 @@ export default function ServicesPage() {
                   borderColor: "rgba(220, 38, 38, 0.4)",
                   boxShadow: "0 0 30px rgba(220, 38, 38, 0.15)"
                 }}
-                className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-[2.5rem] p-10 md:p-16 group transition-all duration-500 active:scale-[0.99]"
+                className="bg-white/[0.03] backdrop-blur-md border border-zinc-700 rounded-[2.5rem] p-10 md:p-16 group transition-all duration-500 active:scale-[0.99]"
               >
                 <div className="text-red-600 mb-10 group-hover:scale-110 transition-transform duration-700">
                   {service.icon}
                 </div>
                 <h2 className="h-md mb-6 uppercase text-white">{service.title}</h2>
-                <p className="p-lg mb-10 text-zinc-400">
+                <p className="p-lg mb-10 text-zinc-200">
                   {service.description}
                 </p>
                 <div className="space-y-4">
                   {service.benefits.map((benefit, j) => (
-                    <div key={j} className="flex items-center gap-4 text-zinc-300 font-bold uppercase tracking-widest text-[10px] group-hover:text-white transition-colors">
+                    <div key={j} className="flex items-center gap-4 text-zinc-200 font-bold uppercase tracking-widest text-xs group-hover:text-white transition-colors">
                       <CheckCircle2 className="w-4 h-4 text-red-600" />
                       {benefit}
                     </div>
