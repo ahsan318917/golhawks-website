@@ -3,6 +3,7 @@ export type Product = {
   name: string;
   spec: string;
   description: string;
+  features?: string[];
   intendedUse: string;
   colors: string[];
   fabrics: string[];
@@ -46,8 +47,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
     products: [
       { 
         id: "bjj-gi", name: "Pro BJJ Gi", spec: "Pearl Weave 450GSM",
-        description: "Tournament-grade Brazilian Jiu-Jitsu Gi engineered with anti-microbial treatments and pre-shrunk fabric.",
-        intendedUse: "Professional Grappling",
+        description: "Our core BJJ Gi is constructed for consistent, heavy-duty mat use. The jacket uses a 450GSM pearl weave cotton that balances weight and breathability, while the pants are built from a durable ripstop blend. Reinforced stress points ensure longevity under regular grappling conditions.",
+        features: [
+          "Pre-shrunk 450GSM pearl weave cotton jacket",
+          "10oz ripstop cotton-polyester blend pants",
+          "Thick EVA foam collar to resist gripping",
+          "Triple-stitched at all major stress points"
+        ],
+        intendedUse: "Regular Grappling & Training",
         colors: ["Obsidian Black", "Arctic White", "Royal Blue"],
         fabrics: ["100% Cotton Pearl Weave", "Ripstop Poly-Cotton"],
         images: ["/images/Martial Arts/PRO BJJ GI.png"],
@@ -56,8 +63,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "karate-gi", name: "Kata Karate Gi", spec: "Heavyweight Canvas",
-        description: "Traditional Karategi built for snap and durability during high-intensity kata and kumite.",
-        intendedUse: "Traditional Martial Arts",
+        description: "A traditional heavyweight Karate Gi designed specifically for kata practitioners. The 14oz canvas cotton provides a stiff, structural fit that produces the distinct 'snap' sound during fast movements, while maintaining enough mobility for deep stances.",
+        features: [
+          "14oz heavyweight 100% cotton canvas",
+          "Traditional Japanese cut with shorter sleeves/trousers",
+          "Brushed interior for skin comfort during long sessions",
+          "Reinforced lapel with multi-row stitching"
+        ],
+        intendedUse: "Traditional Martial Arts & Kata",
         colors: ["Arctic White", "Ivory"],
         fabrics: ["14oz Canvas Cotton"],
         images: ["/images/Martial Arts/Kata Karate GI.png"],
@@ -66,7 +79,13 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "rash-guard", name: "Combat Rash Guard", spec: "4-Way Stretch Compression",
-        description: "Second-skin combat rash guard featuring fully sublimated graphics that never crack or peel.",
+        description: "A functional, skin-tight rash guard built for No-Gi grappling and MMA training. Manufactured using a high-density polyester-spandex blend, it provides effective muscle compression and protection against mat friction. Graphics are fully sublimated into the fabric to prevent peeling.",
+        features: [
+          "88% Polyester / 12% Spandex stretch matrix",
+          "Flatlock seam construction to prevent skin chafing",
+          "Silicone anti-slip waistband interior",
+          "Dye-sublimated graphics that won't crack or fade"
+        ],
         intendedUse: "No-Gi Grappling & MMA",
         colors: ["Rank Colors", "Custom Sublimation"],
         fabrics: ["88% Polyester / 12% Spandex"],
@@ -76,7 +95,13 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "fight-shorts", name: "MMA Fight Shorts", spec: "Stretch Matrix",
-        description: "Ultra-lightweight MMA shorts with high side slits and a locked-in velcro waist system.",
+        description: "Lightweight, unrestrictive fight shorts designed for mixed martial arts. The body is constructed from a microfiber stretch woven fabric, featuring high side slits for unrestricted kicking mobility and a locked-in velcro closure system to keep them secure during grappling.",
+        features: [
+          "Microfiber 4-way stretch body fabric",
+          "High lateral slits for maximum leg extension",
+          "Internal drawstring with fold-over velcro waistband",
+          "Lycra stretch crotch panel for increased mobility"
+        ],
         intendedUse: "MMA & Kickboxing",
         colors: ["Matte Black", "Camo"],
         fabrics: ["Microfiber Stretch Matrix"],
@@ -86,8 +111,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "pro-judo-gi", name: "Pro Judo Gi", spec: "Competition Grade Cotton",
-        description: "Heavyweight double weave Judo Gi designed for maximum throw retention and elite competition standards.",
-        intendedUse: "Grading & Competition",
+        description: "A robust, competition-grade Judo Gi built to withstand heavy gripping and throwing. The jacket features a thick double-weave cotton top half for grip resistance, transitioning into a diamond weave skirt for flexibility. The knees are double-paneled for durability during groundwork.",
+        features: [
+          "Heavyweight double-weave cotton jacket top",
+          "Diamond weave lower jacket skirt",
+          "Reinforced chest, shoulders, and lapel",
+          "Double-layered knee panels on trousers"
+        ],
+        intendedUse: "Judo Grading & Competition",
         colors: ["White", "Blue"],
         fabrics: ["100% Cotton Double Weave"],
         images: ["/images/Martial Arts/Pro judo gi.png"],
@@ -98,7 +129,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
   },
   "denim": {
     title: "DENIM PRODUCTS",
-    description: "Premium denim manufacturing for global fashion brands.\nFrom heavyweight selvedge to modern washed collections,\ncrafted with precision and built for OEM production.",
+    description: "Premium denim manufacturing for global fashion brands. From heavyweight selvedge to modern washed collections.",
     filterTabs: ["All Products", "Selvedge", "Jackets", "Jeans", "Shirts", "Workwear"],
     specs: {
       weight: "10oz – 16oz",
@@ -111,8 +142,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
     products: [
       { 
         id: "selvedge-denim", name: "Selvedge Denim", spec: "Premium Japanese Selvedge",
-        description: "Classic straight-leg selvedge jeans constructed on vintage shuttle looms for an authentic fade profile.",
-        intendedUse: "Premium Streetwear",
+        description: "Classic straight-leg jeans manufactured using traditional shuttle-loomed selvedge denim. Shipped raw and unwashed, this 14oz fabric is rigid initially but breaks in naturally over time to create a personalized wear pattern unique to the user.",
+        features: [
+          "14oz raw selvedge denim woven on shuttle looms",
+          "Signature red-line selvedge outseam ID",
+          "Hidden copper back pocket rivets",
+          "Chain-stitched hems for authentic roping fade"
+        ],
+        intendedUse: "Heritage Streetwear",
         colors: ["Indigo Raw", "Washed Black"],
         fabrics: ["14oz Japanese Selvedge"],
         images: ["/images/Denim Products/Selvedge Denim.png"],
@@ -121,8 +158,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "denim-jacket", name: "Denim Jacket", spec: "Classic Trucker Construction",
-        description: "Type-III inspired trucker jacket featuring custom-branded hardware and expert hand-scraping details.",
-        intendedUse: "Outerwear",
+        description: "A standard Type-III inspired trucker jacket built for reliable everyday wear. Constructed from a versatile 12oz denim, it features a slight stretch blend to improve mobility around the shoulders. Available in raw finishes or factory-washed vintage treatments.",
+        features: [
+          "12oz cotton denim with 2% elastane for comfort",
+          "Classic V-seam front detailing with chest flap pockets",
+          "Branded shank button closures",
+          "Adjustable waist tabs at the rear hem"
+        ],
+        intendedUse: "Casual Outerwear",
         colors: ["Vintage Blue", "Overdyed Black"],
         fabrics: ["12oz Stretch Denim"],
         images: ["/images/Denim Products/Denim Jacket.png"],
@@ -131,8 +174,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "denim-jeans", name: "Denim Jeans", spec: "Raw & Washed Denim",
-        description: "Versatile denim jeans available in multiple washes, offering a perfect balance of comfort and durability.",
-        intendedUse: "Everyday Wear",
+        description: "Our core 5-pocket denim jean designed for bulk retail production. Using a mid-weight 12oz stretch denim, these jeans offer immediate comfort without a break-in period. They can be heavily customized with various industrial washes, distressing, and whiskering profiles.",
+        features: [
+          "12oz mid-weight denim suitable for year-round wear",
+          "Standard 5-pocket construction with coin pocket",
+          "Reinforced bartacks at high-stress points",
+          "Fully customizable wash and distressing options"
+        ],
+        intendedUse: "Everyday Retail Wear",
         colors: ["Indigo", "Light Blue", "Black"],
         fabrics: ["12oz Stretch Denim"],
         images: ["/images/Denim Products/Denim Jeans.png"],
@@ -141,8 +190,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "denim-shirt", name: "Denim Shirt", spec: "Lightweight Indigo Denim",
-        description: "Breathable lightweight denim shirt featuring reinforced seams and pearl snap buttons.",
-        intendedUse: "Smart Casual Streetwear",
+        description: "A breathable, western-inspired denim shirt suitable for layering or standalone wear. Made from a lightweight 6oz chambray cotton, it drapes smoothly while retaining the rugged visual texture of heavier denim. Features classic yoke details and pearl snap fasteners.",
+        features: [
+          "6oz lightweight cotton chambray fabric",
+          "Western-style front and back yokes",
+          "Pearl snap button closures throughout",
+          "Double-needle chainstitching along side seams"
+        ],
+        intendedUse: "Smart Casual Wear",
         colors: ["Light Blue", "Indigo"],
         fabrics: ["6oz Cotton Chambray"],
         images: ["/images/Denim Products/Denim Shirt.png"],
@@ -151,8 +206,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "denim-workwear", name: "Denim Workwear", spec: "Industrial Utility Collection",
-        description: "Heavy-duty denim workwear built for demanding environments with triple-stitched seams.",
-        intendedUse: "Industrial Utility",
+        description: "Heavy-duty denim garments engineered specifically for manual labor and industrial environments. Utilizing a stiff 16oz raw denim, these pieces are constructed with triple-stitched felled seams and reinforced paneling to withstand severe daily abrasion.",
+        features: [
+          "16oz heavyweight industrial-grade denim",
+          "Triple-stitched felled main seams for extreme durability",
+          "Double-layered knee and elbow panels",
+          "Utility tool pockets and hammer loops"
+        ],
+        intendedUse: "Industrial Utility & Labor",
         colors: ["Raw Indigo", "Charcoal"],
         fabrics: ["16oz Heavyweight Denim"],
         images: ["/images/Denim Products/Denim Workwear.png"],
@@ -175,8 +236,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
     products: [
       { 
         id: "compression-wear", name: "Compression Wear", spec: "4-WAY STRETCH COMPRESSION",
-        description: "Advanced 4-way stretch compression engineered for elite combat and athletic performance.",
-        intendedUse: "Professional Athletics",
+        description: "Form-fitting athletic base layers designed to support muscle recovery and regulate body temperature during high-output activities. The fabric applies graduated pressure while actively pulling sweat away from the skin for rapid evaporation.",
+        features: [
+          "85% Polyester / 15% Spandex performance blend",
+          "Graduated compression profile to support circulation",
+          "Moisture-wicking capillary yarn technology",
+          "Strategic mesh underarm panels for heat dumping"
+        ],
+        intendedUse: "Athletic Base Layer",
         colors: ["Obsidian Black", "Arctic White", "Crimson"],
         fabrics: ["Poly-Spandex Blend (85/15)"],
         images: ["/images/Performancewear/Compression Wear.png"],
@@ -185,8 +252,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "training-tshirts", name: "Training T-Shirts", spec: "MOISTURE WICKING POLYESTER",
-        description: "Ultra-breathable training t-shirt using rapid-dry microfiber technology.",
-        intendedUse: "General Fitness",
+        description: "A standard lightweight athletic tee built for general fitness and gym use. Manufactured using 100% recycled polyester microfiber, it offers excellent breathability and a soft hand-feel, making it an ideal blank canvas for gym branding and merch.",
+        features: [
+          "100% recycled polyester microfiber construction",
+          "Standard athletic fit (not overly compressive)",
+          "Anti-odor fabric treatment",
+          "Tagless collar design to prevent irritation"
+        ],
+        intendedUse: "General Fitness & Gym Wear",
         colors: ["White", "Black", "Neon Volt"],
         fabrics: ["100% Recycled Polyester"],
         images: ["/images/Performancewear/Training T-Shirts.png"],
@@ -195,7 +268,13 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "performance-shorts", name: "Performance Shorts", spec: "LIGHTWEIGHT PERFORMANCE FABRIC",
-        description: "High-performance athletic shorts featuring invisible zip pockets and heat-mapped ventilation zones.",
+        description: "Versatile training shorts optimized for running, lifting, and cross-training. The woven 4-way stretch shell moves freely without catching on the knees, while hidden zipper pockets provide secure storage for phones and keys during movement.",
+        features: [
+          "Lightweight 4-way stretch woven outer shell",
+          "Laser-cut ventilation perforations on side panels",
+          "Low-profile invisible zipper pockets",
+          "Elastic waistband with internal drawcord"
+        ],
         intendedUse: "Cross-Training & Running",
         colors: ["Matte Black", "Gunmetal Grey"],
         fabrics: ["4-Way Stretch Woven"],
@@ -205,8 +284,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "performance-legging", name: "Performance Legging", spec: "SECOND-SKIN PERFORMANCE FIT",
-        description: "Winter training base layer constructed with brushed inner fleece for maximum heat retention.",
-        intendedUse: "Athletics",
+        description: "Opaque, squat-proof athletic leggings designed for yoga, running, and high-impact training. The fabric is tightly knit to ensure zero transparency when stretched, while the wide, high-rise waistband provides a secure, flattering fit that stays in place.",
+        features: [
+          "Tightly knit poly-spandex blend (100% squat-proof)",
+          "High-rise, double-layered compression waistband",
+          "Drop-in side pockets suitable for smartphones",
+          "Flatlock seam construction to prevent chafing"
+        ],
+        intendedUse: "Activewear & Training",
         colors: ["Carbon Black", "Navy"],
         fabrics: ["Thermal Poly-Blend"],
         images: ["/images/Performancewear/Performance Legging.png"],
@@ -215,8 +300,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "sports-bras-active-tops", name: "Sports Bras & Active Tops", spec: "HIGH SUPPORT • ACTIVE COMFORT",
-        description: "High-support activewear engineered for maximum comfort and stability during rigorous athletic performance.",
-        intendedUse: "Athletics",
+        description: "Medium to high-impact sports bras engineered to minimize bounce during rigorous activities. Constructed with a compressive outer layer and a soft, sweat-wicking inner liner, featuring removable molded cups and reinforced elastic underbands.",
+        features: [
+          "Compressive dual-layer fabric construction",
+          "Racerback design for full shoulder blade mobility",
+          "Removable perforated foam modesty cups",
+          "Brushed elastic underband for secure, chafe-free support"
+        ],
+        intendedUse: "High-Impact Athletics",
         colors: ["Carbon Black", "Navy"],
         fabrics: ["Poly-Spandex Blend (85/15)"],
         images: ["/images/Performancewear/Sports Bras & Active Tops.png"],
@@ -227,7 +318,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
   },
   "fleece": {
     title: "FLEECE & STREETWEAR",
-    description: "Premium fleece garments engineered for comfort, durability and modern streetwear brands. Custom manufacturing for hoodies, sweatshirts, joggers and coordinated apparel collections.",
+    description: "Premium fleece garments engineered for comfort, durability and modern streetwear brands.",
     filterTabs: ["All Products", "Premium Hoodies", "Crewneck", "Joggers", "Zip Hoodies", "Tracksuits"],
     specs: {
       weight: "280–420 GSM",
@@ -239,7 +330,13 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
     products: [
       { 
         id: "premium-hoodies", name: "Premium Hoodies", spec: "Heavyweight Brushed Fleece",
-        description: "Oversized drop-shoulder hoodie featuring a double-lined hood and zero-shrink fabric processing.",
+        description: "A heavyweight streetwear staple designed for premium blank programs. Constructed from a dense 400GSM cotton fleece, this hoodie features a modern, relaxed drop-shoulder fit. The fabric has been pre-washed to minimize shrinkage and provide an ultra-soft hand feel.",
+        features: [
+          "400GSM heavyweight cotton-rich fleece",
+          "Double-lined hood with no drawcords for a clean aesthetic",
+          "Drop-shoulder, slightly cropped boxy fit",
+          "Heavy 2x2 ribbed cuffs and hem"
+        ],
         intendedUse: "Premium Streetwear",
         colors: ["Heather Grey", "Vintage Wash Black"],
         fabrics: ["100% Cotton French Terry"],
@@ -249,8 +346,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "crewneck-sweatshirts", name: "Crewneck Sweatshirts", spec: "Premium Cotton Blend",
-        description: "Classic crewneck sweatshirt with ribbed cuffs and hem, designed for everyday comfort and layering.",
-        intendedUse: "Streetwear Essentials",
+        description: "A classic, versatile crewneck pullover suitable for both casual retail and branded merchandise. It uses a medium-weight 320GSM fleece blend that holds its shape well over time. The collar features a reinforced V-stitch insert to prevent stretching around the neckline.",
+        features: [
+          "320GSM mid-weight cotton-polyester blend fleece",
+          "Classic set-in sleeve construction",
+          "Reinforced ribbed crew neckline with V-insert",
+          "Smooth outer face optimized for screen printing"
+        ],
+        intendedUse: "Everyday Retail Apparel",
         colors: ["Navy", "Heather Grey", "Black"],
         fabrics: ["Cotton Blend Fleece"],
         images: ["/images/FLEECE&Streetwear/Crewneck&Sweatshirts.png"],
@@ -259,8 +362,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "joggers", name: "Joggers", spec: "Tapered Comfort Fit",
-        description: "Relaxed fit sweatpants with heavy-ribbed cuffs and hidden drawcords for a clean aesthetic.",
-        intendedUse: "Lifestyle & Recovery",
+        description: "Comfortable, tapered sweatpants designed to pair with our hoodie collection. Featuring a relaxed thigh that tapers aggressively down to a thick, elasticated ankle cuff. The fabric is brushed on the inside for warmth and comfort during colder months.",
+        features: [
+          "350GSM brushed-back thermal fleece",
+          "Tapered athletic fit with elastic ankle cuffs",
+          "Deep side pockets and single rear patch pocket",
+          "Thick elastic waistband with hidden internal drawcords"
+        ],
+        intendedUse: "Lifestyle & Lounge Wear",
         colors: ["Heather Grey", "Vintage Wash Black"],
         fabrics: ["French Terry 400GSM"],
         images: ["/images/FLEECE&Streetwear/Joggers.png"],
@@ -269,8 +378,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "zip-hoodies", name: "Zip Hoodies", spec: "Full Zip Premium Fleece",
-        description: "Premium full-zip hoodie with heavyweight metal hardware and structured hood design.",
-        intendedUse: "Layered Streetwear",
+        description: "A functional, full-zip variant of our premium hoodie, built for easy layering. It incorporates a heavy-duty, smooth-gliding metal zipper that runs cleanly from the hem to the collar. The split kangaroo pocket is deep and reinforced at the corners.",
+        features: [
+          "350GSM cotton-blend brushed fleece",
+          "Heavy-duty YKK metal front zipper",
+          "Split front kangaroo pockets with bartack reinforcements",
+          "Standard, true-to-size layering fit"
+        ],
+        intendedUse: "Layered Casual Wear",
         colors: ["Black", "Charcoal"],
         fabrics: ["Brushed Cotton Fleece"],
         images: ["/images/FLEECE&Streetwear/Zip Hoodie.png"],
@@ -279,8 +394,14 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       },
       { 
         id: "tracksuits-coords", name: "Tracksuits & Co-ords", spec: "Matching Luxury Sets",
-        description: "Coordinated luxury fleece sets engineered for a cohesive and elevated streetwear look.",
-        intendedUse: "Luxury Streetwear",
+        description: "Fully matched top and bottom tracksuit sets designed to be sold as cohesive luxury outfits. Both pieces are cut from the exact same dye lot to ensure flawless color matching. The fit is slightly tailored to offer a sharper, more put-together look than standard sweats.",
+        features: [
+          "Color-matched 380GSM premium fleece top and bottom",
+          "Slightly tailored, modern athletic silhouette",
+          "Custom tonal hardware and drawcords",
+          "Available for custom side-stripe or paneling requests"
+        ],
+        intendedUse: "Luxury Streetwear Sets",
         colors: ["Bone", "Mocha", "Black"],
         fabrics: ["Premium Fleece Blend"],
         images: ["/images/FLEECE&Streetwear/Tracksuits & Co-ords.png"],

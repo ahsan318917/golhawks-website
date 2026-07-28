@@ -5,11 +5,12 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Image from "next/image";
 import Link from "next/link";
-import { Settings, Plus } from "lucide-react";
+import { Settings, Plus, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { CATEGORY_DATA } from "@/data/categories";
 import { notFound } from "next/navigation";
+import { useQuoteCart } from "@/context/QuoteContext";
 
 import { use } from "react";
 
@@ -21,6 +22,9 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
   
   const PRODUCT = categoryData.products.find(p => p.id === productId);
   if (!PRODUCT) notFound();
+
+  const { addItem } = useQuoteCart();
+  const relatedProducts = categoryData.products.filter(p => p.id !== productId).slice(0, 3);
 
   return (
     <main className="min-h-screen bg-zinc-950 selection:bg-brand-red selection:text-white overflow-x-hidden relative">
@@ -84,9 +88,20 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
                  <h1 className="text-4xl md:text-6xl font-black uppercase text-white tracking-tighter mb-6 leading-[0.9]">
                    {PRODUCT.name}
                  </h1>
-                 <p className="text-lg md:text-xl text-zinc-200 font-medium leading-relaxed mb-12 max-w-2xl">
+                 <p className="text-base md:text-lg text-zinc-300 font-medium leading-relaxed mb-8 max-w-2xl">
                    {PRODUCT.description}
                  </p>
+
+                 {PRODUCT.features && PRODUCT.features.length > 0 && (
+                   <ul className="mb-12 space-y-4">
+                     {PRODUCT.features.map((feature, idx) => (
+                       <li key={idx} className="flex items-start gap-4 text-sm md:text-base text-zinc-200 font-medium">
+                         <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-red flex-shrink-0" />
+                         <span className="leading-relaxed">{feature}</span>
+                       </li>
+                     ))}
+                   </ul>
+                 )}
                  
                  <div className="space-y-8">
                     <div>
@@ -115,6 +130,21 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
                          ))}
                       </div>
                     </div>
+                 </div>
+                 
+                 <div className="mt-12">
+                    <button 
+                      onClick={() => addItem({
+                        id: PRODUCT.id,
+                        title: PRODUCT.name,
+                        category: PRODUCT.productType,
+                        image: PRODUCT.images[0]
+                      })}
+                      className="w-full sm:w-auto flex items-center justify-center gap-3 bg-brand-red text-white text-sm md:text-base font-black uppercase tracking-widest px-10 py-5 rounded-full hover:bg-brand-red-dark transition-all duration-300 hover:scale-105 premium-shadow-red cursor-pointer"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                      Add to Quote Bag
+                    </button>
                  </div>
                </motion.div>
             </div>
@@ -160,13 +190,15 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
          
         <div className="max-w-[1400px] mx-auto relative z-10">
           <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter text-white mb-12 text-center">
-            Manufacturing Capabilities
+            Customization Options For This Product
           </h2>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
              {categoryData.customisation.map((cap, i) => (
-                <div key={i} className="border border-zinc-700 px-8 py-6 flex flex-col items-center justify-center text-center gap-4 hover:border-white/30 transition-colors group bg-zinc-900 hover:bg-zinc-950 min-w-[200px]">
-                   <Plus className="w-5 h-5 md:w-6 md:h-6 text-brand-red group-hover:scale-125 transition-transform" />
-                   <span className="text-xs font-bold uppercase tracking-widest text-zinc-200 group-hover:text-white transition-colors">
+                <div key={i} className="border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm p-6 md:p-8 flex flex-col items-start gap-6 hover:bg-zinc-900 hover:border-brand-red/50 transition-all duration-300 group rounded-2xl">
+                   <div className="w-10 h-10 rounded-full bg-zinc-950 border border-zinc-800 flex items-center justify-center group-hover:border-brand-red/50 transition-colors">
+                     <Plus className="w-4 h-4 text-brand-red" />
+                   </div>
+                   <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-zinc-300 group-hover:text-white transition-colors">
                      {cap}
                    </span>
                 </div>
@@ -181,21 +213,21 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
            Similar Constructions
          </h2>
          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            {[1, 2, 3].map((_, i) => (
-               <Link key={i} href="#" className="group block cursor-pointer">
-                 <div className="relative aspect-[4/5] w-full bg-zinc-900 mb-6 overflow-hidden">
+            {relatedProducts.map((relatedProduct) => (
+               <Link key={relatedProduct.id} href={`/products/${categorySlug}/${relatedProduct.id}`} className="group block cursor-pointer">
+                 <div className="relative aspect-[4/5] w-full bg-zinc-900 mb-6 overflow-hidden border border-zinc-800 rounded-2xl">
                    <Image 
-                     src={PRODUCT.images[1]} 
-                     alt="Related Product" 
+                     src={relatedProduct.images[0]} 
+                     alt={relatedProduct.name} 
                      fill 
                      sizes="(max-width: 768px) 100vw, 33vw"
                      className="object-cover group-hover:scale-105 transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)]" 
                    />
                  </div>
                  <h4 className="text-lg font-black uppercase tracking-tight text-white mb-2 group-hover:text-zinc-200 transition-colors">
-                   Heavyweight Hoodie
+                   {relatedProduct.name}
                  </h4>
-                 <p className="text-xs font-bold uppercase tracking-widest text-zinc-300">French Terry 400GSM</p>
+                 <p className="text-xs font-bold uppercase tracking-widest text-zinc-400">{relatedProduct.spec}</p>
                </Link>
             ))}
          </div>
