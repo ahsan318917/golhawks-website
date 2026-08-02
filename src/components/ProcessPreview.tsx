@@ -26,13 +26,16 @@ const ProcessPreview = () => {
           className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-24 gap-6 md:gap-10"
         >
           <div>
-            <span className="text-red-500 font-black uppercase tracking-[0.2em] md:tracking-[0.4em] text-[7px] md:text-xs mb-2 md:mb-6 block">Workflow</span>
-            <h2 className="text-[2.2rem] sm:text-6xl md:text-8xl lg:text-9xl font-black leading-[0.9] tracking-tighter uppercase text-white">THE PRODUCTION <br /><span className="text-zinc-800 italic">LINE</span></h2>
+            <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/50 px-4.5 py-2 rounded-full mb-4 md:mb-6 shadow-md">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
+              <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-white">Workflow</span>
+            </div>
+            <h2 className="text-[2.2rem] sm:text-6xl md:text-8xl lg:text-9xl font-black leading-[0.9] tracking-tighter uppercase text-white">THE PRODUCTION <br /><span className="text-zinc-600 italic">LINE</span></h2>
           </div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/process" className="group flex items-center gap-3 text-white hover:text-red-500 transition-all font-black uppercase tracking-[0.2em] text-[8px] md:text-xs border-b border-zinc-700 pb-2 md:pb-4 w-fit">
+            <Link href="/process" className="group flex items-center gap-3 text-white hover:text-brand-red transition-all font-black uppercase tracking-[0.2em] text-xs md:text-sm border-b border-zinc-600 hover:border-brand-red pb-2 md:pb-4 w-fit">
               See Full Process
-              <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-2 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
             </Link>
           </motion.div>
         </motion.div>

@@ -40,10 +40,13 @@ const WhyChooseUs = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <span className="text-red-500 font-black uppercase tracking-[0.4em] text-xs mb-8 block">Operational Trust</span>
+            <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/50 px-4.5 py-2 rounded-full mb-6 md:mb-8 shadow-md">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
+              <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-white">Operational Trust</span>
+            </div>
             <h2 className="text-[1.75rem] sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-10 leading-[0.9] tracking-tighter uppercase">
               BUILT FOR <br />
-              <span className="text-zinc-800 italic">CONSISTENCY</span>
+              <span className="text-zinc-600 italic">CONSISTENCY</span>
             </h2>
             <p className="p-lg mb-14 max-w-lg">
               Every order follows a defined quality control workflow. We eliminate manufacturing variables to ensure your brand's reputation remains secure.

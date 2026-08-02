@@ -10,7 +10,6 @@ import { motion } from "framer-motion";
 
 import { CATEGORY_DATA } from "@/data/categories";
 import { notFound } from "next/navigation";
-import { useQuoteCart } from "@/context/QuoteContext";
 
 import { use } from "react";
 
@@ -23,7 +22,6 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
   const PRODUCT = categoryData.products.find(p => p.id === productId);
   if (!PRODUCT) notFound();
 
-  const { addItem } = useQuoteCart();
   const relatedProducts = categoryData.products.filter(p => p.id !== productId).slice(0, 3);
 
   return (
@@ -133,18 +131,15 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
                  </div>
                  
                  <div className="mt-12">
-                    <button 
-                      onClick={() => addItem({
-                        id: PRODUCT.id,
-                        title: PRODUCT.name,
-                        category: PRODUCT.productType,
-                        image: PRODUCT.images[0]
-                      })}
-                      className="w-full sm:w-auto flex items-center justify-center gap-3 bg-brand-red text-white text-sm md:text-base font-black uppercase tracking-widest px-10 py-5 rounded-full hover:bg-brand-red-dark transition-all duration-300 hover:scale-105 premium-shadow-red cursor-pointer"
+                    <a 
+                      href={`https://wa.me/923712362363?text=${encodeURIComponent(`Hi GolHawks! I would like to inquire about lot booking for: ${PRODUCT.name}`)}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-red text-white text-sm md:text-base font-black uppercase tracking-widest px-10 py-5 rounded-full hover:bg-brand-red-dark transition-all duration-300 hover:scale-105 premium-shadow-red cursor-pointer"
                     >
-                      <MessageCircle className="w-5 h-5" />
-                      Add to Quote Bag
-                    </button>
+                      <MessageCircle className="w-5 h-5 text-white" />
+                      Contact Us for Lot Booking
+                    </a>
                  </div>
                </motion.div>
             </div>
@@ -188,7 +183,13 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
          {/* Background Texture */}
          <div className="absolute inset-0 noise-bg opacity-[0.03] z-0" />
          
-        <div className="max-w-[1400px] mx-auto relative z-10">
+        <div className="max-w-[1400px] mx-auto relative z-10 text-center">
+          <div className="flex justify-center mb-4">
+            <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/50 px-4.5 py-2 rounded-full shadow-md">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
+              <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-white">Private Labeling</span>
+            </div>
+          </div>
           <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter text-white mb-12 text-center">
             Customization Options For This Product
           </h2>

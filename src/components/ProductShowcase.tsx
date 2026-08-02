@@ -62,10 +62,13 @@ const ProductShowcase = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-brand-red font-black uppercase tracking-[0.2em] md:tracking-[0.4em] text-[8px] md:text-xs mb-4 md:mb-6 block">Product Categories</span>
+            <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/50 px-4.5 py-2 rounded-full mb-4 md:mb-6 shadow-md">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
+              <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-white">Product Categories</span>
+            </div>
             <h2 className="text-4xl md:text-8xl font-black leading-[0.9] tracking-tighter">
               BATTLE <br />
-              <span className="text-white/20 italic">CERTIFIED</span>
+              <span className="text-zinc-600 italic">CERTIFIED</span>
             </h2>
           </motion.div>
         </div>

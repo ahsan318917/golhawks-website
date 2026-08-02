@@ -75,9 +75,9 @@ const CTA = () => {
             transition={{ duration: 0.8 }}
             className="lg:sticky lg:top-32"
           >
-            <div className="inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/20 px-4 py-2 rounded-full mb-8">
-              <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
-              <span className="text-xs font-black uppercase tracking-[0.3em] text-brand-red">Global Inquiries Open</span>
+            <div className="inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/30 px-5 py-2.5 rounded-full mb-8">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
+              <span className="text-xs md:text-sm font-black uppercase tracking-[0.3em] text-brand-red">Global Inquiries Open</span>
             </div>
             
             <h2 className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 md:mb-10 leading-[0.9] md:leading-[0.85] tracking-tighter uppercase text-white">
@@ -91,11 +91,11 @@ const CTA = () => {
 
             <div className="space-y-6 md:space-y-8 mb-10 md:mb-12">
               <div className="flex items-center gap-4 md:gap-6 group">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-zinc-800 border border-zinc-700 rounded-xl md:rounded-2xl flex items-center justify-center text-zinc-300 md:group-hover:text-brand-red md:group-hover:border-brand-red/30 transition-all">
-                  <Mail className="w-5 h-5 md:w-6 md:h-6" />
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-zinc-900 border border-zinc-700 rounded-xl md:rounded-2xl flex items-center justify-center text-zinc-200 md:group-hover:text-brand-red md:group-hover:border-brand-red/50 transition-all shadow-md">
+                  <Mail className="w-6 h-6 md:w-7 md:h-7 text-brand-red" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[8px] md:text-xs text-zinc-300 uppercase font-black tracking-[0.2em] md:tracking-[0.3em] mb-0.5 md:mb-1">Business Email</div>
+                  <div className="text-xs md:text-sm text-zinc-300 uppercase font-black tracking-[0.2em] md:tracking-[0.3em] mb-0.5 md:mb-1">Business Email</div>
                   <a href="mailto:info@golhawksinternational.com" className="text-sm sm:text-lg md:text-xl font-bold text-white md:hover:text-brand-red transition-colors uppercase tracking-tight block truncate">
                     info@golhawksinternational.com
                   </a>
@@ -103,12 +103,12 @@ const CTA = () => {
               </div>
 
               <div className="flex items-center gap-4 md:gap-6 group">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-zinc-800 border border-zinc-700 rounded-xl md:rounded-2xl flex items-center justify-center text-zinc-300 md:group-hover:text-green-500 md:group-hover:border-green-500/30 transition-all">
-                  <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6" />
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-zinc-900 border border-zinc-700 rounded-xl md:rounded-2xl flex items-center justify-center text-zinc-200 md:group-hover:text-green-500 md:group-hover:border-green-500/50 transition-all shadow-md">
+                  <FaWhatsapp className="w-6 h-6 md:w-7 md:h-7 text-green-400" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[8px] md:text-xs text-zinc-300 uppercase font-black tracking-[0.2em] md:tracking-[0.3em] mb-0.5 md:mb-1">WhatsApp Business</div>
-                  <a href="https://wa.me/923712362363" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-lg md:text-xl font-bold text-white md:hover:text-green-500 transition-colors uppercase tracking-tight block">
+                  <div className="text-xs md:text-sm text-zinc-300 uppercase font-black tracking-[0.2em] md:tracking-[0.3em] mb-0.5 md:mb-1">WhatsApp Business</div>
+                  <a href="https://wa.me/923712362363" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-lg md:text-xl font-bold text-white md:hover:text-green-400 transition-colors uppercase tracking-tight block">
                     +92 371 2362363
                   </a>
                 </div>

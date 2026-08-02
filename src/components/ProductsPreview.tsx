@@ -5,8 +5,6 @@ import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import Image from "next/image";
 
-import { useQuoteCart } from "@/context/QuoteContext";
-
 const categoryPills = [
   "All Products", "Martial Arts", "Denim", "Fleece & Streetwear", "Performance"
 ];
@@ -43,8 +41,6 @@ const featuredProducts = [
 ];
 
 const ProductsPreview = () => {
-  const { addItem } = useQuoteCart();
-  
   return (
     <section className="section-padding bg-zinc-950 relative overflow-hidden border-t border-zinc-800">
       {/* Background Depth - Glow */}
@@ -59,15 +55,19 @@ const ProductsPreview = () => {
           className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-6 md:gap-10"
         >
           <div>
+            <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/50 px-4.5 py-2 rounded-full mb-4 md:mb-6 shadow-md">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
+              <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-white">Featured Catalog</span>
+            </div>
             <h2 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.9] tracking-tighter uppercase text-white mb-6">
-              FEATURED <br /><span className="text-zinc-700 italic">PRODUCTS</span>
+              FEATURED <br /><span className="text-zinc-500 italic">PRODUCTS</span>
             </h2>
             <div className="w-12 h-1 bg-brand-red mb-4" />
           </div>
           <motion.div>
-            <Link href="/products" className="group flex items-center gap-4 text-white/60 hover:text-white transition-colors duration-500 font-bold uppercase tracking-[0.3em] text-[11px] md:text-[11px] border-b border-zinc-600 hover:border-white pb-3 w-fit">
+            <Link href="/products" className="group flex items-center gap-4 text-white hover:text-brand-red transition-colors duration-500 font-bold uppercase tracking-[0.3em] text-xs border-b border-zinc-600 hover:border-brand-red pb-3 w-fit">
               View Entire Catalog
-              <ArrowRight className="w-3 h-3 md:w-4 md:h-4 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-500" />
+              <ArrowRight className="w-4 h-4 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-500" />
             </Link>
           </motion.div>
         </motion.div>
@@ -77,10 +77,10 @@ const ProductsPreview = () => {
           {categoryPills.map((pill, idx) => (
             <button 
               key={idx} 
-              className={`whitespace-nowrap px-6 py-2.5 rounded-full text-xs md:text-xs font-bold uppercase tracking-[0.1em] transition-all duration-300 ${
+              className={`whitespace-nowrap px-6 py-2.5 rounded-full text-xs md:text-sm font-bold uppercase tracking-[0.1em] transition-all duration-300 ${
                 idx === 0 
                 ? "bg-brand-red text-white" 
-                : "bg-zinc-800 text-zinc-200 hover:bg-zinc-700 hover:text-white"
+                : "bg-zinc-800 text-zinc-100 border border-zinc-700 hover:bg-zinc-700 hover:text-white"
               }`}
             >
               {pill}
@@ -100,7 +100,7 @@ const ProductsPreview = () => {
               className="flex-none w-[80vw] sm:w-[45vw] md:w-auto snap-center flex flex-col gap-4 group"
             >
               {/* Product Image */}
-              <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden bg-zinc-900 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] border border-zinc-800">
+              <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden bg-zinc-900 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] border border-zinc-700">
                 <Image
                   src={product.image}
                   alt={product.title}
@@ -110,27 +110,29 @@ const ProductsPreview = () => {
                   loading={i < 4 ? "eager" : "lazy"}
                 />
                 
-                {/* E-commerce Quick Action Overlay */}
+                {/* Lot Booking Quick Action Overlay */}
                 <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-zinc-950/90 to-transparent opacity-100 md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-500 flex justify-center">
-                  <button 
-                    onClick={() => addItem(product)}
-                    className="flex items-center justify-center w-full md:w-auto gap-2 bg-brand-red text-white text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-full hover:bg-red-700 transition-colors cursor-pointer"
+                  <a 
+                    href={`https://wa.me/923712362363?text=${encodeURIComponent(`Hi GolHawks! I would like to inquire about lot booking for: ${product.title}`)}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center w-full gap-2 bg-brand-red text-white text-xs font-black uppercase tracking-widest px-4 py-3.5 rounded-full hover:bg-red-700 transition-colors cursor-pointer text-center"
                   >
-                    <MessageCircle className="w-3.5 h-3.5" />
-                    Add to Quote
-                  </button>
+                    <MessageCircle className="w-4 h-4 flex-shrink-0 text-white" />
+                    <span>Contact For Lot Booking</span>
+                  </a>
                 </div>
               </div>
               
               {/* Product Info */}
               <div className="flex flex-col gap-1 px-1">
-                <p className="text-zinc-300 font-bold text-[11px] uppercase tracking-[0.2em]">
+                <p className="text-white font-bold text-xs uppercase tracking-[0.2em]">
                   {product.category}
                 </p>
                 <h3 className="text-lg md:text-xl font-black text-white leading-tight tracking-tight uppercase transition-colors duration-500 md:group-hover:text-brand-red">
                   {product.title}
                 </h3>
-                <p className="text-zinc-400 text-xs mt-1">
+                <p className="text-zinc-200 text-xs font-semibold mt-1">
                   {product.tech}
                 </p>
               </div>

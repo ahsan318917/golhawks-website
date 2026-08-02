@@ -102,10 +102,13 @@ const AboutPreview = () => {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="lg:pl-10 pt-12 lg:pt-24 text-white"
           >
-            <span className="text-brand-red font-black uppercase tracking-[0.4em] text-xs mb-8 block">Factory Operations</span>
+            <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/50 px-4.5 py-2 rounded-full mb-6 md:mb-8 shadow-md">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
+              <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-white">Factory Operations</span>
+            </div>
             <h2 className="text-4xl md:text-7xl font-black mb-10 leading-[0.85] tracking-tighter">
               PRECISION <br />
-              <span className="text-white/20 italic text-8xl">CONTROL</span>
+              <span className="text-zinc-600 italic text-8xl">CONTROL</span>
             </h2>
             
             <div className="mb-12">

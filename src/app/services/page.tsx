@@ -49,7 +49,10 @@ export default function ServicesPage() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-4xl"
           >
-            <span className="text-red-500 font-black uppercase tracking-[0.4em] text-xs mb-8 block">Core Capabilities</span>
+            <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/50 px-4.5 py-2 rounded-full mb-6 md:mb-8 shadow-md">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
+              <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-white">Core Capabilities</span>
+            </div>
             <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black leading-[0.85] tracking-tighter mb-12 uppercase text-white">
               INDUSTRIAL <br />
               <span className="text-zinc-700 italic">SOLUTIONS</span>

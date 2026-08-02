@@ -25,7 +25,7 @@ const Footer = () => {
                 <span className="text-2xl md:text-5xl font-black tracking-[-0.05em] leading-none text-white uppercase">
                   GOL<span className="text-brand-red italic">HAWKS</span>
                 </span>
-                <span className="text-[8px] md:text-xs font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] text-white/30 mt-2 md:mt-3 group-hover:text-white/60 transition-colors">
+                <span className="text-[9px] md:text-xs font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] text-zinc-300 mt-2 md:mt-3 group-hover:text-white transition-colors">
                   International
                 </span>
               </div>
@@ -36,22 +36,22 @@ const Footer = () => {
             <div className="flex gap-8 md:gap-10">
               <div className="flex items-center gap-2 md:gap-3">
                 <ShieldCheck className="w-4 h-4 md:w-5 md:h-5 text-brand-red" />
-                <span className="text-[8px] md:text-xs font-black uppercase tracking-widest text-white/60">Factory Direct</span>
+                <span className="text-[9px] md:text-xs font-black uppercase tracking-widest text-zinc-200">Factory Direct</span>
               </div>
               <div className="flex items-center gap-2 md:gap-3">
                 <Truck className="w-4 h-4 md:w-5 md:h-5 text-brand-red" />
-                <span className="text-[8px] md:text-xs font-black uppercase tracking-widest text-white/60">Global Freight</span>
+                <span className="text-[9px] md:text-xs font-black uppercase tracking-widest text-zinc-200">Global Freight</span>
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-1 gap-8 col-span-1 lg:col-span-1">
             <div>
-              <h4 className="text-white font-black mb-6 md:mb-8 uppercase tracking-[0.2em] md:tracking-[0.3em] text-[11px] md:text-xs">Operations</h4>
+              <h4 className="text-white font-black mb-6 md:mb-8 uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm">Operations</h4>
               <ul className="space-y-3 md:space-y-4">
-                <li><div className="text-white/40 hover:text-white transition-colors cursor-default text-[11px] md:text-[13px] font-bold uppercase tracking-wider">Sialkot, Pakistan</div></li>
-                <li><div className="text-white/40 hover:text-white transition-colors cursor-default text-[11px] md:text-[13px] font-bold uppercase tracking-wider">OEM/ODM Services</div></li>
-                <li><div className="text-white/40 hover:text-white transition-colors cursor-default text-[11px] md:text-[13px] font-bold uppercase tracking-wider">Batch QC Protocols</div></li>
+                <li><div className="text-zinc-300 hover:text-white transition-colors cursor-default text-xs md:text-sm font-bold uppercase tracking-wider">Sialkot, Pakistan</div></li>
+                <li><div className="text-zinc-300 hover:text-white transition-colors cursor-default text-xs md:text-sm font-bold uppercase tracking-wider">OEM/ODM Services</div></li>
+                <li><div className="text-zinc-300 hover:text-white transition-colors cursor-default text-xs md:text-sm font-bold uppercase tracking-wider">Batch QC Protocols</div></li>
               </ul>
             </div>
 

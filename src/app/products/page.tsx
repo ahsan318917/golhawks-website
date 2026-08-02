@@ -103,12 +103,13 @@ export default function ProductsPage() {
                }} 
                className="flex flex-col items-start text-left"
              >
-                <motion.span 
+                <motion.div 
                   variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                  className="text-brand-red font-bold uppercase tracking-[0.3em] text-xs mb-6"
+                  className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/50 px-4.5 py-2 rounded-full mb-6 shadow-md"
                 >
-                  Global Manufacturing
-                </motion.span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
+                  <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-white">Global Manufacturing</span>
+                </motion.div>
                 <motion.h1 
                   variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
                   className="text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] font-black leading-[0.85] tracking-tighter uppercase text-white mb-8"

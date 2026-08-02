@@ -16,10 +16,9 @@ const TrustMarquee = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-brand-red/[0.03] blur-[120px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
-        <div className="inline-flex items-center gap-4">
-          <div className="h-[1px] w-8 bg-brand-red/30" />
-          <span className="text-xs font-black uppercase tracking-[0.5em] text-white/60">Manufacturing Partners & Global Brands</span>
-          <div className="h-[1px] w-8 bg-brand-red/30" />
+        <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/50 px-5 py-2.5 rounded-full shadow-md">
+          <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
+          <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-white">Manufacturing Partners & Global Brands</span>
         </div>
       </div>
       
@@ -30,7 +29,7 @@ const TrustMarquee = () => {
           className="flex gap-32 items-center"
         >
           {brands.map((brand, i) => (
-            <span key={i} className="text-4xl md:text-6xl font-black text-white/50 hover:text-white/80 hover:text-brand-red/60 transition-all duration-700 cursor-default select-none tracking-tighter italic uppercase drop-shadow-[0_4px_6px_rgba(0,0,0,0.9)]">
+            <span key={i} className="text-4xl md:text-6xl font-black text-zinc-200 hover:text-brand-red transition-all duration-300 cursor-default select-none tracking-tighter italic uppercase drop-shadow-[0_4px_6px_rgba(0,0,0,0.9)]">
               {brand}
             </span>
           ))}

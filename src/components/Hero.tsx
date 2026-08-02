@@ -22,8 +22,8 @@ const Hero = () => {
         <source src="/hero.mp4" type="video/mp4" />
       </video>
 
-      {/* 2. Overlay - z-10 - Improved Contrast */}
-      <div className="absolute inset-0 bg-zinc-950/70 md:bg-zinc-950/60 z-10" />
+      {/* 2. Overlay - z-10 - Bright Video Visibility */}
+      <div className="absolute inset-0 bg-zinc-950/40 md:bg-zinc-950/30 z-10" />
 
       {/* 3. Content - z-20 */}
       <div className="relative z-20 h-full flex items-center pt-24 md:pt-32">
@@ -70,7 +70,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-              className="text-sm md:text-xl text-white/60 max-w-xl mb-8 md:mb-14 leading-relaxed font-medium text-left"
+              className="text-base md:text-xl text-zinc-100 max-w-xl mb-8 md:mb-14 leading-relaxed font-semibold text-left"
             >
               B2B sportswear manufacturing engineered for global brands. Technical precision meets scalable output in our quality-controlled facility.
             </motion.p>
@@ -83,7 +83,7 @@ const Hero = () => {
                   transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98, y: 0 }}
-                  className="bg-brand-red text-white px-8 md:px-14 py-4 md:py-6 rounded-full font-black uppercase tracking-[0.2em] text-[11px] md:text-xs flex items-center justify-center gap-4 transition-all duration-300 premium-shadow-red relative group overflow-hidden cursor-pointer"
+                  className="bg-brand-red text-white px-8 md:px-14 py-4 md:py-6 rounded-full font-black uppercase tracking-[0.2em] text-xs md:text-sm flex items-center justify-center gap-4 transition-all duration-300 premium-shadow-red relative group overflow-hidden cursor-pointer"
                 >
                   <div className="absolute inset-0 bg-zinc-700 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500" />
                   <span className="relative z-10 flex items-center gap-4">
@@ -100,23 +100,14 @@ const Hero = () => {
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98, y: 0 }}
                 href="https://wa.me/923712362363"
-                className="w-full sm:w-auto text-white/60 hover:text-white px-6 py-4 md:py-3 rounded-full font-black uppercase tracking-[0.2em] text-[11px] md:text-xs flex items-center justify-center gap-3 transition-all duration-300 border border-zinc-700 sm:border-transparent hover:border-zinc-600"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full sm:w-auto text-white bg-zinc-900/80 hover:bg-zinc-800 px-6 py-4 md:py-4 rounded-full font-black uppercase tracking-[0.2em] text-xs md:text-sm flex items-center justify-center gap-3 transition-all duration-300 border border-zinc-600 hover:border-brand-red"
               >
-                <MessageCircle className="w-4 h-4 text-green-500/60" />
+                <MessageCircle className="w-4 h-4 text-green-400" />
                 Talk to Specialist
               </motion.a>
             </div>
-          </div>
-        </div>
-
-        {/* Mobile-Friendly Trust Indicators */}
-        <div className="absolute bottom-6 md:bottom-16 left-0 w-full z-20 px-6 md:px-12">
-          <div className="max-w-7xl mx-auto flex justify-between items-center text-[9px] sm:text-[10px] md:text-xs font-black uppercase tracking-[0.05em] md:tracking-[0.4em] text-white/10 border-t border-zinc-800 pt-4 md:pt-8">
-            <motion.span animate={{ opacity: [0.1, 0.3, 0.1] }} transition={{ duration: 3, repeat: Infinity }}>Sialkot Operations</motion.span>
-            <span className="w-1 h-1 rounded-full bg-zinc-800" />
-            <motion.span animate={{ opacity: [0.1, 0.3, 0.1] }} transition={{ duration: 3, delay: 1, repeat: Infinity }}>Technical R&D</motion.span>
-            <span className="w-1 h-1 rounded-full bg-zinc-800" />
-            <motion.span animate={{ opacity: [0.1, 0.3, 0.1] }} transition={{ duration: 3, delay: 2, repeat: Infinity }}>Global Freight</motion.span>
           </div>
         </div>
       </div>

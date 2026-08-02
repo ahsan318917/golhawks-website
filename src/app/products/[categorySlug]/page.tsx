@@ -11,7 +11,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CATEGORY_DATA } from "@/data/categories";
 import { notFound } from "next/navigation";
 
-import { useQuoteCart } from "@/context/QuoteContext";
 import { use, useState, useMemo } from "react";
 
 export default function CategoryPage({ params }: { params: Promise<{ categorySlug: string }> }) {
@@ -22,7 +21,6 @@ export default function CategoryPage({ params }: { params: Promise<{ categorySlu
     notFound();
   }
 
-  const { addItem } = useQuoteCart();
   const [activeTab, setActiveTab] = useState(categoryData.filterTabs[0]);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -316,7 +314,7 @@ export default function CategoryPage({ params }: { params: Promise<{ categorySlu
                  >
                    <Link href={`/products/${categorySlug}/${p.id}`} className="block w-full">
                      <div className="flex flex-col gap-6 md:gap-8">
-                       <div className="relative w-full aspect-[4/5] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-zinc-800 bg-zinc-900 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:border-zinc-700 group-hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] group-active:scale-[0.98]">
+                       <div className="relative w-full aspect-[4/5] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-zinc-700/80 bg-zinc-900 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:border-brand-red/60 group-hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7),0_0_30px_rgba(196,18,48,0.15)] group-hover:-translate-y-1 group-active:scale-[0.98]">
                          <Image 
                            src={p.images[0]}
                            alt={p.name}
@@ -347,22 +345,16 @@ export default function CategoryPage({ params }: { params: Promise<{ categorySlu
                    
                    {/* Overlay Button */}
                    <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-[20px] group-hover:translate-y-0 z-20">
-                     <button 
-                       onClick={(e) => {
-                         e.preventDefault();
-                         e.stopPropagation();
-                         addItem({
-                           id: p.id,
-                           title: p.name,
-                           category: p.productType,
-                           image: p.images[0]
-                         });
-                       }}
-                       className="flex items-center gap-2 bg-brand-red text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-red-700 transition-colors shadow-2xl hover:scale-105 active:scale-95"
+                     <a 
+                       href={`https://wa.me/923712362363?text=${encodeURIComponent(`Hi GolHawks! I would like to inquire about lot booking for: ${p.name}`)}`}
+                       target="_blank"
+                       rel="noreferrer"
+                       onClick={(e) => e.stopPropagation()}
+                       className="flex items-center gap-2 bg-brand-red text-white text-xs font-black uppercase tracking-widest px-6 py-3 rounded-full hover:bg-red-700 transition-colors shadow-2xl hover:scale-105 active:scale-95"
                      >
-                       <MessageCircle className="w-3.5 h-3.5" />
-                       Add to Quote
-                     </button>
+                       <MessageCircle className="w-4 h-4 text-white" />
+                       Contact For Lot Booking
+                     </a>
                    </div>
                  </motion.div>
               ))}

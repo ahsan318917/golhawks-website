@@ -4,9 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Search, ShoppingBag } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useQuoteCart } from "@/context/QuoteContext";
 import SearchOverlay from "@/components/SearchOverlay";
 import Topbar from "@/components/Topbar";
 
@@ -15,7 +14,6 @@ const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const { items, toggleCart } = useQuoteCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +57,7 @@ const Navbar = () => {
               <span className="text-white">GOL</span>
               <span className="text-brand-red italic">HAWKS</span>
             </span>
-            <span className="text-[7px] md:text-[11px] font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-white/40 mt-1 group-hover:text-white/60 transition-colors">
+            <span className="text-[8px] md:text-[11px] font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-zinc-300 mt-1 group-hover:text-white transition-colors">
               International
             </span>
           </div>
@@ -74,7 +72,7 @@ const Navbar = () => {
                  key={link.name}
                  href={link.href}
                  className={`text-xs uppercase tracking-[0.2em] font-black transition-all pb-1 relative group ${
-                   isActive ? "text-brand-red" : "text-white/60 hover:text-white"
+                   isActive ? "text-brand-red" : "text-zinc-200 hover:text-white"
                  }`}
                >
                  {link.name}
@@ -86,27 +84,16 @@ const Navbar = () => {
           })}
         </div>
 
-        {/* Action Buttons & Icons (E-Commerce Style) */}
+        {/* Action Buttons & Icons */}
         <div className="flex items-center gap-4 md:gap-8">
-          {/* Search Icon */}
+          {/* Search Icon Button - Elevated Visual Focal Point */}
           <button 
             onClick={() => setIsSearchOpen(true)}
-            className="text-white/60 hover:text-white transition-colors cursor-pointer"
+            className="flex items-center gap-2 bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700 hover:border-brand-red text-white text-xs font-bold uppercase tracking-wider px-3.5 md:px-4 py-2 rounded-full transition-all shadow-md hover:scale-105 cursor-pointer"
+            aria-label="Search Catalog & FAQs"
           >
-            <Search className="w-5 h-5 md:w-6 md:h-6" />
-          </button>
-          
-          {/* Quote Bag (Shopping Cart) */}
-          <button 
-            onClick={toggleCart}
-            className="relative text-white/60 hover:text-white transition-colors group cursor-pointer"
-          >
-            <ShoppingBag className="w-5 h-5 md:w-6 md:h-6" />
-            {items.length > 0 && (
-              <span className="absolute -top-1.5 -right-2 bg-brand-red text-white text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                {items.length}
-              </span>
-            )}
+            <Search className="w-4 h-4 text-brand-red" />
+            <span className="hidden sm:inline">Search B2B</span>
           </button>
 
           {/* Mobile Toggle */}
