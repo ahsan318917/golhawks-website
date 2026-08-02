@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X, ArrowRight, HelpCircle, Layers, Wrench, PackageCheck, Box, Tag, Sparkles } from "lucide-react";
 import Link from "next/link";
@@ -159,9 +160,14 @@ const faqs = [
 ];
 
 export default function SearchOverlay({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  const [mounted, setMounted] = useState(false);
   const [query, setQuery] = useState("");
   const [activeTab, setActiveTab] = useState<"all" | "products" | "categories" | "services" | "faqs">("all");
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -211,7 +217,9 @@ export default function SearchOverlay({ isOpen, onClose }: { isOpen: boolean; on
   const totalResultsCount = matchingProducts.length + matchingCategories.length + matchingServices.length + matchingFaqs.length;
   const hasResults = totalResultsCount > 0;
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
         <motion.div 
@@ -219,7 +227,7 @@ export default function SearchOverlay({ isOpen, onClose }: { isOpen: boolean; on
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-[9999] bg-zinc-950 flex flex-col items-center pt-6 md:pt-10 pb-6 px-4 sm:px-8 overflow-hidden overscroll-none"
+          className="fixed inset-0 top-0 left-0 w-screen h-screen z-[99999] bg-zinc-950 flex flex-col items-center pt-8 md:pt-12 pb-8 px-4 sm:px-8 overflow-hidden overscroll-none"
         >
           {/* 7. Ambient Subtle Red Radial Spotlights & Noise Texture */}
           <div className="absolute inset-0 noise-bg opacity-[0.03] pointer-events-none z-0" />
@@ -527,6 +535,7 @@ export default function SearchOverlay({ isOpen, onClose }: { isOpen: boolean; on
           </div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }
