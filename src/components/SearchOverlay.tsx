@@ -166,13 +166,18 @@ export default function SearchOverlay({ isOpen, onClose }: { isOpen: boolean; on
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 100);
+      document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
       setQuery("");
       setActiveTab("all");
     }
-    return () => { document.body.style.overflow = "auto"; };
+    return () => {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+    };
   }, [isOpen]);
 
   const q = query.trim().toLowerCase();
@@ -214,7 +219,7 @@ export default function SearchOverlay({ isOpen, onClose }: { isOpen: boolean; on
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-[9999] bg-zinc-950 flex flex-col items-center pt-6 md:pt-12 px-4 sm:px-8 overflow-hidden"
+          className="fixed inset-0 z-[9999] bg-zinc-950 flex flex-col items-center pt-6 md:pt-10 pb-6 px-4 sm:px-8 overflow-hidden overscroll-none"
         >
           {/* 7. Ambient Subtle Red Radial Spotlights & Noise Texture */}
           <div className="absolute inset-0 noise-bg opacity-[0.03] pointer-events-none z-0" />
@@ -231,7 +236,7 @@ export default function SearchOverlay({ isOpen, onClose }: { isOpen: boolean; on
           </button>
 
           {/* 12. Desktop Balance: Widened Container */}
-          <div className="w-full max-w-5xl lg:max-w-6xl flex flex-col gap-7 md:gap-10 relative z-10">
+          <div className="w-full max-w-5xl lg:max-w-6xl h-full flex flex-col gap-6 md:gap-8 relative z-10 overflow-hidden">
             {/* Header & Eyebrow Badge */}
             <div>
               <span className="text-[11px] font-black uppercase tracking-[0.3em] text-brand-red flex items-center gap-2 mb-1.5">
@@ -315,7 +320,7 @@ export default function SearchOverlay({ isOpen, onClose }: { isOpen: boolean; on
             )}
 
             {/* 11 & 5. Results & Custom Scrollbar Container */}
-            <div className="w-full max-h-[56vh] overflow-y-auto pr-2 custom-scrollbar pb-14">
+            <div className="w-full flex-1 min-h-0 overflow-y-auto overscroll-contain pr-2 custom-scrollbar pb-14">
               {q === "" ? (
                 /* DEFAULT VIEW: Category Shortcuts & FAQs */
                 <div className="flex flex-col gap-12 md:gap-14">
