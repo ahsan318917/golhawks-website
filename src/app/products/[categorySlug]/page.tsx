@@ -310,51 +310,62 @@ export default function CategoryPage({ params }: { params: Promise<{ categorySlu
                    animate={{ opacity: 1, y: 0 }}
                    exit={{ opacity: 0, scale: 0.95 }}
                    transition={{ duration: 0.4 }}
-                   className="group relative"
+                   className="group relative flex flex-col gap-6 md:gap-8"
                  >
-                   <Link href={`/products/${categorySlug}/${p.id}`} className="block w-full">
-                     <div className="flex flex-col gap-6 md:gap-8">
-                       <div className="relative w-full aspect-[4/5] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-zinc-700/80 bg-zinc-900 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:border-brand-red/60 group-hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7),0_0_30px_rgba(196,18,48,0.15)] group-hover:-translate-y-1 group-active:scale-[0.98]">
-                         <Image 
-                           src={p.images[0]}
-                           alt={p.name}
-                           fill
-                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                           className="object-cover transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] contrast-[1.05] saturate-[1.05] group-hover:scale-105"
-                           loading={i < 3 ? "eager" : "lazy"}
-                           priority={i < 3}
-                         />
-                         
-                         {/* Add to Quote Overlay */}
-                         <div className="absolute inset-0 bg-zinc-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                       </div>
-                       
-                       <div className="flex flex-col gap-3 px-2 md:px-4">
-                         <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-white leading-none tracking-tighter uppercase transition-colors duration-500 group-hover:text-zinc-200">
-                           {p.name}
-                         </h3>
-                         <p className="text-zinc-300 font-bold text-[11px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em]">
-                           {p.spec}
-                         </p>
-                         <p className="text-zinc-200 text-xs md:text-sm leading-relaxed font-medium line-clamp-2 md:line-clamp-3 mt-1">
-                           {p.description}
-                         </p>
-                       </div>
+                   {/* Product Image Box */}
+                   <div className="relative w-full aspect-[4/5] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-zinc-700/80 bg-zinc-900 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:border-brand-red/60 group-hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7),0_0_30px_rgba(196,18,48,0.15)] group-hover:-translate-y-1 group-active:scale-[0.98]">
+                     <Link href={`/products/${categorySlug}/${p.id}`} className="absolute inset-0 z-10 block">
+                       <Image 
+                         src={p.images[0]}
+                         alt={p.name}
+                         fill
+                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                         className="object-cover transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] contrast-[1.05] saturate-[1.05] group-hover:scale-105"
+                         loading={i < 3 ? "eager" : "lazy"}
+                         priority={i < 3}
+                       />
+                     </Link>
+                     
+                     {/* Lot Booking Button Overlay - Visible on Mobile + Hover on Desktop */}
+                     <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-zinc-950/95 via-zinc-950/60 to-transparent opacity-100 md:opacity-0 md:translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300 flex justify-center z-20 pointer-events-auto">
+                       <a 
+                         href={`https://wa.me/923712362363?text=${encodeURIComponent(`Hi GolHawks! I would like to inquire about lot booking for: ${p.name}`)}`}
+                         target="_blank"
+                         rel="noreferrer"
+                         className="flex items-center justify-center w-full gap-2 bg-brand-red text-white text-xs font-black uppercase tracking-widest px-6 py-3.5 rounded-full hover:bg-red-700 transition-all shadow-xl hover:scale-105 active:scale-95 text-center cursor-pointer"
+                       >
+                         <MessageCircle className="w-4 h-4 text-white flex-shrink-0" />
+                         <span>Contact For Lot Booking</span>
+                       </a>
                      </div>
-                   </Link>
+                   </div>
                    
-                   {/* Overlay Button */}
-                   <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-[20px] group-hover:translate-y-0 z-20">
-                     <a 
-                       href={`https://wa.me/923712362363?text=${encodeURIComponent(`Hi GolHawks! I would like to inquire about lot booking for: ${p.name}`)}`}
-                       target="_blank"
-                       rel="noreferrer"
-                       onClick={(e) => e.stopPropagation()}
-                       className="flex items-center gap-2 bg-brand-red text-white text-xs font-black uppercase tracking-widest px-6 py-3 rounded-full hover:bg-red-700 transition-colors shadow-2xl hover:scale-105 active:scale-95"
-                     >
-                       <MessageCircle className="w-4 h-4 text-white" />
-                       Contact For Lot Booking
-                     </a>
+                   {/* Product Info */}
+                   <div className="flex flex-col gap-3 px-2 md:px-4">
+                     <Link href={`/products/${categorySlug}/${p.id}`} className="block">
+                       <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-white leading-none tracking-tighter uppercase transition-colors duration-500 group-hover:text-brand-red">
+                         {p.name}
+                       </h3>
+                     </Link>
+                     <p className="text-zinc-300 font-bold text-[11px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em]">
+                       {p.spec}
+                     </p>
+                     <p className="text-zinc-200 text-xs md:text-sm leading-relaxed font-medium line-clamp-2 md:line-clamp-3 mt-1">
+                       {p.description}
+                     </p>
+
+                     {/* Direct Mobile & Desktop CTA Button */}
+                     <div className="mt-2 pt-2">
+                       <a 
+                         href={`https://wa.me/923712362363?text=${encodeURIComponent(`Hi GolHawks! I would like to inquire about lot booking for: ${p.name}`)}`}
+                         target="_blank"
+                         rel="noreferrer"
+                         className="w-full inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white text-xs font-black uppercase tracking-widest px-5 py-3 rounded-full transition-all shadow-lg hover:scale-[1.02] active:scale-95 cursor-pointer text-center"
+                       >
+                         <MessageCircle className="w-4 h-4 text-white flex-shrink-0" />
+                         <span>Contact For Lot Booking</span>
+                       </a>
+                     </div>
                    </div>
                  </motion.div>
               ))}
