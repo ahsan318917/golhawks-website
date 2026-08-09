@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Search } from "lucide-react";
+import { Menu, X, Search, Mail, Phone, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import SearchOverlay from "@/components/SearchOverlay";
 import Topbar from "@/components/Topbar";
@@ -143,12 +143,31 @@ const Navbar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
-                className="mt-12 pt-12 border-t border-zinc-800"
+                className="mt-8 pt-8 border-t border-zinc-800 space-y-4"
               >
-                <p className="text-xs font-black uppercase tracking-[0.4em] text-white/20 mb-6">Operational Base</p>
-                <div className="flex items-center gap-4">
-                  <span className="w-8 h-[1px] bg-brand-red" />
-                  <p className="text-lg font-bold text-white/60 italic">Sialkot, Pakistan</p>
+                <p className="text-xs font-black uppercase tracking-[0.4em] text-white/20 mb-4">Direct Contact & Base</p>
+                
+                <a 
+                  href="mailto:info@golhawksinternational.com" 
+                  className="flex items-center gap-3 text-sm font-semibold text-zinc-300 hover:text-white transition-colors"
+                >
+                  <Mail className="w-4 h-4 text-brand-red shrink-0" />
+                  <span className="truncate">info@golhawksinternational.com</span>
+                </a>
+
+                <a 
+                  href="https://wa.me/923712362363" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="flex items-center gap-3 text-sm font-semibold text-zinc-300 hover:text-white transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-brand-red shrink-0" />
+                  <span>+92 371 2362363</span>
+                </a>
+
+                <div className="flex items-center gap-3 text-sm font-semibold text-zinc-400 pt-1">
+                  <MapPin className="w-4 h-4 text-brand-red shrink-0" />
+                  <span>Sialkot, Pakistan (GMT+5)</span>
                 </div>
               </motion.div>
             </div>

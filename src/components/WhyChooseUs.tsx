@@ -102,6 +102,36 @@ const WhyChooseUs = () => {
             ))}
           </motion.div>
         </div>
+
+        {/* B2B Manufacturing Industrial Compliance & Standards Strip */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-16 md:mt-24 pt-8 border-t border-zinc-800/80 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 text-center"
+        >
+          <div className="bg-[#12151D] border border-zinc-800 p-4 rounded-xl flex flex-col items-center justify-center">
+            <span className="text-white font-black text-xs md:text-sm tracking-widest uppercase">ISO 9001:2015</span>
+            <span className="text-[10px] md:text-xs font-bold text-zinc-300 uppercase tracking-wider mt-1">Quality System</span>
+          </div>
+          <div className="bg-[#12151D] border border-zinc-800 p-4 rounded-xl flex flex-col items-center justify-center">
+            <span className="text-white font-black text-xs md:text-sm tracking-widest uppercase">WRAP AUDITED</span>
+            <span className="text-[10px] md:text-xs font-bold text-zinc-300 uppercase tracking-wider mt-1">Ethical Labor</span>
+          </div>
+          <div className="bg-[#12151D] border border-zinc-800 p-4 rounded-xl flex flex-col items-center justify-center">
+            <span className="text-white font-black text-xs md:text-sm tracking-widest uppercase">OEKO-TEX 100</span>
+            <span className="text-[10px] md:text-xs font-bold text-zinc-300 uppercase tracking-wider mt-1">Eco Fabric Dyes</span>
+          </div>
+          <div className="bg-[#12151D] border border-zinc-800 p-4 rounded-xl flex flex-col items-center justify-center">
+            <span className="text-white font-black text-xs md:text-sm tracking-widest uppercase">AQL 2.5 QC</span>
+            <span className="text-[10px] md:text-xs font-bold text-zinc-300 uppercase tracking-wider mt-1">Batch Inspection</span>
+          </div>
+          <div className="bg-[#12151D] border border-zinc-800 p-4 rounded-xl flex flex-col items-center justify-center col-span-2 sm:col-span-1">
+            <span className="text-white font-black text-xs md:text-sm tracking-widest uppercase">JUKI AUTOMATED</span>
+            <span className="text-[10px] md:text-xs font-bold text-zinc-300 uppercase tracking-wider mt-1">Stitching Tech</span>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -25,11 +25,18 @@ export type CategoryData = {
     weight: string;
     composition: string;
     leadTime: string;
+    sampleTime?: string;
     moq: string;
     production?: string;
+    shippingTerms?: string;
+    packaging?: string;
   };
   customisation: string[];
   filterTabs: string[];
+  manufacturingHighlights?: {
+    title: string;
+    details: string;
+  }[];
 };
 
 export const CATEGORY_DATA: Record<string, CategoryData> = {
@@ -41,8 +48,18 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       weight: "450 - 550 GSM",
       composition: "100% Cotton Pearl Weave / Ripstop",
       leadTime: "4 - 6 Weeks",
-      moq: "100 Pieces / Style"
+      sampleTime: "7 - 10 Days",
+      moq: "100 Pieces / Style",
+      production: "OEM / ODM Private Label",
+      shippingTerms: "FOB Sialkot / Air & Sea Freight",
+      packaging: "Individual Polybag / Master Carton"
     },
+    manufacturingHighlights: [
+      { title: "Pre-Shrunk Weave", details: "Preshrunk fabric treatment ensures minimal dimensional change (<3%) after washing." },
+      { title: "Reinforced Construction", details: "Stress points, armpits, and side slits reinforced with 3-ply heavy bar-tack stitching." },
+      { title: "EVA Foam Collar", details: "Molded EVA foam lapel insert resists sweat absorption and maintains collar structure." },
+      { title: "Sample Dispatch", details: "Physical counter-sample dispatch within 7-10 working days upon receiving tech pack." }
+    ],
     customisation: ["Custom Embroidery", "Woven Patches", "Reinforced Triple Stitching", "EVA Foam Collars"],
     products: [
       { 
@@ -135,9 +152,18 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       weight: "10oz – 16oz",
       composition: "100% Cotton Denim / Stretch Denim / Selvedge",
       leadTime: "5–7 Weeks",
+      sampleTime: "7 - 10 Days",
       moq: "150 Pieces / Style",
-      production: "OEM / ODM"
+      production: "OEM / ODM Private Label",
+      shippingTerms: "FOB Sialkot / Air & Sea Freight",
+      packaging: "Individual Polybag / Master Carton"
     },
+    manufacturingHighlights: [
+      { title: "Shuttle Loom Selvedge", details: "Authentic selvedge edge weaving and premium elastane-blended indigo denims." },
+      { title: "Industrial Wash Finishing", details: "Enzyme, stone wash, laser whisker, and tinting capabilities tailored to brand tech packs." },
+      { title: "Heavy-Duty Hardware", details: "Custom brass shank buttons, copper rivets, and debossed genuine leather waist patches." },
+      { title: "Sample Dispatch", details: "Physical counter-sample dispatch within 7-10 working days upon receiving tech pack." }
+    ],
     customisation: ["Stone Wash", "Acid Wash", "Enzyme Wash", "Laser Distressing", "Embroidery", "Screen Printing", "Leather Patches", "Custom Hardware"],
     products: [
       { 
@@ -230,8 +256,18 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       weight: "180 - 250 GSM",
       composition: "Nylon Spandex / Recycled Poly",
       leadTime: "4 - 5 Weeks",
-      moq: "100 Pieces / Color"
+      sampleTime: "7 - 10 Days",
+      moq: "100 Pieces / Color",
+      production: "OEM / ODM Private Label",
+      shippingTerms: "FOB Sialkot / Air & Sea Freight",
+      packaging: "Individual Polybag / Master Carton"
     },
+    manufacturingHighlights: [
+      { title: "4-Way Stretch Matrix", details: "High-elastane nylon & recycled polyester blends for shape retention and zero transparency." },
+      { title: "Flatlock Seam Stitching", details: "Ultra-flat 4-needle 6-thread coverstitch to prevent skin chafing during intense movement." },
+      { title: "Moisture Management", details: "Capillary wicking yarns facilitate rapid moisture dispersion and quick drying." },
+      { title: "Sample Dispatch", details: "Physical counter-sample dispatch within 7-10 working days upon receiving tech pack." }
+    ],
     customisation: ["Sublimation", "Reflective Heat Transfer", "Laser Cut Venting", "Silicone Grippers"],
     products: [
       { 
@@ -324,8 +360,18 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
       weight: "280–420 GSM",
       composition: "Cotton / Polyester Fleece",
       leadTime: "4–6 Weeks",
-      moq: "100 Pieces / Style"
+      sampleTime: "7 - 10 Days",
+      moq: "100 Pieces / Style",
+      production: "OEM / ODM Private Label",
+      shippingTerms: "FOB Sialkot / Air & Sea Freight",
+      packaging: "Individual Polybag / Master Carton"
     },
+    manufacturingHighlights: [
+      { title: "Heavyweight French Terry", details: "High-density 280-420 GSM cotton fleece pre-washed for soft hand-feel and minimal shrinkage." },
+      { title: "Ribbing & Fit Recovery", details: "Heavy 2x2 elastane ribbing at cuffs and hem to maintain elastic recovery over extended wear." },
+      { title: "Print & Branding Ready", details: "Smooth combed cotton surface optimized for screen printing, puff ink, and high-density embroidery." },
+      { title: "Sample Dispatch", details: "Physical counter-sample dispatch within 7-10 working days upon receiving tech pack." }
+    ],
     customisation: ["Screen Printing", "Puff Printing", "Embroidery", "Silicone Badges", "Rubber Patches", "Woven Labels", "DTF Printing", "Reflective Prints"],
     products: [
       { 

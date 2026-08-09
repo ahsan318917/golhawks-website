@@ -1,12 +1,13 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Image from "next/image";
 import Link from "next/link";
-import { Settings, Plus, MessageCircle } from "lucide-react";
-import { motion } from "framer-motion";
+import { Settings, Plus, MessageCircle, ShieldCheck, Clock, PackageCheck, Truck, CheckCircle2 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { CATEGORY_DATA } from "@/data/categories";
 import { notFound } from "next/navigation";
@@ -23,6 +24,20 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
   if (!PRODUCT) notFound();
 
   const relatedProducts = categoryData.products.filter(p => p.id !== productId).slice(0, 3);
+
+  const [showStickyBar, setShowStickyBar] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 350) {
+        setShowStickyBar(true);
+      } else {
+        setShowStickyBar(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <main className="min-h-screen bg-zinc-950 selection:bg-brand-red selection:text-white overflow-x-hidden relative">
@@ -90,6 +105,26 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
                    {PRODUCT.description}
                  </p>
 
+                 {/* Authentic B2B Manufacturing Badges */}
+                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10 p-4 rounded-xl bg-zinc-900/60 border border-zinc-800">
+                   <div className="flex items-center gap-2 text-zinc-300">
+                     <Clock className="w-4 h-4 text-brand-red shrink-0" />
+                     <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider">7-10 Days Sample</span>
+                   </div>
+                   <div className="flex items-center gap-2 text-zinc-300">
+                     <ShieldCheck className="w-4 h-4 text-brand-red shrink-0" />
+                     <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider">Pre-Shipment QC</span>
+                   </div>
+                   <div className="flex items-center gap-2 text-zinc-300">
+                     <PackageCheck className="w-4 h-4 text-brand-red shrink-0" />
+                     <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider">Tech Pack Ready</span>
+                   </div>
+                   <div className="flex items-center gap-2 text-zinc-300">
+                     <Truck className="w-4 h-4 text-brand-red shrink-0" />
+                     <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider">FOB Sialkot Cargo</span>
+                   </div>
+                 </div>
+
                  {PRODUCT.features && PRODUCT.features.length > 0 && (
                    <ul className="mb-12 space-y-4">
                      {PRODUCT.features.map((feature, idx) => (
@@ -146,30 +181,42 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
             
             {/* Right: Manufacturing Specifications (Sticky B2B Anchor) */}
             <div className="lg:col-span-5 relative">
-               <div className="bg-zinc-900 backdrop-blur-xl border border-zinc-700 p-8 md:p-12 lg:sticky lg:top-32 shadow-2xl">
+               <div className="bg-zinc-900 backdrop-blur-xl border border-zinc-700 p-8 md:p-12 lg:sticky lg:top-32 shadow-2xl rounded-2xl">
                  <h3 className="text-xs font-black uppercase tracking-[0.2em] text-white mb-8 flex items-center gap-3 border-b border-zinc-700 pb-6">
-                   <Settings className="w-4 h-4 text-brand-red" /> Technical Specs
+                   <Settings className="w-4 h-4 text-brand-red" /> Technical & Manufacturing Specs
                  </h3>
-                 <ul className="space-y-6">
+                 <ul className="space-y-5">
                    <li className="flex justify-between items-center text-xs md:text-sm border-b border-zinc-800 pb-4">
-                     <span className="text-zinc-300 font-bold uppercase tracking-widest text-xs md:text-xs">Minimum Order</span>
+                     <span className="text-zinc-300 font-bold uppercase tracking-widest text-xs">Minimum Order</span>
                      <span className="text-white font-bold uppercase tracking-wide text-right">{categoryData.specs.moq}</span>
                    </li>
                    <li className="flex justify-between items-center text-xs md:text-sm border-b border-zinc-800 pb-4">
-                     <span className="text-zinc-300 font-bold uppercase tracking-widest text-xs md:text-xs">Lead Time</span>
+                     <span className="text-zinc-300 font-bold uppercase tracking-widest text-xs">Sample Dispatch</span>
+                     <span className="text-white font-bold uppercase tracking-wide text-right">{categoryData.specs.sampleTime || "7 - 10 Days"}</span>
+                   </li>
+                   <li className="flex justify-between items-center text-xs md:text-sm border-b border-zinc-800 pb-4">
+                     <span className="text-zinc-300 font-bold uppercase tracking-widest text-xs">Bulk Production</span>
                      <span className="text-white font-bold uppercase tracking-wide text-right">{categoryData.specs.leadTime}</span>
                    </li>
                    <li className="flex justify-between items-center text-xs md:text-sm border-b border-zinc-800 pb-4">
-                     <span className="text-zinc-300 font-bold uppercase tracking-widest text-xs md:text-xs">Fabric Weight</span>
+                     <span className="text-zinc-300 font-bold uppercase tracking-widest text-xs">Fabric Weight</span>
                      <span className="text-white font-bold uppercase tracking-wide text-right">{categoryData.specs.weight}</span>
                    </li>
                    <li className="flex justify-between items-center text-xs md:text-sm border-b border-zinc-800 pb-4">
-                     <span className="text-zinc-300 font-bold uppercase tracking-widest text-xs md:text-xs">Composition</span>
+                     <span className="text-zinc-300 font-bold uppercase tracking-widest text-xs">Composition</span>
                      <span className="text-white font-bold uppercase tracking-wide text-right max-w-[60%]">{categoryData.specs.composition}</span>
                    </li>
                    <li className="flex justify-between items-center text-xs md:text-sm border-b border-zinc-800 pb-4">
-                     <span className="text-zinc-300 font-bold uppercase tracking-widest text-xs md:text-xs">Packaging</span>
-                     <span className="text-white font-bold uppercase tracking-wide text-right">Poly-bagged / Tagged</span>
+                     <span className="text-zinc-300 font-bold uppercase tracking-widest text-xs">Production Type</span>
+                     <span className="text-white font-bold uppercase tracking-wide text-right">{categoryData.specs.production || "OEM / ODM Private Label"}</span>
+                   </li>
+                   <li className="flex justify-between items-center text-xs md:text-sm border-b border-zinc-800 pb-4">
+                     <span className="text-zinc-300 font-bold uppercase tracking-widest text-xs">Shipping Terms</span>
+                     <span className="text-white font-bold uppercase tracking-wide text-right max-w-[60%]">{categoryData.specs.shippingTerms || "FOB Sialkot / Air & Sea Freight"}</span>
+                   </li>
+                   <li className="flex justify-between items-center text-xs md:text-sm pb-2">
+                     <span className="text-zinc-300 font-bold uppercase tracking-widest text-xs">Packaging</span>
+                     <span className="text-white font-bold uppercase tracking-wide text-right">{categoryData.specs.packaging || "Individual Polybag / Master Carton"}</span>
                    </li>
                  </ul>
                </div>
@@ -178,32 +225,58 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
          </div>
       </section>
 
-      {/* 4. Customisation Options */}
+      {/* 4. Manufacturing Quality Highlights & Customisation Options */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-y border-zinc-800 relative overflow-hidden bg-gradient-to-b from-zinc-900 via-black to-zinc-950 mt-12">
          {/* Background Texture */}
          <div className="absolute inset-0 noise-bg opacity-[0.03] z-0" />
          
-        <div className="max-w-[1400px] mx-auto relative z-10 text-center">
-          <div className="flex justify-center mb-4">
-            <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/50 px-4.5 py-2 rounded-full shadow-md">
-              <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
-              <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-white">Private Labeling</span>
+        <div className="max-w-[1400px] mx-auto relative z-10">
+          {categoryData.manufacturingHighlights && categoryData.manufacturingHighlights.length > 0 && (
+            <div className="mb-20">
+              <div className="text-center mb-12">
+                <span className="text-xs font-black uppercase tracking-[0.3em] text-brand-red block mb-3">Authentic Factory Standards</span>
+                <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter text-white">
+                  Manufacturing & Quality Control Protocols
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {categoryData.manufacturingHighlights.map((hl, idx) => (
+                  <div key={idx} className="border border-zinc-800 bg-zinc-900/60 p-6 rounded-2xl flex flex-col justify-between hover:border-brand-red/40 transition-colors">
+                    <div>
+                      <div className="w-8 h-8 rounded-full bg-brand-red/10 border border-brand-red/30 flex items-center justify-center mb-4">
+                        <CheckCircle2 className="w-4 h-4 text-brand-red" />
+                      </div>
+                      <h4 className="text-sm font-bold uppercase tracking-wide text-white mb-2">{hl.title}</h4>
+                      <p className="text-xs text-zinc-300 leading-relaxed font-medium">{hl.details}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-          <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter text-white mb-12 text-center">
-            Customization Options For This Product
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-             {categoryData.customisation.map((cap, i) => (
-                <div key={i} className="border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm p-6 md:p-8 flex flex-col items-start gap-6 hover:bg-zinc-900 hover:border-brand-red/50 transition-all duration-300 group rounded-2xl">
-                   <div className="w-10 h-10 rounded-full bg-zinc-950 border border-zinc-800 flex items-center justify-center group-hover:border-brand-red/50 transition-colors">
-                     <Plus className="w-4 h-4 text-brand-red" />
-                   </div>
-                   <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-zinc-300 group-hover:text-white transition-colors">
-                     {cap}
-                   </span>
-                </div>
-             ))}
+          )}
+
+          <div className="text-center">
+            <div className="flex justify-center mb-4">
+              <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/50 px-4.5 py-2 rounded-full shadow-md">
+                <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
+                <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-white">Private Labeling</span>
+              </div>
+            </div>
+            <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter text-white mb-12 text-center">
+              Customization Options For This Product
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+               {categoryData.customisation.map((cap, i) => (
+                  <div key={i} className="border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm p-6 md:p-8 flex flex-col items-start gap-6 hover:bg-zinc-900 hover:border-brand-red/50 transition-all duration-300 group rounded-2xl">
+                     <div className="w-10 h-10 rounded-full bg-zinc-950 border border-zinc-800 flex items-center justify-center group-hover:border-brand-red/50 transition-colors">
+                       <Plus className="w-4 h-4 text-brand-red" />
+                     </div>
+                     <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-zinc-300 group-hover:text-white transition-colors">
+                       {cap}
+                     </span>
+                  </div>
+               ))}
+            </div>
           </div>
         </div>
       </section>
@@ -244,6 +317,52 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
       <CTA />
       
       <Footer />
+
+      {/* Sticky Mobile & Tablet Lot-Booking Action Bar */}
+      <AnimatePresence>
+        {showStickyBar && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed bottom-0 left-0 right-0 z-[90] lg:hidden bg-zinc-950/95 backdrop-blur-2xl border-t border-zinc-800 px-4 py-3 shadow-[0_-10px_30px_rgba(0,0,0,0.8)]"
+          >
+            <div className="flex items-center justify-between gap-3 max-w-md mx-auto">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="relative w-11 h-11 rounded-lg overflow-hidden bg-zinc-900 border border-zinc-700 shrink-0">
+                  <Image 
+                    src={PRODUCT.images[0]} 
+                    alt={PRODUCT.name} 
+                    fill 
+                    className="object-cover" 
+                    sizes="44px"
+                  />
+                </div>
+                <div className="flex flex-col min-w-0">
+                  <span className="text-xs font-black uppercase text-white truncate leading-tight">
+                    {PRODUCT.name}
+                  </span>
+                  <span className="text-[10px] font-bold uppercase text-brand-red tracking-wider">
+                    MOQ: {categoryData.specs.moq}
+                  </span>
+                </div>
+              </div>
+
+              <a
+                href={`https://wa.me/923712362363?text=${encodeURIComponent(`Hi GolHawks! I would like to inquire about lot booking for: ${PRODUCT.name}`)}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white text-xs font-black uppercase tracking-wider px-5 py-3 rounded-full transition-all shadow-lg active:scale-95 shrink-0 cursor-pointer"
+              >
+                <MessageCircle className="w-4 h-4 text-white" />
+                <span>Inquire Lot</span>
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }
+

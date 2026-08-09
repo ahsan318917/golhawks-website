@@ -382,7 +382,7 @@ export default function CategoryPage({ params }: { params: Promise<{ categorySlu
          <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.06),transparent_60%)] blur-[100px] -translate-x-1/2 pointer-events-none z-0" />
          
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 md:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 md:gap-24 mb-16">
             <div className="flex flex-col">
               <h4 className="text-white/90 font-bold uppercase tracking-[0.2em] text-xs mb-8 border-b border-zinc-800 pb-4">
                 Product Specifications
@@ -396,6 +396,12 @@ export default function CategoryPage({ params }: { params: Promise<{ categorySlu
                   <span className="text-zinc-300/80 font-medium uppercase tracking-widest text-xs">Composition</span>
                   <span className="text-white/80 font-medium tracking-wide text-xs text-right max-w-[65%]">{categoryData.specs.composition}</span>
                 </li>
+                {categoryData.specs.packaging && (
+                  <li className="flex justify-between items-baseline text-xs md:text-sm border-b border-white/[0.02] pb-5">
+                    <span className="text-zinc-300/80 font-medium uppercase tracking-widest text-xs">Packaging</span>
+                    <span className="text-white/80 font-medium tracking-wide text-xs text-right">{categoryData.specs.packaging}</span>
+                  </li>
+                )}
               </ul>
             </div>
             <div className="flex flex-col">
@@ -425,18 +431,38 @@ export default function CategoryPage({ params }: { params: Promise<{ categorySlu
                   <span className="text-white/80 font-medium tracking-wide text-xs text-right">{categoryData.specs.moq}</span>
                 </li>
                 <li className="flex justify-between items-baseline text-xs md:text-sm border-b border-white/[0.02] pb-5">
-                  <span className="text-zinc-300/80 font-medium uppercase tracking-widest text-xs">Lead Time</span>
+                  <span className="text-zinc-300/80 font-medium uppercase tracking-widest text-xs">Sample Dispatch</span>
+                  <span className="text-white/80 font-medium tracking-wide text-xs text-right">{categoryData.specs.sampleTime || "7 - 10 Days"}</span>
+                </li>
+                <li className="flex justify-between items-baseline text-xs md:text-sm border-b border-white/[0.02] pb-5">
+                  <span className="text-zinc-300/80 font-medium uppercase tracking-widest text-xs">Bulk Lead Time</span>
                   <span className="text-white/80 font-medium tracking-wide text-xs text-right">{categoryData.specs.leadTime}</span>
                 </li>
-                {categoryData.specs.production && (
+                {categoryData.specs.shippingTerms && (
                   <li className="flex justify-between items-baseline text-xs md:text-sm border-b border-white/[0.02] pb-5">
-                    <span className="text-zinc-300/80 font-medium uppercase tracking-widest text-xs">Production</span>
-                    <span className="text-white/80 font-medium tracking-wide text-xs text-right">{categoryData.specs.production}</span>
+                    <span className="text-zinc-300/80 font-medium uppercase tracking-widest text-xs">Freight & Shipping</span>
+                    <span className="text-white/80 font-medium tracking-wide text-xs text-right">{categoryData.specs.shippingTerms}</span>
                   </li>
                 )}
               </ul>
             </div>
           </div>
+
+          {categoryData.manufacturingHighlights && categoryData.manufacturingHighlights.length > 0 && (
+            <div className="pt-12 border-t border-zinc-800">
+              <h4 className="text-white/90 font-bold uppercase tracking-[0.2em] text-xs mb-8 text-center">
+                Technical Quality & Process Standards
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {categoryData.manufacturingHighlights.map((hl, idx) => (
+                  <div key={idx} className="bg-zinc-950/80 border border-zinc-800 p-6 rounded-xl">
+                    <h5 className="text-xs font-bold uppercase tracking-wider text-brand-red mb-2">{hl.title}</h5>
+                    <p className="text-xs text-zinc-300 leading-relaxed font-medium">{hl.details}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

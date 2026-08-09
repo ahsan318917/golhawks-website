@@ -16,7 +16,6 @@ const Hero = () => {
         loop
         playsInline
         preload="metadata"
-        poster="/hero-poster.jpg"
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
         <source src="/hero.mp4" type="video/mp4" />
