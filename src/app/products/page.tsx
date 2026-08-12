@@ -13,69 +13,103 @@ const productCategories = [
     id: "martial-arts",
     title: "Martial Arts Wear",
     subtitle: "Combat Engineering",
-    description: "Technical combat apparel engineered for extreme durability and professional performance. Our manufacturing facility specializes in heavyweight weaves and reinforced construction for elite global combat brands.",
-    image: "https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=2072&auto=format&fit=crop",
+    description: "Technical combat apparel engineered for extreme durability, traditional cuts, and professional performance. Specializing in 14oz smooth cotton canvas Kata Gis, 450 GSM pearl weave BJJ Gis, and satin Muay Thai shorts.",
+    image: "/images/Martial Arts/pro bjj gi.png",
     specs: [
-      "Heavyweight Pearl Weave Cotton (450-550 GSM)",
-      "Reinforced Triple-Needle Contrast Stitching",
+      "14oz (450 GSM) Smooth Cotton Canvas Kata Gis",
+      "Heavyweight Pearl Weave Cotton (450 GSM BJJ Gis)",
+      "Reinforced Triple-Needle & 3-Ply Bar-Tack Stitching",
       "Anti-Microbial & Pre-Shrunk Fabric Treatment",
-      "EVA Foam Padded Collars for Structural Integrity",
-      "IBJJF & Tournament Compliant Specifications"
+      "Satin Muay Thai & Sparring Shorts"
     ],
-    fabric: "100% Cotton Pearl Weave / Ripstop Poly-Cotton",
+    fabric: "100% Cotton Canvas / Pearl Weave / Ripstop Poly-Cotton",
     capabilities: "Full OEM/ODM Production • Custom Embroidery • Woven Patch Integration",
-    tags: ["BJJ GIs", "Karate Gi", "Judo Uniforms", "Rank Belts", "Training Apparel"]
+    tags: ["BJJ Gis", "Kata Karate Gis", "Taekwondo Uniforms", "Judo Gis", "No-Gi Rashguards", "MMA Shorts", "Muay Thai & Boxing"]
+  },
+  {
+    id: "cotton-apparel",
+    title: "Cotton & Casualwear",
+    subtitle: "Streetwear & Retail Blanks",
+    description: "Premium cotton apparel manufacturing ranging from 180 GSM Peruvian Pima tees to 240 GSM heavyweight oversized streetwear blanks and organic pique polos.",
+    image: "/images/Cotton Casualwear/Heavyweight oversized tee.png",
+    specs: [
+      "Heavyweight Oversized Streetwear Tees (240 GSM)",
+      "Organic Cotton Pique Polo Shirts (220 GSM)",
+      "Luxury Peruvian Pima Crewnecks (180 GSM)",
+      "Custom Acid Wash & Vintage Wash Distressing",
+      "Twin-Needle Collar & Sleeve Coverstitching"
+    ],
+    fabric: "100% Combed Ring-Spun Cotton / Organic Pique / Peruvian Pima",
+    capabilities: "High-Density Screen Printing • Puff Ink • Custom Woven Neck Tags",
+    tags: ["Heavyweight Tees", "Pique Polo Shirts", "Casual Shirts", "Long Sleeves", "Pima Cotton", "Vintage Wash", "Tank Tops"]
+  },
+  {
+    id: "team-jerseys",
+    title: "Sports Shirts & Team Jerseys",
+    subtitle: "Custom Match Day Apparel",
+    description: "Custom athletic team kits, sublimated sports jerseys, and high-performance club apparel engineered for match day and professional leagues.",
+    image: "/images/SPORTS SHIRTS & TEAM JERSEYS/Football Match Kits.png",
+    specs: [
+      "Sublimated Soccer & Football Match Day Kits (180 GSM)",
+      "UV-Protective Cricket Team Shirts & Polos (200 GSM)",
+      "Double-Layer Retro Mesh Basketball Uniforms (220 GSM)",
+      "Heavyweight Contact Rugby & Multi-Sport Jerseys (280 GSM)",
+      "Full HD Dye-Sublimation & Custom Club Crest Badges"
+    ],
+    fabric: "Micro-Interlock Poly / Breathable Jacquard Mesh / Poly-Spandex",
+    capabilities: "HD Italian Dye-Sublimation • Rubberized 3D Crests • Player Name/Number Customization",
+    tags: ["Football Kits", "Cricket Team Shirts", "Basketball Uniforms", "Rugby Jerseys", "Esports Tops", "Warmup Jackets", "Multi-Sport Tees"]
   },
   {
     id: "denim",
     title: "Denim Products",
     subtitle: "Selvedge Authority",
     description: "Premium selvedge denim, custom washed finishes, and expert tailoring. From raw denim to complex distressed streetwear, we provide scalable manufacturing solutions for premium global labels.",
-    image: "https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=2052&auto=format&fit=crop",
+    image: "/images/Denim Products/Selvedge Denim.png",
     specs: [
-      "Premium Selvedge & Stretch Denim Options",
+      "14oz (450 GSM) Shuttle-Loomed Japanese Selvedge",
       "Custom Laser Distressing & Hand-Scraping",
       "Enzyme, Stone, and Acid Wash Specializations",
-      "Reinforced Rivet Placement & YKK Hardware",
+      "16oz (520 GSM) Heavy-Duty Industrial Workwear",
       "Precision Tapering & Engineered Fit Systems"
     ],
     fabric: "Organic Cotton Denim / Selvedge / Elastane Blends",
     capabilities: "Proprietary Washing Lab • Custom Hardware Sourcing • Pattern Engineering",
-    tags: ["Raw Denim", "Denim Jackets", "Washed Jeans", "Streetwear", "Custom Apparel"]
+    tags: ["Japanese Selvedge", "Trucker Jackets", "Classic Jeans", "Denim Shirts", "Utility Workwear", "Distressed Denim", "Denim Overshirts"]
   },
   {
     id: "fleece",
     title: "Fleece & Streetwear",
     subtitle: "Urban Essentials",
     description: "Heavyweight fleece and urban coordinates engineered for the modern streetwear market. We focus on oversized silhouettes, premium hand-feel, and high-density branding applications.",
-    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1974&auto=format&fit=crop",
+    image: "/images/FLEECE&Streetwear/Premium_Hoodies.png",
     specs: [
-      "Heavyweight French Terry & Brushed Fleece (300-450 GSM)",
+      "Heavyweight Boxy Hoodies (400 GSM French Terry)",
       "Oversized Drop-Shoulder Patterns & Boxy Fits",
-      "Double-Lined Hoods & Heavy-Ribbed Cuffs",
+      "Double-Lined Hoods & Heavy 2x2 Ribbed Cuffs",
       "High-Density Screen Print & Puff Print Capabilities",
-      "Sustainable Fabric Sourcing & Custom Dyeing"
+      "Matching Dye-Lot Luxury Tracksuit Sets (380 GSM)"
     ],
     fabric: "Premium Combed Cotton / Polyester Interlock Blends",
     capabilities: "Large Scale Screen Printing • Custom Pantones • Private Label Packaging",
-    tags: ["Hoodies", "Joggers", "Tech Fleece", "Oversized Tees", "Urban Sets"]
+    tags: ["Boxy Hoodies", "Crewnecks", "Tapered Joggers", "Zip Hoodies", "Luxury Tracksuits", "Quarter-Zips", "Fleece Shorts"]
   },
   {
     id: "performance",
     title: "Performance Wear",
     subtitle: "Technical Athleticism",
     description: "Advanced compression and moisture-management apparel for professional athletes. Our production line utilizes laser-cutting and flat-lock stitching for friction-less athletic performance.",
-    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/Performancewear/Compression wear.png",
     specs: [
-      "4-Way Stretch Compression Technology",
-      "Advanced Moisture-Wicking & Rapid-Dry Finish",
-      "Flat-Lock Frictionless Seam Construction",
-      "Laser-Cut Ventilation & Heat-Mapped Zones",
+      "240 GSM 4-Way Stretch Compression Base Layers",
+      "Squat-Proof Interlock Leggings (280 GSM)",
+      "4-Needle 6-Thread Flat-Lock Frictionless Seams",
+      "High-Support Impact Sports Bras (300 GSM)",
       "Sublimation Printing & Reflective Branding"
     ],
     fabric: "Nylon Spandex / Recycled Polyester / Mesh Blends",
     capabilities: "Sublimation Lab • Laser Cutting • Heat Press Integration",
-    tags: ["Compression", "Training Shorts", "Rash Guards", "Tracksuits", "Leggings"]
+    tags: ["Compression Tops", "Moisture-Wicking Tees", "Aero Shorts", "Squat-Proof Leggings", "Sports Bras", "Windbreakers", "Seamless Active Tops"]
   }
 ];
 

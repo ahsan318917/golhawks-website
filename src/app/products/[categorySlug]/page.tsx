@@ -10,8 +10,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { CATEGORY_DATA } from "@/data/categories";
 import { notFound } from "next/navigation";
-
 import { use, useState, useMemo } from "react";
+import ProductCustomizer from "@/components/ProductCustomizer";
 
 export default function CategoryPage({ params }: { params: Promise<{ categorySlug: string }> }) {
   const { categorySlug } = use(params);
@@ -449,7 +449,7 @@ export default function CategoryPage({ params }: { params: Promise<{ categorySlu
           </div>
 
           {categoryData.manufacturingHighlights && categoryData.manufacturingHighlights.length > 0 && (
-            <div className="pt-12 border-t border-zinc-800">
+            <div className="pt-12 border-t border-zinc-800 mb-16">
               <h4 className="text-white/90 font-bold uppercase tracking-[0.2em] text-xs mb-8 text-center">
                 Technical Quality & Process Standards
               </h4>
@@ -463,6 +463,14 @@ export default function CategoryPage({ params }: { params: Promise<{ categorySlu
               </div>
             </div>
           )}
+
+          {/* Interactive B2B Order Specification Builder */}
+          <div className="pt-8">
+            <ProductCustomizer
+              categoryTitle={categoryData.title}
+              customisationOptions={categoryData.customisation}
+            />
+          </div>
         </div>
       </section>
 

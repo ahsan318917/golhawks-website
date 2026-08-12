@@ -6,8 +6,9 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Image from "next/image";
 import Link from "next/link";
-import { Settings, Plus, MessageCircle, ShieldCheck, Clock, PackageCheck, Truck, CheckCircle2 } from "lucide-react";
+import { Settings, Plus, MessageCircle, ShieldCheck, Clock, PackageCheck, Truck, CheckCircle2, Sliders } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ProductCustomizer from "@/components/ProductCustomizer";
 
 import { CATEGORY_DATA } from "@/data/categories";
 import { notFound } from "next/navigation";
@@ -165,15 +166,23 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
                     </div>
                  </div>
                  
-                 <div className="mt-12">
+                 <div className="mt-12 flex flex-col sm:flex-row gap-4">
                     <a 
                       href={`https://wa.me/923712362363?text=${encodeURIComponent(`Hi GolHawks! I would like to inquire about lot booking for: ${PRODUCT.name}`)}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-red text-white text-sm md:text-base font-black uppercase tracking-widest px-10 py-5 rounded-full hover:bg-brand-red-dark transition-all duration-300 hover:scale-105 premium-shadow-red cursor-pointer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-red text-white text-sm md:text-base font-black uppercase tracking-widest px-8 py-5 rounded-full hover:bg-brand-red-dark transition-all duration-300 hover:scale-105 premium-shadow-red cursor-pointer"
                     >
                       <MessageCircle className="w-5 h-5 text-white" />
                       Contact Us for Lot Booking
+                    </a>
+
+                    <a 
+                      href="#customizer-builder"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-zinc-900 border border-zinc-700 hover:border-brand-red text-white text-sm md:text-base font-black uppercase tracking-widest px-8 py-5 rounded-full transition-all duration-300 hover:scale-105 cursor-pointer"
+                    >
+                      <Sliders className="w-5 h-5 text-brand-red" />
+                      Customize Spec Order
                     </a>
                  </div>
                </motion.div>
@@ -255,7 +264,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
             </div>
           )}
 
-          <div className="text-center">
+          <div className="text-center mb-16">
             <div className="flex justify-center mb-4">
               <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/50 px-4.5 py-2 rounded-full shadow-md">
                 <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
@@ -277,6 +286,16 @@ export default function ProductDetailPage({ params }: { params: Promise<{ catego
                   </div>
                ))}
             </div>
+          </div>
+
+          {/* Interactive B2B Order Specification Builder */}
+          <div id="customizer-builder" className="pt-12">
+            <ProductCustomizer
+              categoryTitle={categoryData.title}
+              productName={PRODUCT.name}
+              defaultColors={PRODUCT.colors}
+              customisationOptions={categoryData.customisation}
+            />
           </div>
         </div>
       </section>
