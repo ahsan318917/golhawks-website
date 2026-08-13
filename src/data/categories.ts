@@ -74,7 +74,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Regular Grappling & BJJ Training",
         colors: ["Obsidian Black", "Arctic White", "Royal Blue"],
         fabrics: ["450 GSM Pearl Weave", "10oz Ripstop Poly-Cotton"],
-        images: ["/images/Martial Arts/pro bjj gi.png"],
+        images: ["/images/martial-arts/pro-bjj-gi.png"],
         productType: "BJJ Gis", collection: "Pro", gender: "Unisex", tags: ["bjj", "gi", "grappling", "kimono"],
         dateAdded: "2026-06-01", popularity: 95, featured: true
       },
@@ -90,7 +90,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Traditional Martial Arts & Kata Competition",
         colors: ["Arctic White"],
         fabrics: ["14oz (450 GSM) Smooth Cotton Canvas"],
-        images: ["/images/Martial Arts/kata_karate_gi.png"],
+        images: ["/images/martial-arts/kata-karate-gi.png"],
         productType: "Kata Karate Gis", collection: "Core", gender: "Unisex", tags: ["karate", "gi", "kata", "canvas"],
         dateAdded: "2026-05-15", popularity: 90, featured: true
       },
@@ -106,7 +106,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Taekwondo Training & Poomsae Competition",
         colors: ["White / Black V-Neck"],
         fabrics: ["8oz Ribbed Poly-Cotton"],
-        images: ["/images/Martial Arts/takenwodo_.png"],
+        images: ["/images/martial-arts/taekwondo-uniform.png"],
         productType: "Taekwondo Uniforms", collection: "Competition", gender: "Unisex", tags: ["taekwondo", "tkd", "uniform"],
         dateAdded: "2026-06-20", popularity: 88, featured: false
       },
@@ -122,7 +122,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Judo Grading & International Competition",
         colors: ["Arctic White", "Royal Blue"],
         fabrics: ["750 GSM Cotton Double Weave"],
-        images: ["/images/Martial Arts/PRO_JUDO_GI.png"],
+        images: ["/images/martial-arts/pro-judo-gi.png"],
         productType: "Judo Gis", collection: "Pro", gender: "Unisex", tags: ["judo", "gi", "competition"],
         dateAdded: "2026-06-12", popularity: 85, featured: false
       },
@@ -138,7 +138,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "No-Gi Grappling & MMA Base Layer",
         colors: ["Rank Colors", "Obsidian Black"],
         fabrics: ["240 GSM Poly-Spandex (88/12)"],
-        images: ["/images/Martial Arts/Rash guard.png"],
+        images: ["/images/martial-arts/rash-guard.png"],
         productType: "No-Gi Rashguards", collection: "Pro", gender: "Men", tags: ["rashguard", "nogi", "mma", "compression"],
         dateAdded: "2026-06-10", popularity: 92, featured: true
       },
@@ -154,7 +154,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "MMA, Kickboxing & No-Gi",
         colors: ["Matte Black", "Tactical Camo"],
         fabrics: ["180 GSM Stretch Microfiber"],
-        images: ["/images/Martial Arts/MMA Fight Shorts.png"],
+        images: ["/images/martial-arts/mma-fight-shorts.png"],
         productType: "MMA Fight Shorts", collection: "Core", gender: "Men", tags: ["shorts", "mma", "nogi"],
         dateAdded: "2026-05-20", popularity: 86, featured: false
       },
@@ -170,7 +170,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Muay Thai & Kickboxing",
         colors: ["Matte Black & Gold", "Red & White"],
         fabrics: ["220 GSM Satin Polyester"],
-        images: ["/images/Martial Arts/muay_thai_shorts.png"],
+        images: ["/images/martial-arts/muay-thai-shorts.png"],
         productType: "Muay Thai & Boxing", collection: "Pro", gender: "Unisex", tags: ["muaythai", "boxing", "shorts"],
         dateAdded: "2026-06-22", popularity: 89, featured: true
       }
@@ -211,7 +211,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Streetwear Brand Blanks & Retail",
         colors: ["Obsidian Black", "Vintage Wash Grey", "Off-White"],
         fabrics: ["240 GSM Combed Cotton"],
-        images: ["/images/Cotton Casualwear/Heavyweight oversized tee.png"],
+        images: ["/images/cotton-casualwear/heavyweight-oversized-tee.png"],
         productType: "Heavyweight Tees", collection: "Streetwear", gender: "Unisex", tags: ["tee", "tshirt", "heavyweight", "oversized"],
         dateAdded: "2026-06-15", popularity: 96, featured: true
       },
@@ -227,7 +227,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Corporate Apparel & Golf Retail",
         colors: ["Navy Blue", "Carbon Black", "Arctic White"],
         fabrics: ["220 GSM Cotton Pique"],
-        images: ["/images/Cotton Casualwear/executive-pique_polo.png"],
+        images: ["/images/cotton-casualwear/executive-pique-polo.png"],
         productType: "Pique Polo Shirts", collection: "Executive", gender: "Men", tags: ["polo", "shirt", "pique", "corporate"],
         dateAdded: "2026-06-18", popularity: 91, featured: true
       },
@@ -243,7 +243,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Smart Casual & Lifestyle Retail",
         colors: ["Light Blue", "Arctic White"],
         fabrics: ["180 GSM Cotton Oxford"],
-        images: ["/images/Cotton Casualwear/casual_button_down.png"],
+        images: ["/images/cotton-casualwear/casual-button-down.png"],
         productType: "Casual Shirts", collection: "Classic", gender: "Men", tags: ["shirt", "oxford", "buttondown"],
         dateAdded: "2026-06-10", popularity: 84, featured: false
       },
@@ -259,7 +259,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Fall/Winter Streetwear Merch",
         colors: ["Obsidian Black", "Heather Grey", "Olive Green"],
         fabrics: ["260 GSM Heavy Cotton"],
-        images: ["/images/Cotton Casualwear/Heavyweight_long_sleeve.png"],
+        images: ["/images/cotton-casualwear/heavyweight-long-sleeve.png"],
         productType: "Long Sleeves", collection: "Heavyweight", gender: "Unisex", tags: ["longsleeve", "shirt", "heavyweight"],
         dateAdded: "2026-06-12", popularity: 87, featured: false
       },
@@ -275,7 +275,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Luxury Retail & Boutique Programs",
         colors: ["Arctic White", "Matte Black", "Sand"],
         fabrics: ["180 GSM Pima Cotton"],
-        images: ["/images/Cotton Casualwear/luxury pima tee.png"],
+        images: ["/images/cotton-casualwear/luxury-pima-tee.png"],
         productType: "Pima Cotton Tees", collection: "Luxury", gender: "Unisex", tags: ["pima", "tee", "luxury"],
         dateAdded: "2026-06-25", popularity: 93, featured: true
       },
@@ -291,7 +291,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Vintage Streetwear Collections",
         colors: ["Acid Charcoal", "Washed Olive"],
         fabrics: ["220 GSM Washed Cotton"],
-        images: ["/images/Cotton Casualwear/vintage_acid_wash_tee.png"],
+        images: ["/images/cotton-casualwear/vintage-acid-wash-tee.png"],
         productType: "Vintage Washed Tees", collection: "Vintage", gender: "Unisex", tags: ["acidwash", "vintage", "tee"],
         dateAdded: "2026-06-08", popularity: 89, featured: false
       },
@@ -307,7 +307,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Gym Bodybuilding & Casualwear",
         colors: ["Obsidian Black", "Arctic White"],
         fabrics: ["200 GSM Ribbed Cotton"],
-        images: ["/images/Cotton Casualwear/athletic_ribbed_tank.png"],
+        images: ["/images/cotton-casualwear/athletic-ribbed-tank.png"],
         productType: "Tank Tops", collection: "Core", gender: "Men", tags: ["tank", "singlet", "ribbed"],
         dateAdded: "2026-06-05", popularity: 82, featured: false
       }
@@ -348,7 +348,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Professional Soccer Club Match Kits",
         colors: ["Custom Club Colors", "Black & Gold"],
         fabrics: ["180 GSM Micro-Interlock Poly"],
-        images: ["/images/SPORTS SHIRTS & TEAM JERSEYS/Football Match Kits.png"],
+        images: ["/images/team-jerseys/football-match-kits.png"],
         productType: "Football Kits", collection: "Pro", gender: "Unisex", tags: ["soccer", "football", "jersey", "kit"],
         dateAdded: "2026-06-15", popularity: 98, featured: true
       },
@@ -364,7 +364,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Cricket Leagues & Club Tournaments",
         colors: ["Custom Team Colors"],
         fabrics: ["200 GSM Jacquard Mesh"],
-        images: ["/images/SPORTS SHIRTS & TEAM JERSEYS/Cricket Team Shirts.png"],
+        images: ["/images/team-jerseys/cricket-team-shirts.png"],
         productType: "Cricket Team Shirts", collection: "Pro", gender: "Unisex", tags: ["cricket", "shirt", "polo", "jersey"],
         dateAdded: "2026-06-18", popularity: 95, featured: true
       },
@@ -380,7 +380,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Basketball Leagues & College Tournaments",
         colors: ["Navy & Gold", "Black & Crimson"],
         fabrics: ["220 GSM Poly Mesh"],
-        images: ["/images/SPORTS SHIRTS & TEAM JERSEYS/Basketball Team Uniforms.png"],
+        images: ["/images/team-jerseys/basketball-uniforms.png"],
         productType: "Basketball Uniforms", collection: "Pro", gender: "Unisex", tags: ["basketball", "jersey", "uniform"],
         dateAdded: "2026-06-10", popularity: 91, featured: false
       },
@@ -396,7 +396,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Rugby Union, League & Contact Sports",
         colors: ["Red & Black Stripes", "Navy"],
         fabrics: ["280 GSM Stretch Poly-Elastane"],
-        images: ["/images/SPORTS SHIRTS & TEAM JERSEYS/Rugby Sports Jerseys.png"],
+        images: ["/images/team-jerseys/rugby-sports-jerseys.png"],
         productType: "Rugby Sports Jerseys", collection: "Heavyweight", gender: "Men", tags: ["rugby", "jersey", "contact"],
         dateAdded: "2026-06-22", popularity: 89, featured: true
       },
@@ -412,7 +412,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Esports Teams, Streamers & Gaming Orgs",
         colors: ["Purple Cyber", "Neon Volt"],
         fabrics: ["160 GSM Poly-Spandex"],
-        images: ["/images/SPORTS SHIRTS & TEAM JERSEYS/Esports & Gaming Team Tops.png"],
+        images: ["/images/team-jerseys/esports-team-tops.png"],
         productType: "Esports Team Tops", collection: "Pro", gender: "Unisex", tags: ["esports", "gaming", "jersey"],
         dateAdded: "2026-06-05", popularity: 87, featured: false
       },
@@ -428,7 +428,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Sideline Warmup & Club Travel Apparel",
         colors: ["Black & Red", "Navy & White"],
         fabrics: ["200 GSM Aero-Shell Poly"],
-        images: ["/images/SPORTS SHIRTS & TEAM JERSEYS/Team Warmup & Training Track Jackets.png"],
+        images: ["/images/team-jerseys/team-warmup-jackets.png"],
         productType: "Team Warmup Jackets", collection: "Core", gender: "Unisex", tags: ["jacket", "warmup", "tracksuit", "team"],
         dateAdded: "2026-06-08", popularity: 93, featured: true
       },
@@ -444,7 +444,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Volleyball, Athletics & Tournament Teams",
         colors: ["Navy & Gold", "White & Blue"],
         fabrics: ["140 GSM Poly Mesh"],
-        images: ["/images/SPORTS SHIRTS & TEAM JERSEYS/Volleyball & Multi-Sport Athletic Tees.png"],
+        images: ["/images/team-jerseys/volleyball-multi-sport-tees.png"],
         productType: "Multi-Sport Tees", collection: "Core", gender: "Unisex", tags: ["volleyball", "multisport", "jersey"],
         dateAdded: "2026-06-02", popularity: 84, featured: false
       }
@@ -485,7 +485,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Heritage Streetwear & Denim Retail",
         colors: ["Indigo Raw", "Washed Black"],
         fabrics: ["14oz Japanese Selvedge"],
-        images: ["/images/Denim Products/Selvedge Denim.png"],
+        images: ["/images/denim/selvedge-denim.png"],
         productType: "Japanese Selvedge", collection: "Heritage", gender: "Men", tags: ["jeans", "selvedge", "raw", "denim"],
         dateAdded: "2026-06-05", popularity: 95, featured: true
       },
@@ -501,7 +501,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Casual Outerwear",
         colors: ["Vintage Blue", "Overdyed Black"],
         fabrics: ["12oz Stretch Denim"],
-        images: ["/images/Denim Products/Denim Jacket.png"],
+        images: ["/images/denim/denim-jacket.png"],
         productType: "Trucker Jackets", collection: "Heritage", gender: "Unisex", tags: ["jacket", "trucker", "outerwear"],
         dateAdded: "2026-05-28", popularity: 88, featured: true
       },
@@ -517,7 +517,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Everyday Retail Wear",
         colors: ["Indigo", "Light Blue", "Black"],
         fabrics: ["12oz Stretch Denim"],
-        images: ["/images/Denim Products/Denim Jeans.png"],
+        images: ["/images/denim/denim-jeans.png"],
         productType: "Classic Jeans", collection: "Core", gender: "Unisex", tags: ["jeans", "denim", "bottoms"],
         dateAdded: "2026-06-15", popularity: 90, featured: false
       },
@@ -533,7 +533,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Smart Casual Wear",
         colors: ["Light Blue", "Indigo"],
         fabrics: ["6oz Cotton Chambray"],
-        images: ["/images/Denim Products/denim_shirt_new.png"],
+        images: ["/images/denim/denim-shirt.png"],
         productType: "Denim Shirts", collection: "Core", gender: "Men", tags: ["shirt", "chambray", "top"],
         dateAdded: "2026-06-10", popularity: 82, featured: false
       },
@@ -549,7 +549,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Industrial Utility & Workwear",
         colors: ["Raw Indigo", "Charcoal"],
         fabrics: ["16oz Heavyweight Denim"],
-        images: ["/images/Denim Products/Denim Workwear.png"],
+        images: ["/images/denim/denim-workwear.png"],
         productType: "Utility Workwear", collection: "Utility", gender: "Men", tags: ["workwear", "utility", "overalls"],
         dateAdded: "2026-06-20", popularity: 85, featured: true
       },
@@ -565,7 +565,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Streetwear Fashion Retail",
         colors: ["Vintage Light Wash", "Dirty Wash Indigo"],
         fabrics: ["13oz Ring-Spun Denim"],
-        images: ["/images/Denim Products/Distressed Vintage Jeans.png"],
+        images: ["/images/denim/distressed-vintage-jeans.png"],
         productType: "Distressed Denim", collection: "Streetwear", gender: "Unisex", tags: ["distressed", "jeans", "streetwear"],
         dateAdded: "2026-06-14", popularity: 87, featured: false
       },
@@ -581,7 +581,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Layered Casual & Workwear",
         colors: ["Raw Indigo", "Washed Olive"],
         fabrics: ["10oz Denim Canvas"],
-        images: ["/images/Denim Products/Denim Utility OVERSHIRT.png"],
+        images: ["/images/denim/denim-utility-overshirt.png"],
         productType: "Denim Overshirts", collection: "Utility", gender: "Men", tags: ["overshirt", "denim", "outerwear"],
         dateAdded: "2026-06-03", popularity: 81, featured: false
       }
@@ -622,7 +622,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Premium Streetwear Brand Blank",
         colors: ["Heather Grey", "Vintage Wash Black", "Bone"],
         fabrics: ["400 GSM French Terry Cotton"],
-        images: ["/images/FLEECE&Streetwear/Premium_Hoodies.png"],
+        images: ["/images/fleece/premium-hoodies.png"],
         productType: "Boxy Hoodies", collection: "Streetwear", gender: "Unisex", tags: ["hoodie", "fleece", "heavyweight", "oversized"],
         dateAdded: "2026-06-10", popularity: 96, featured: true
       },
@@ -638,7 +638,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Everyday Retail Apparel & Merch",
         colors: ["Navy Blue", "Heather Grey", "Black"],
         fabrics: ["320 GSM Cotton Fleece"],
-        images: ["/images/FLEECE&Streetwear/Crewneck&Sweat shirts.png"],
+        images: ["/images/fleece/crewneck-sweatshirts.png"],
         productType: "Crewneck Sweatshirts", collection: "Core", gender: "Unisex", tags: ["crewneck", "sweatshirt", "fleece"],
         dateAdded: "2026-06-12", popularity: 92, featured: true
       },
@@ -654,7 +654,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Lifestyle & Lounge Wear",
         colors: ["Heather Grey", "Vintage Wash Black"],
         fabrics: ["350 GSM Brushed Fleece"],
-        images: ["/images/FLEECE&Streetwear/Joggers.png"],
+        images: ["/images/fleece/joggers.png"],
         productType: "Tapered Joggers", collection: "Core", gender: "Unisex", tags: ["joggers", "sweatpants", "fleece"],
         dateAdded: "2026-06-10", popularity: 85, featured: false
       },
@@ -670,7 +670,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Layered Casual & Streetwear",
         colors: ["Obsidian Black", "Charcoal"],
         fabrics: ["350 GSM Brushed Fleece"],
-        images: ["/images/FLEECE&Streetwear/ZIP_Hoodie.png"],
+        images: ["/images/fleece/zip-hoodie.png"],
         productType: "Zip Hoodies", collection: "Core", gender: "Unisex", tags: ["zip hoodie", "fleece", "outerwear"],
         dateAdded: "2026-06-15", popularity: 88, featured: false
       },
@@ -686,7 +686,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Luxury Streetwear Sets",
         colors: ["Bone White", "Mocha", "Black"],
         fabrics: ["380 GSM Fleece Blend"],
-        images: ["/images/FLEECE&Streetwear/Tracksuits &co-ords.png"],
+        images: ["/images/fleece/tracksuits-coords.png"],
         productType: "Luxury Tracksuits", collection: "Luxury", gender: "Unisex", tags: ["tracksuit", "co-ord", "set"],
         dateAdded: "2026-06-20", popularity: 94, featured: true
       },
@@ -702,7 +702,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Golf, Activewear & Corporate Merch",
         colors: ["Navy Blue", "Heather Charcoal"],
         fabrics: ["340 GSM Brushed Fleece"],
-        images: ["/images/FLEECE&Streetwear/Quarter_Zip_Pullover.png"],
+        images: ["/images/fleece/quarter-zip-pullover.png"],
         productType: "Quarter-Zip Pullovers", collection: "Executive", gender: "Unisex", tags: ["quarterzip", "pullover", "fleece"],
         dateAdded: "2026-06-14", popularity: 87, featured: false
       },
@@ -718,7 +718,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Summer Streetwear Sets",
         colors: ["Vintage Black", "Sand"],
         fabrics: ["380 GSM French Terry"],
-        images: ["/images/FLEECE&Streetwear/streetwear_fleece_shorts.png"],
+        images: ["/images/fleece/streetwear-fleece-shorts.png"],
         productType: "Fleece Shorts", collection: "Streetwear", gender: "Unisex", tags: ["shorts", "fleece", "streetwear"],
         dateAdded: "2026-06-02", popularity: 84, featured: false
       }
@@ -759,7 +759,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Athletic Base Layer & Recovery",
         colors: ["Obsidian Black", "Arctic White", "Crimson Red"],
         fabrics: ["240 GSM Poly-Spandex (85/15)"],
-        images: ["/images/Performancewear/Compression wear.png"],
+        images: ["/images/performance/compression-wear.png"],
         productType: "Compression Tops", collection: "Pro", gender: "Men", tags: ["compression", "top", "baselayer"],
         dateAdded: "2026-06-10", popularity: 98, featured: true
       },
@@ -775,7 +775,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "General Fitness & Gym Retail",
         colors: ["White", "Black", "Neon Volt"],
         fabrics: ["160 GSM Recycled Polyester"],
-        images: ["/images/Performancewear/Training T shirts.png"],
+        images: ["/images/performance/training-tshirts.png"],
         productType: "Moisture-Wicking Tees", collection: "Core", gender: "Unisex", tags: ["tee", "dryfit", "training"],
         dateAdded: "2026-06-25", popularity: 88, featured: false
       },
@@ -791,7 +791,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Cross-Training & Running",
         colors: ["Matte Black", "Gunmetal Grey"],
         fabrics: ["140 GSM Stretch Woven"],
-        images: ["/images/Performancewear/performance_shorts_new.png"],
+        images: ["/images/performance/performance-shorts.png"],
         productType: "Aero Shorts", collection: "Aero", gender: "Men", tags: ["shorts", "training", "running"],
         dateAdded: "2026-06-15", popularity: 90, featured: true
       },
@@ -807,7 +807,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Activewear & Yoga Retail",
         colors: ["Carbon Black", "Navy Blue"],
         fabrics: ["280 GSM Interlock Poly-Spandex"],
-        images: ["/images/Performancewear/Performance Leggings.png"],
+        images: ["/images/performance/performance-leggings.png"],
         productType: "Squat-Proof Leggings", collection: "Core", gender: "Women", tags: ["leggings", "activewear", "squatproof"],
         dateAdded: "2026-05-01", popularity: 85, featured: false
       },
@@ -823,7 +823,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "High-Impact Athletics & Running",
         colors: ["Carbon Black", "Navy Blue"],
         fabrics: ["300 GSM Dual-Layer Compression"],
-        images: ["/images/Performancewear/Sports Bra & Active Tops.png"],
+        images: ["/images/performance/sports-bra-active-tops.png"],
         productType: "Sports Bras", collection: "Core", gender: "Women", tags: ["sportsbra", "activetop", "training"],
         dateAdded: "2026-06-11", popularity: 92, featured: true
       },
@@ -839,7 +839,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Outdoor Athletics & Weather Protection",
         colors: ["Matte Black"],
         fabrics: ["120 GSM Aero Ripstop"],
-        images: ["/images/Performancewear/Windbreajer.png"],
+        images: ["/images/performance/windbreaker.png"],
         productType: "Windbreakers & Outerwear", collection: "Pro", gender: "Unisex", tags: ["windbreaker", "jacket", "outerwear", "performance"],
         dateAdded: "2026-06-07", popularity: 89, featured: true
       },
@@ -855,7 +855,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "Activewear & Fitness Programs",
         colors: ["Charcoal Grey", "Rose Pink"],
         fabrics: ["220 GSM Seamless Knit"],
-        images: ["/images/Performancewear/Seamless Croptop.png"],
+        images: ["/images/performance/seamless-crop-top.png"],
         productType: "Seamless Active Tops", collection: "Seamless", gender: "Women", tags: ["croptop", "seamless", "activewear"],
         dateAdded: "2026-06-19", popularity: 89, featured: false
       }

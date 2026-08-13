@@ -14,7 +14,7 @@ const productCategories = [
     title: "Martial Arts Wear",
     subtitle: "Combat Engineering",
     description: "Technical combat apparel engineered for extreme durability, traditional cuts, and professional performance. Specializing in 14oz smooth cotton canvas Kata Gis, 450 GSM pearl weave BJJ Gis, and satin Muay Thai shorts.",
-    image: "/images/Martial Arts/pro bjj gi.png",
+    image: "/images/martial-arts/pro-bjj-gi.png",
     specs: [
       "14oz (450 GSM) Smooth Cotton Canvas Kata Gis",
       "Heavyweight Pearl Weave Cotton (450 GSM BJJ Gis)",
@@ -31,7 +31,7 @@ const productCategories = [
     title: "Cotton & Casualwear",
     subtitle: "Streetwear & Retail Blanks",
     description: "Premium cotton apparel manufacturing ranging from 180 GSM Peruvian Pima tees to 240 GSM heavyweight oversized streetwear blanks and organic pique polos.",
-    image: "/images/Cotton Casualwear/Heavyweight oversized tee.png",
+    image: "/images/cotton-casualwear/heavyweight-oversized-tee.png",
     specs: [
       "Heavyweight Oversized Streetwear Tees (240 GSM)",
       "Organic Cotton Pique Polo Shirts (220 GSM)",
@@ -48,7 +48,7 @@ const productCategories = [
     title: "Sports Shirts & Team Jerseys",
     subtitle: "Custom Match Day Apparel",
     description: "Custom athletic team kits, sublimated sports jerseys, and high-performance club apparel engineered for match day and professional leagues.",
-    image: "/images/SPORTS SHIRTS & TEAM JERSEYS/Football Match Kits.png",
+    image: "/images/team-jerseys/football-match-kits.png",
     specs: [
       "Sublimated Soccer & Football Match Day Kits (180 GSM)",
       "UV-Protective Cricket Team Shirts & Polos (200 GSM)",
@@ -65,7 +65,7 @@ const productCategories = [
     title: "Denim Products",
     subtitle: "Selvedge Authority",
     description: "Premium selvedge denim, custom washed finishes, and expert tailoring. From raw denim to complex distressed streetwear, we provide scalable manufacturing solutions for premium global labels.",
-    image: "/images/Denim Products/Selvedge Denim.png",
+    image: "/images/denim/selvedge-denim.png",
     specs: [
       "14oz (450 GSM) Shuttle-Loomed Japanese Selvedge",
       "Custom Laser Distressing & Hand-Scraping",
@@ -82,7 +82,7 @@ const productCategories = [
     title: "Fleece & Streetwear",
     subtitle: "Urban Essentials",
     description: "Heavyweight fleece and urban coordinates engineered for the modern streetwear market. We focus on oversized silhouettes, premium hand-feel, and high-density branding applications.",
-    image: "/images/FLEECE&Streetwear/Premium_Hoodies.png",
+    image: "/images/fleece/premium-hoodies.png",
     specs: [
       "Heavyweight Boxy Hoodies (400 GSM French Terry)",
       "Oversized Drop-Shoulder Patterns & Boxy Fits",
@@ -99,7 +99,7 @@ const productCategories = [
     title: "Performance Wear",
     subtitle: "Technical Athleticism",
     description: "Advanced compression and moisture-management apparel for professional athletes. Our production line utilizes laser-cutting and flat-lock stitching for friction-less athletic performance.",
-    image: "/images/Performancewear/Compression wear.png",
+    image: "/images/performance/compression-wear.png",
     specs: [
       "240 GSM 4-Way Stretch Compression Base Layers",
       "Squat-Proof Interlock Leggings (280 GSM)",
@@ -118,187 +118,147 @@ export default function ProductsPage() {
     <main className="min-h-screen bg-zinc-950 selection:bg-brand-red selection:text-white overflow-x-hidden">
       <Navbar />
       
-      {/* Hero Intro Section */}
-      <section className="pt-32 md:pt-48 pb-20 md:pb-32 px-6 md:px-12 relative overflow-hidden bg-zinc-950 border-b border-zinc-800">
-         {/* Background Texture */}
-         <div className="absolute inset-0 noise-bg opacity-[0.05] z-0" />
-         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-red/5 blur-[150px] rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none z-0" />
-
-         <div className="max-w-7xl mx-auto relative z-10">
-           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
-             
-             {/* Left Text Content */}
-             <motion.div 
-               initial="hidden" 
-               animate="visible" 
-               variants={{
-                 hidden: { opacity: 0 },
-                 visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
-               }} 
-               className="flex flex-col items-start text-left"
-             >
-                <motion.div 
-                  variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                  className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/50 px-4.5 py-2 rounded-full mb-6 shadow-md"
-                >
-                  <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
-                  <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-white">Global Manufacturing</span>
-                </motion.div>
-                <motion.h1 
-                  variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
-                  className="text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] font-black leading-[0.85] tracking-tighter uppercase text-white mb-8"
-                >
-                   THE <br/><span className="text-zinc-300/50 italic">ARCHIVE</span>
-                </motion.h1>
-                <motion.div 
-                  variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                  className="w-12 h-1 bg-brand-red mb-8" 
-                />
-                <motion.p 
-                  variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                  className="text-base md:text-xl text-zinc-200 font-medium leading-relaxed max-w-md whitespace-pre-wrap"
-                >
-                   Premium end-to-end manufacturing for the world's most demanding apparel brands. Discover our engineered collections below.
-                </motion.p>
-             </motion.div>
-
-             {/* Right Image Collage */}
-             <motion.div 
-               initial={{ opacity: 0, scale: 0.95 }}
-               animate={{ opacity: 1, scale: 1 }}
-               transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
-               className="relative h-[50vh] lg:h-[60vh] w-full hidden md:block"
-             >
-               {/* Main large image - Martial Arts / Performance */}
-               <div className="absolute right-0 top-0 w-3/4 h-5/6 rounded-3xl overflow-hidden border border-zinc-700 shadow-2xl z-10">
-                 <Image 
-                   src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=2072&auto=format&fit=crop"
-                   alt="Martial Arts Manufacturing"
-                   fill
-                   className="object-cover"
-                   priority
-                 />
-               </div>
-               {/* Overlapping smaller image - Denim / Streetwear */}
-               <div className="absolute left-0 bottom-10 w-[55%] h-[60%] rounded-3xl overflow-hidden border border-zinc-700 shadow-2xl z-20">
-                 <Image 
-                   src="https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=2052&auto=format&fit=crop"
-                   alt="Denim Detail"
-                   fill
-                   className="object-cover"
-                   priority
-                 />
-               </div>
-             </motion.div>
-
-           </div>
-         </div>
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 md:px-12 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 border-b border-zinc-800">
+        <div className="absolute inset-0 noise-bg opacity-[0.03] z-0" />
+        <div className="max-w-7xl mx-auto relative z-10 text-center">
+          <motion.span 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-xs md:text-sm font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-brand-red mb-4 block"
+          >
+            Product Catalog & Division Directory
+          </motion.span>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-white mb-6 leading-none"
+          >
+            B2B Manufacturing <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-300 to-zinc-500">Divisions</span>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-base md:text-xl text-zinc-400 max-w-3xl mx-auto font-medium leading-relaxed"
+          >
+            Explore our specialized OEM/ODM production divisions in Sialkot, Pakistan. Engineered for global brands requiring exact GSM weights, technical fabric blends, and custom tech packs.
+          </motion.p>
+        </div>
       </section>
 
-      {/* Product Category Sections */}
-      {productCategories.map((category, i) => (
-        <section 
-          key={category.id}
-          className="section-padding relative overflow-hidden bg-zinc-950 border-t border-zinc-800"
-        >
-          <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-            <Link href={`/products/${category.id}`} className="block group cursor-pointer">
-              <div className={`flex flex-col lg:flex-row gap-16 lg:gap-32 items-center ${
-                i % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              }`}>
-                
-                {/* Image Column */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 1, ease: "easeOut" }}
-                  className="w-full lg:w-[55%]"
-                >
-                  <div className="relative aspect-[4/5] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden bg-zinc-900 border border-zinc-800 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:border-white/15 group-hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] group-hover:-translate-y-2">
-                    <Image
-                      src={category.image}
-                      alt={category.title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 contrast-[1.05] saturate-[1.05]"
-                      priority={i < 1}
-                      loading={i < 1 ? "eager" : "lazy"}
-                    />
-                  </div>
-                </motion.div>
+      {/* Category Grid Section */}
+      <section className="py-20 md:py-32 px-6 md:px-12 bg-zinc-950">
+        <div className="max-w-7xl mx-auto space-y-24 md:space-y-36">
+          {productCategories.map((category, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <motion.div
+                key={category.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8 }}
+                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-center ${
+                  isEven ? "" : "lg:flex-row-reverse"
+                }`}
+              >
+                {/* Image Container */}
+                <div className={`lg:col-span-6 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+                  <Link href={`/products/${category.id}`} className="group block relative">
+                    <div className="relative aspect-[4/3] md:aspect-square rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-900 shadow-2xl transition-all duration-700 group-hover:border-brand-red/60 group-hover:shadow-[0_20px_50px_rgba(220,38,38,0.2)]">
+                      <Image
+                        src={category.image}
+                        alt={category.title}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                      
+                      {/* Badge */}
+                      <div className="absolute top-6 left-6 z-10">
+                        <span className="bg-zinc-950/80 backdrop-blur-md border border-zinc-700 text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full">
+                          {category.subtitle}
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
 
-              {/* Content Column */}
-              <div className="w-full lg:w-[45%] lg:px-8">
-                <motion.div
-                  initial={{ opacity: 0, x: i % 2 === 0 ? 30 : -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <h2 className="text-4xl md:text-6xl font-black mb-4 uppercase text-white tracking-tighter group-hover:text-zinc-200 transition-colors duration-500">
-                    {category.title}
-                  </h2>
-                  <span className="text-zinc-300 font-bold uppercase tracking-[0.4em] text-xs md:text-xs mb-8 block">
-                    {category.subtitle}
-                  </span>
-                  <p className="text-base md:text-lg text-zinc-200 font-medium leading-relaxed mb-12">
+                {/* Content Container */}
+                <div className={`lg:col-span-6 space-y-6 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
+                  <div className="space-y-2">
+                    <span className="text-xs font-black uppercase tracking-widest text-brand-red">
+                      Division 0{index + 1}
+                    </span>
+                    <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-white">
+                      {category.title}
+                    </h2>
+                  </div>
+
+                  <p className="text-sm md:text-base text-zinc-300 leading-relaxed font-medium">
                     {category.description}
                   </p>
 
-                  <div className="grid grid-cols-1 gap-8 mb-12 opacity-80 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="space-y-4">
-                      <h4 className="text-white font-black uppercase tracking-widest text-xs md:text-xs mb-4">
-                        Construction Details
-                      </h4>
-                      <ul className="space-y-4">
-                        {category.specs.map((spec, j) => (
-                          <li key={j} className="text-xs md:text-sm text-zinc-200 font-bold border-b border-zinc-800 pb-4 uppercase tracking-wide">
-                            {spec}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="space-y-8 mt-6">
-                      <div>
-                        <h4 className="text-white font-black uppercase tracking-widest text-xs md:text-xs mb-4">
-                          Fabric System
-                        </h4>
-                        <p className="text-xs md:text-sm font-bold text-zinc-300 uppercase tracking-wide">{category.fabric}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="text-white font-black uppercase tracking-widest text-xs md:text-xs mb-4">
-                          Available Programs
-                        </h4>
-                        <div className="flex flex-wrap gap-x-4 gap-y-2">
-                          {category.tags.map((tag, j) => (
-                            <span key={j} className="text-xs font-bold uppercase tracking-widest text-zinc-300">
-                              {tag}
-                            </span>
-                          ))}
+                  {/* Specs List */}
+                  <div className="space-y-3 pt-2">
+                    <h3 className="text-xs font-black uppercase tracking-widest text-zinc-300">
+                      Construction Details
+                    </h3>
+                    <div className="grid grid-cols-1 gap-2">
+                      {category.specs.map((spec, i) => (
+                        <div key={i} className="flex items-center gap-3 text-xs font-bold text-zinc-200">
+                          <div className="w-1.5 h-1.5 rounded-full bg-brand-red shrink-0" />
+                          <span>{spec}</span>
                         </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
 
-                  {/* Explore Cursor Feedback */}
-                    <div className="flex items-center gap-4 text-zinc-300 group-hover:text-white transition-colors duration-500 border-b border-zinc-700 group-hover:border-white/30 pb-3 w-fit mt-8">
-                      <span className="text-xs font-bold uppercase tracking-widest">Explore Collection</span>
-                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-500" />
+                  {/* Fabric & Capabilities */}
+                  <div className="pt-4 border-t border-zinc-800/80 space-y-3">
+                    <div className="text-xs font-medium text-zinc-400">
+                      <strong className="text-zinc-300 font-bold uppercase tracking-wider block mb-1">Fabric System</strong>
+                      {category.fabric}
                     </div>
-                  </motion.div>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </section>
-      ))}
+                    <div className="text-xs font-medium text-zinc-400">
+                      <strong className="text-zinc-300 font-bold uppercase tracking-wider block mb-1">OEM Capabilities</strong>
+                      {category.capabilities}
+                    </div>
+                  </div>
 
-      {/* Final CTA Section */}
+                  {/* Sub-Category Tags */}
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {category.tags.map((tag, i) => (
+                      <span key={i} className="bg-zinc-900 border border-zinc-800 text-zinc-400 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Action Link */}
+                  <div className="pt-4">
+                    <Link
+                      href={`/products/${category.id}`}
+                      className="inline-flex items-center gap-3 bg-white hover:bg-brand-red text-zinc-950 hover:text-white text-xs font-black uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 group"
+                    >
+                      <span>Explore {category.title} Line</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Custom B2B CTA */}
       <CTA />
-      
+
       <Footer />
     </main>
   );
