@@ -138,7 +138,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "No-Gi Grappling & MMA Base Layer",
         colors: ["Rank Colors", "Obsidian Black"],
         fabrics: ["240 GSM Poly-Spandex (88/12)"],
-        images: ["/images/martial-arts/rash-guard.png"],
+        images: ["/images/martial-arts/rash_guard_clean.png"],
         productType: "No-Gi Rashguards", collection: "Pro", gender: "Men", tags: ["rashguard", "nogi", "mma", "compression"],
         dateAdded: "2026-06-10", popularity: 92, featured: true
       },
