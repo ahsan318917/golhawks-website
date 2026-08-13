@@ -154,7 +154,7 @@ const faqs = [
     type: "faq" as const,
     id: "faq-quality",
     question: "How is quality control handled during manufacturing?",
-    answer: "Every lot undergoes 100% inline stitching audits, fabric GSM verification, color-fastness testing, and final AQL 2.5 inspection before packing.",
+    answer: "Every lot undergoes 100% inline stitching audits, fabric verification, color-fastness testing, and final AQL 2.5 inspection before packing.",
     category: "Quality Assurance"
   }
 ];
