@@ -154,7 +154,7 @@ export const CATEGORY_DATA: Record<string, CategoryData> = {
         intendedUse: "MMA, Kickboxing & No-Gi",
         colors: ["Matte Black", "Tactical Camo"],
         fabrics: ["180 GSM Stretch Microfiber"],
-        images: ["/images/martial-arts/mma-fight-shorts.png"],
+        images: ["/images/martial-arts/mma_fight_shorts_v2.png"],
         productType: "MMA Fight Shorts", collection: "Core", gender: "Men", tags: ["shorts", "mma", "nogi"],
         dateAdded: "2026-05-20", popularity: 86, featured: false
       },
