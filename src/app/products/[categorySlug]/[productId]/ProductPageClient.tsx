@@ -73,7 +73,7 @@ export function ProductPageClient({ categorySlug, productId }: { categorySlug: s
                    
                    <Image 
                      src={img} 
-                     alt={`${PRODUCT.name} Gallery ${i + 1}`} 
+                     alt={`${PRODUCT.name} - Custom ${categoryData.title} Manufacturing View ${i + 1} | GolHawks International Sialkot`} 
                      fill 
                      sizes="(max-width: 768px) 100vw, 50vw"
                      className="object-cover transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 contrast-[1.15] saturate-[0.75] brightness-[0.85] sepia-[.1]" 

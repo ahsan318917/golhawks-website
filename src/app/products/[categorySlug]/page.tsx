@@ -1,5 +1,5 @@
 import { CATEGORY_DATA } from "@/data/categories";
-import { SITE_URL, SITE_NAME } from "@/config/seo";
+import { SITE_URL, SITE_NAME, formatCategoryMetaTitle, formatCategoryMetaDesc, B2B_KEYWORDS } from "@/config/seo";
 import { CategoryPageClient } from "./CategoryPageClient";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -20,13 +20,14 @@ export async function generateMetadata({
   const categoryData = CATEGORY_DATA[categorySlug];
   if (!categoryData) return {};
 
-  const title = `${categoryData.title} | Custom Manufacturing | ${SITE_NAME}`;
-  const description = categoryData.description;
+  const title = formatCategoryMetaTitle(categoryData.title);
+  const description = formatCategoryMetaDesc(categoryData.title, categoryData.description);
   const url = `${SITE_URL}/products/${categorySlug}`;
 
   return {
     title,
     description,
+    keywords: [categoryData.title, ...B2B_KEYWORDS, 'Sialkot Manufacturer', 'Private Label Apparel'],
     openGraph: {
       title,
       description,

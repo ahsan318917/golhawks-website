@@ -316,7 +316,7 @@ export function CategoryPageClient({ categorySlug }: { categorySlug: string }) {
                      <Link href={`/products/${categorySlug}/${p.id}`} className="absolute inset-0 z-10 block">
                        <Image 
                          src={p.images[0]}
-                         alt={p.name}
+                         alt={`${p.name} - Custom ${categoryData.title} Manufacturing by GolHawks International Sialkot`}
                          fill
                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                          className="object-cover transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] contrast-[1.05] saturate-[1.05] group-hover:scale-105"

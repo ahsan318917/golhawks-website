@@ -1,5 +1,5 @@
 import { CATEGORY_DATA } from "@/data/categories";
-import { SITE_URL, SITE_NAME } from "@/config/seo";
+import { SITE_URL, SITE_NAME, formatProductMetaTitle, formatProductMetaDesc, formatImageAltText, B2B_KEYWORDS } from "@/config/seo";
 import { ProductPageClient } from "./ProductPageClient";
 import { ProductJsonLd } from "@/components/JsonLd";
 import { notFound } from "next/navigation";
@@ -24,20 +24,22 @@ export async function generateMetadata({ params }: { params: Promise<{ categoryS
   const product = categoryData.products.find(p => p.id === productId);
   if (!product) return {};
 
-  const title = `${product.name} | ${categoryData.title} | ${SITE_NAME}`;
-  const description = product.description;
+  const title = formatProductMetaTitle(product.name, categoryData.title);
+  const description = formatProductMetaDesc(product.name, product.description);
   const url = `${SITE_URL}/products/${categorySlug}/${productId}`;
   const ogImage = product.images?.[0] ? `${SITE_URL}${product.images[0]}` : undefined;
+  const altText = formatImageAltText(product.name, categoryData.title);
 
   return {
     title,
     description,
+    keywords: [product.name, categoryData.title, ...product.tags, ...B2B_KEYWORDS, 'Sialkot Factory'],
     openGraph: {
       title,
       description,
       url,
       siteName: SITE_NAME,
-      images: ogImage ? [{ url: ogImage, width: 800, height: 600, alt: product.name }] : [],
+      images: ogImage ? [{ url: ogImage, width: 800, height: 600, alt: altText }] : [],
       type: "website",
     },
     twitter: {

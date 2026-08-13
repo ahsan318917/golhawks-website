@@ -103,7 +103,7 @@ const ProductsPreview = () => {
  <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden bg-zinc-900 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] border border-zinc-700">
  <Image
  src={product.image}
- alt={product.title}
+ alt={`${product.title} - Custom ${product.category} Manufacturing by GolHawks International Sialkot`}
  fill
  sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 25vw"
  className="object-cover transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] md:group-hover:scale-105"
