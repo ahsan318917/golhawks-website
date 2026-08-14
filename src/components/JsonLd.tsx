@@ -81,3 +81,45 @@ export function ProductJsonLd({
     />
   );
 }
+
+export function FaqJsonLd() {
+  const faqs = [
+    {
+      question: "Can I request sample garments before placing a bulk lot order?",
+      answer: "Yes! We produce pre-production samples with your exact branding and fabric specs within 7-10 business days for approval."
+    },
+    {
+      question: "What are the standard payment terms for lot booking?",
+      answer: "Standard terms are 50% deposit upon order confirmation & tech pack approval, and 50% prior to dispatch following final QC inspection."
+    },
+    {
+      question: "Do you offer custom tech pack and pattern development?",
+      answer: "Our in-house R&D team can generate technical flat sketches, size grading charts, and complete tech packs from physical samples or photos."
+    },
+    {
+      question: "How is quality control handled during manufacturing?",
+      answer: "Every lot undergoes 100% inline stitching audits, fabric verification, color-fastness testing, and final AQL 2.5 inspection before packing."
+    }
+  ];
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { OrganizationJsonLd } from "@/components/JsonLd";
+import { OrganizationJsonLd, FaqJsonLd } from "@/components/JsonLd";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -70,6 +70,7 @@ export default function RootLayout({
     <html lang="en" className="dark scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <OrganizationJsonLd />
+        <FaqJsonLd />
         {children}
         <Analytics />
         <SpeedInsights />
